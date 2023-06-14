@@ -4,9 +4,7 @@ const login = {
     return templateHTML.text();
   },
   loadEvents: async () => {
-    document.getElementById('btnPrueba').addEventListener('click', () => {
-      console.log('Me clickean');
-    });
+
   },
 };
 

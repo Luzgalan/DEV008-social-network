@@ -7,6 +7,10 @@ export const navigation = async () => {
   const path = window.location.pathname;
   // Buscamos que  componente corresponde a la ruta en el objeto routes
   const component = routes[path];
+  // Solo cuando es login o register pintamos el fondo de naranja
+  if (path === '/' || path === '/register') {
+    document.getElementById('bodyApp').classList.add('fondo-naranja');
+  }
   // Cargamos el HTML
   root.innerHTML = await component.loadHTML();
   // Cargamos los eventos
