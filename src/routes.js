@@ -7,3 +7,4 @@ export const routes = {
   '/register': register,
   '/feed': feed,
 };
+
