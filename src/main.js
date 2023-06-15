@@ -13,8 +13,8 @@ export const navigation = async (path) => {
 
 // Evento al cargar la pagina
 window.addEventListener('load', () => {
-  window.history.pushState({}, '', window.location.origin);
-  navigation('/');
+  const path = window.location.pathname;
+  navigation(path);
 });
 
 // Evento al cambiar la ruta
