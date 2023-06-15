@@ -3,7 +3,10 @@
         "editor.maxTokenizationLineLength": 2500,
         "editor.defaultFormatter": "vscode.typescript-language-features",
         "editor.tabSize": 2,
-        "editor.formatOnSave": true
+        "editor.formatOnSave": true,
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+}
     },
     "[html]": {
         "editor.suggest.insertMode": "replace",
