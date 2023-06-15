@@ -4,9 +4,14 @@ const login = {
     return templateHTML.text();
   },
   loadEvents: async () => {
-    document.getElementById('btnPrueba').addEventListener('click', () => {
-      console.log('Me clickean');
+    /* -------------------------- Navegacion a register ------------------------- */
+    document.getElementById('spnNuevaCuenta').addEventListener('click', () => {
+      window.history.pushState({}, '', `${window.location.origin}/register`);
+      /* ----- Dispara manualmente el evento popstate para actualizar la ruta ----- */
+      window.dispatchEvent(new PopStateEvent('popstate'));
     });
+
+    /* ----------------------------- Inniciar sesion ---------------------------- */
   },
 };
 
