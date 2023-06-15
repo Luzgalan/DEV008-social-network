@@ -1,14 +1,10 @@
 import { routes } from './routes.js';
 
 // Funcion para navegar entre componentes
-export const navigation = async () => {
+export const navigation = async (path) => {
   const root = document.getElementById('app');
-  // Obtenemos la liga actual en la barrra de url
-  const path = window.location.pathname;
   // Buscamos que  componente corresponde a la ruta en el objeto routes
   const component = routes[path];
-  // Solo cuando es login o register pintamos el fondo de naranja
-
   // Cargamos el HTML
   root.innerHTML = await component.loadHTML();
   // Cargamos los eventos
@@ -16,6 +12,13 @@ export const navigation = async () => {
 };
 
 // Evento al cargar la pagina
-window.addEventListener('load', navigation);
-// evento al cambiar la ruta
-window.addEventListener('hasChange', navigation);
+window.addEventListener('load', () => {
+  window.history.pushState({}, '', window.location.origin);
+  navigation('/');
+});
+
+// Evento al cambiar la ruta
+window.addEventListener('popstate', async () => {
+  const path = window.location.pathname;
+  navigation(path);
+});
