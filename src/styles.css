@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@500&display=swap');
+
+body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.fondo-naranja {
+    background-color: #F39F25;
+}
+
+/* --------------------- Definicion de tamaños de letrs --------------------- */
+.text-small {
+    font-size: small;
+}
+.text-medium {
+    font-size: medium;
+}
+.text-large{
+    font-size: larger;
+}
+.text-title{
+        color: #333333;
+        font-size: 25px;
+        font-weight: 500;
+        margin: 5px;
+    
+}
+
+.text-color-white{
+color: #ffffff;
+}
+
+.text-color-orange{
+    color: #FFA500;
+}
