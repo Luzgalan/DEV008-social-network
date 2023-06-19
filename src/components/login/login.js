@@ -1,3 +1,5 @@
+import { loginWithGoogle } from './login.controller';
+
 const login = {
   loadHTML: async () => {
     const templateHTML = await fetch('components/login/login.html');
@@ -11,7 +13,12 @@ const login = {
       window.dispatchEvent(new PopStateEvent('popstate'));
     });
 
-    /* ----------------------------- Inniciar sesion ---------------------------- */
+    /* ----------------------------- Inniciar sesion con google---------------------------- */
+    document.getElementById('btnLoginGoogle').addEventListener('click', async () => {
+      document.getElementById('btnLoginGoogle').disabled = true;
+      // await createUser('luz', 'vg@outlook.es', 'photo');
+      await loginWithGoogle();
+    });
   },
 };
 
