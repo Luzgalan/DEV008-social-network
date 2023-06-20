@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@500&display=swap');
-
 body{
     height: 100%;
     margin: 0;
     font-family: 'Montserrat';
     background-color: #fafafa;
-
 }
-
 .fondo-naranja {
     background-color: #F39F25;
 }
-
 /* --------------------- Definicion de tamaños de letrs --------------------- */
 .text-small {
     font-size: small;
@@ -30,11 +26,9 @@ body{
         margin: 5px;
     
 }
-
 .text-color-white{
 color: #ffffff;
 }
-
 .text-color-orange{
     color: #FFA500;
 }
@@ -136,4 +130,306 @@ border: #FFA500 solid 1px;
 
 /* -------------------------------------------------------------------------- */
 /*                                Clases feed                                */
+<<<<<<< HEAD
 /* -------------------------------------------------------------------------- */
+
+
+#pageAllContent {
+    width: 100%;
+    max-width: 1000px;
+    margin:auto;
+}
+
+#feedHeader {
+    width: 100%;
+    height: 50px;
+    background-color: #f39f25;
+    border-top: 3px solid #f39f25;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 5px solid #CD3B32;
+}
+
+#feedLogoContent {
+    width: 10%;
+}
+
+img#feedLogo {
+    width: 80%;
+    height: 100%;
+    background: cover;
+    padding: 0%;
+    margin: 0%;
+    display: flex;
+    align-items: center;
+    filter: brightness(100%);
+    padding:0 10px;
+}
+
+nav#feedGeneralSearch {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+}
+
+#searchContent {
+    width: 15%;
+    height: 100%;
+    background-color: #CD3B32;
+    border: 1px solid #CD3B32;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input#inputSearch {
+    width: 85%;
+    height: 100%;
+    background-color: rgba(255, 235, 205, 0.797);
+    border-radius: 4px 0 0 4px;
+    border: none;
+}
+
+span.material-symbols-search {
+    color: aliceblue;
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-size: 20px;
+}
+
+span.material-symbols-outlined {
+    padding: 5px;
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    filter: brightness(100%); 
+}
+
+#feedAllContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+#feedAside {
+    width: 25%;
+    height: 2000px;
+    background-color: antiquewhite;
+    margin: 0 10px 10px 0;
+    border-radius: 0 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#feedMenu {
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    padding: 5px 0 5px 0;
+    margin: 5px 0 10px 0;
+}
+
+span.material-symbols-menu {
+    padding: 5px; 
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-size: 30px;
+    color: #CD3B32; 
+}
+
+#feedProfile {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#feedProfileImageContent {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;  
+}
+
+#feedProfileImage {
+   width: 100%;
+   height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.feedNameLogo {
+    color: #CD3B32;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#feedIntroduction {
+    width: 75%;
+    height: auto;
+    text-align: center;
+}
+
+#feedScroll {
+    width: 75%;
+    height: 2000px;
+    margin: 0 0 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px 0 5px 5px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section#newPost {
+    width: 80%;
+    height: auto;
+    background-color:#f3a1257e;
+    border-radius: 8px;
+    margin: 10px 0 10px 0;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input#feedNewPost {
+    width: 100%;
+    height: 50px;
+    background-color: #cd6d3245;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.newPost {
+    font-size: 16px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #CD3B32;
+    display: flex;
+    align-items: end;
+    margin: 0;
+}
+
+.botones {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: end;
+}
+
+#feedcategory,
+#publish,
+#cancel {
+    margin:5px 5px;
+    border-radius: 7px;
+    background-color: #CD3B32;
+    border: none;
+    padding: 5px 5px;
+    font-size: 14px;
+    color: aliceblue;
+}
+
+div#randomImages {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: solid 5px #010101;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#adoptionLetter {
+    width: 40%;
+    font-family: "Grobold";
+    font-size: 25px;
+    color: #CD3B32;
+    text-align: center;
+    margin: 20px 40px 20px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.randomAbeja {
+    width: 20%;
+    padding: 10px 0;
+}
+
+img#randomAbeja {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.randomDog {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+img#randomDog {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#feedScrollContent {
+    width: 80%;
+    height: auto;
+    background-color:antiquewhite;
+    margin: 10px 0 10px 0;
+    border-radius: 8px;
+}
+
+div#likeEditDelete {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px 10px;
+}
+
+span.material-symbols-like,
+span.material-symbols-edit,
+span.material-symbols-delete {
+    color: rgb(0, 0, 0);
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#feedScrollContent p {
+    background-color:#f3a1256d;
+    width: 97%;
+    min-height:50px ;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 10px;
+    margin: 10px 0 10 px 0;   
+}
+=======
+/* -------------------------------------------------------------------------- */
+>>>>>>> develop

@@ -4,7 +4,6 @@ const feed = {
     return templateHTML.text();
   },
   loadEvents: async () => {
-
   },
 };
 
