@@ -1,8 +1,5 @@
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { crearUsuario } from './register.controller';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-
 
 const register = {
   loadHTML: async () => {
@@ -19,10 +16,6 @@ const register = {
 
 export default register;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
 function registrar() {
   const email = document.getElementById('correo').value;
   const contrasena = document.getElementById('contrasena').value;
@@ -43,7 +36,3 @@ function registrar() {
       // ..
     });
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
