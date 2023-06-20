@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
@@ -9,7 +10,5 @@ const firebaseConfig = {
   appId: '1:348333556906:web:83992e5ad022fa6e917cd3',
   measurementId: 'G-D0TZTYL4PJ',
 };
-
 // Initialize Firebase
-
 export const app = initializeApp(firebaseConfig);

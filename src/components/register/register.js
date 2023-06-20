@@ -1,3 +1,4 @@
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { crearUsuario } from './register.controller';
 
 const register = {
@@ -14,3 +15,24 @@ const register = {
 };
 
 export default register;
+
+function registrar() {
+  const email = document.getElementById('correo').value;
+  const contrasena = document.getElementById('contrasena').value;
+
+  console.log(email);
+  console.log(contrasena);
+
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email, contrasena)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+}
