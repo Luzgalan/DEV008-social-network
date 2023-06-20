@@ -43,6 +43,8 @@
     "commit": "a942adeb868f1fe54b86e34cc4fc4ddb0601700d"
   },
   "dependencies": {
+    "@firebase/database": "^0.14.4",
+    "@firebase/firestore": "^3.12.2",
     "firebase": "^9.22.2"
   }
 }
