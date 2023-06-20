@@ -16,12 +16,20 @@ const login = {
             <div class="l-input-with-icon">
                 <input type="text" placeholder="Correo electrónico">
                 <i class="fas fa-user"></i>
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
             </div>
             <div class="l-input-with-icon">
                 <input type="text" placeholder="Contraseña">
                 <i class="fas fa-lock"></i>
             </div>
             <div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> develop
                 <button class="l-button-login">Ingresar</button>
                 <p class="text-small">¿No tienes cuenta?
                     <span class="text-color-orange manita" id="spnNuevaCuenta">Crea una aquí</span>
