@@ -433,3 +433,102 @@ span.material-symbols-delete {
 
 /* -------------------------------------------------------------------------- */
 
+/* -------------------------------------------------------------------------- */
+/*                                  Register                                  */
+/* -------------------------------------------------------------------------- */
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-crear-cuenta{
+    height: 100%;
+    display: flex;
+    padding: 80px;
+}
+
+.formulario-cuenta{
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+background-color: #fff;
+text-align: center;
+padding: 3em;
+box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 0px 20px 20px 0px;
+}
+
+.logo-cuenta{
+    max-width: 400px;
+padding: 1em;
+text-align: center;
+/* background: rgba(243, 237, 206, 0.33); */
+background: #FFA500;
+box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+border-radius: 20px 0px 0px 20px;
+}
+.marca{
+    max-width: 300px;
+}
+
+.ingresa {
+    position: relative;
+    display: inline-block;
+    padding-right: 30px; /* Ajusta el valor según sea necesario */
+    border: none;
+    border-bottom: 1px solid #B8B8B8;
+    outline: none;
+    font-size: medium;
+}
+
+
+.ingresa input {
+    padding-right: 30px; /* Ajusta el valor según sea necesario */
+    border: none;
+    border-bottom: 1px solid #B8B8B8;
+    outline: none;
+    font-size: medium;
+}
+
+
+
+#Crearcuenta {
+mix-blend-mode: normal;
+border-radius: 50px;
+width: 180px;
+height: 50px;
+font-size: medium;
+border: #CD3B32 solid 1px;
+background-color: #FFFFFF;
+color: #CD3B32;
+margin-top: 30px;
+margin-left: 25px;
+margin-bottom: 30px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#Crearcuenta:hover {
+    background-color: #CD3B32;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+#Google {
+    height: 60px;
+    width: 60px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin-top: 30px;
+}
+
+.text-title{
+    padding-bottom: 25px ;
+}
+
+#bienvenido {
+    margin-top: 40px;
+}
+
+h1 {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

@@ -1,7 +1,7 @@
 import { collection, addDoc, getFirestore } from 'firebase/firestore';
-/* import { async } from 'regenerator-runtime'; */
+//import { async } from 'regenerator-runtime';
 import { app } from '../../firebase';
-
+//Para post 
 const db = getFirestore(app);
 export const crearUsuario = async ({ nombre, email, edad }) => {
   try {
