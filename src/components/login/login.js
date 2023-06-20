@@ -16,20 +16,12 @@ const login = {
             <div class="l-input-with-icon">
                 <input type="text" placeholder="Correo electrónico">
                 <i class="fas fa-user"></i>
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
             </div>
             <div class="l-input-with-icon">
                 <input type="text" placeholder="Contraseña">
                 <i class="fas fa-lock"></i>
             </div>
             <div>
-<<<<<<< HEAD
-=======
-
->>>>>>> develop
                 <button class="l-button-login">Ingresar</button>
                 <p class="text-small">¿No tienes cuenta?
                     <span class="text-color-orange manita" id="spnNuevaCuenta">Crea una aquí</span>
@@ -50,19 +42,16 @@ const login = {
   loadEvents: async () => {
     /* -------------------------- Navegacion a register ------------------------- */
     document.getElementById('spnNuevaCuenta').addEventListener('click', () => {
-Expand All
-      @@ -11, 7 + 49, 13 @@ const login = {
-        window.dispatchEvent(new PopStateEvent('popstate'));
-      });
-
+      window.history.pushState({}, '', `${window.location.origin}/register`);
+      /* ----- Dispara manualmente el evento popstate para actualizar la ruta ----- */
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    });
     /* ----------------------------- Inniciar sesion con google---------------------------- */
     document.getElementById('btnLoginGoogle').addEventListener('click', async () => {
       document.getElementById('btnLoginGoogle').disabled = true;
       // Inicio de sesion con google
-
       await loginWithGoogle();
     });
   },
 };
-
 export default login;
