@@ -99,7 +99,6 @@ const feed = {
     };
 
     document.getElementById('publish').addEventListener('click', async () => {
-      document.getElementById('publish').disabled = true;
       const obtenerRelleno = document.getElementById('feedNewPost').value;
       if (obtenerRelleno.length !== 0) {
         await newPost({ publicacion: obtenerRelleno });
