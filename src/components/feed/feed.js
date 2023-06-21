@@ -17,14 +17,7 @@ const feed = {
           <div id="feedMenu"><span class="material-symbols-menu">
                   menu
               </span>
-              <select class="menuSelects">
-                  <option value="opcion1">Perfil</option>
-                  <option value="opcion2">Risoterapia</option>
-                  <option value="opcion3">Adopciones</option>
-                  <option value="opcion4">Servicios</option>
-                  <option value="opcion5">Pet S.O.S</option>
-                  <option value="opcion6">Configuración</option>
-              </select>
+              
           </div>
           <section id="feedProfile">
               <div id="feedProfileImageContent"><img id="feedProfileImage" src="imgfeed/perfilFoto.jpg"
