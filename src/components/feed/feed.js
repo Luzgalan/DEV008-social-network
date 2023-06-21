@@ -1,7 +1,7 @@
 import { newPost, getData } from './feed.controller';
 
 const feed = {
-  loadHTML: async () => `<main id="pageAllContent">
+  loadHTML: () => `<main id="pageAllContent">
   <header id="feedHeader">
       <div id="feedLogoContent">
           <img id="feedLogo" src="imgfeed/logo-eslogan.png" alt="Logotype">
