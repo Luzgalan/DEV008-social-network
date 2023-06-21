@@ -1,5 +1,5 @@
 import {
-  collection, addDoc, getFirestore, getDocs,
+  collection, addDoc, getFirestore, getDocs, doc, deleteDoc,
 } from 'firebase/firestore';
 
 import { app } from '../../firebase';
@@ -19,4 +19,10 @@ export const newPost = async ({ publicacion }) => {
 export const getData = async () => {
   const querySnapshot = await getDocs(collection(db, 'nuevoPost'));
   return querySnapshot;
+};
+
+export const deletePost = async () => {
+  const eliminandoPost = deleteDoc(doc(db, 'nuevoPost', ''));
+  console.log(eliminandoPost);
+  return eliminandoPost;
 };

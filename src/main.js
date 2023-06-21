@@ -6,7 +6,7 @@ export const navigation = async (path) => {
   // Buscamos que  componente corresponde a la ruta en el objeto routes
   const component = routes[path];
   // Cargamos el HTML
-  root.innerHTML = await component.loadHTML();
+  root.innerHTML = component.loadHTML();
   // Cargamos los eventos
   await component.loadEvents();
 };
