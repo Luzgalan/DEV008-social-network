@@ -1,7 +1,7 @@
 import { newPost, getData } from './feed.controller';
 
 const feed = {
-  loadHTML: async () => `<main id="pageAllContent">
+  loadHTML: () => `<main id="pageAllContent">
   <header id="feedHeader">
       <div id="feedLogoContent">
           <img id="feedLogo" src="imgfeed/logo-eslogan.png" alt="Logotype">
@@ -38,6 +38,7 @@ const feed = {
               <div class="randomAbeja"><img id="randomAbeja" src="imgfeed/abejita.png" alt="Abejita"></div>
               <div class="randomDog"><img id="randomDog" src="imgfeed/perritove.png" alt="Perrito"></div>
           </div>
+          
           <section id="newPost">
               <h4 class="newPost">Crear nueva publicación</h4>
               <input type="text" id="feedNewPost" placeholder="Cuéntanos,  ¿Qué quieres compartir?...">
