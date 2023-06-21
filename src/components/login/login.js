@@ -1,4 +1,4 @@
-import { loginWithGoogle } from './login.controller';
+import { loginWithGoogle, loginWithPassword } from './login.controller';
 
 const login = {
   loadHTML: () => `
@@ -13,20 +13,24 @@ const login = {
                 </svg>
             </div>
             <p class="text-small">O con tu cuenta</p>
+            <form id="formLogin">
             <div class="l-input-with-icon">
-                <input type="text" placeholder="Correo electrónico">
+                <input type="email" required id="iptEmail" placeholder="Correo electrónico">
                 <i class="fas fa-user"></i>
             </div>
             <div class="l-input-with-icon">
-                <input type="text" placeholder="Contraseña">
+                <input type="password" required id="iptPassword"  placeholder="Contraseña">
                 <i class="fas fa-lock"></i>
             </div>
             <div>
-                <button class="l-button-login">Ingresar</button>
+
+                <button id="btnLoginPassword" class="l-button-login">Ingresar</button>
                 <p class="text-small">¿No tienes cuenta?
                     <span class="text-color-orange manita" id="spnNuevaCuenta">Crea una aquí</span>
                 </p>
             </div>
+            </form>
+            
         </div>
         
         <div class="l-container-informacion">
@@ -51,6 +55,18 @@ const login = {
       document.getElementById('btnLoginGoogle').disabled = true;
       // Inicio de sesion con google
       await loginWithGoogle();
+    });
+
+    /* ----------------- inciar sesion con usuario y contraseña ----------------- */
+
+    document.getElementById('formLogin').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('iptEmail').value;
+      const password = document.getElementById('iptPassword').value;
+      console.log(email);
+      console.log(password);
+
+      loginWithPassword(email, password);
     });
   },
 };

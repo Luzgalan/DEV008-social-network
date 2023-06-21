@@ -1,7 +1,18 @@
 import {
-  collection, addDoc, getFirestore, query, where, getDocs,
+  addDoc,
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
 } from 'firebase/firestore';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from 'firebase/auth';
 
 import { app } from '../../firebase';
 
@@ -70,4 +81,22 @@ export const loginWithGoogle = async () => {
   //  Redireccionamiento del usuario al feeds
   window.history.pushState({}, '', `${window.location.origin}/feed`);
   window.dispatchEvent(new PopStateEvent('popstate'));
+};
+
+export const loginWithPassword = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Obtenemos el token  y el email y lo guardamos en el Local Storage
+      const token = userCredential.user.accessToken;
+      localStorage.setItem('accessToken', token);
+      const mail = userCredential.user.email;
+      localStorage.setItem('email', mail);
+      //  Redireccionamiento del usuario al feeds
+      window.history.pushState({}, '', `${window.location.origin}/feed`);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    })
+    .catch(() => {
+      // const errorCode = error.code;
+      // const errorMessage = error.message;
+    });
 };
