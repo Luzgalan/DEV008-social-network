@@ -129,11 +129,6 @@ const feed = {
         }
       });
     });
-    const postPorEliminar = await getData();
-    const eliminadoPost = await deletePost();
-    eliminadoPost.forEach((item) => {
-      renderNewElement({ publicacion: item.data().publicacion });
-    });
   },
 };
 
