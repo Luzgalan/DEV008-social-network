@@ -1,7 +1,7 @@
-//import { collection, addDoc, getFirestore } from 'firebase/firestore';
-//import { async } from 'regenerator-runtime';
-/*import { app } from '../../firebase';
-//Para post 
+// import { collection, addDoc, getFirestore } from 'firebase/firestore';
+// import { async } from 'regenerator-runtime';
+/* import { app } from '../../firebase';
+//Para post
 const db = getFirestore(app);
 export const crearUsuario = async ({ nombre, email, edad }) => {
   try {
@@ -14,10 +14,9 @@ export const crearUsuario = async ({ nombre, email, edad }) => {
   } catch (e) {
     console.error('Error adding document: ', e);
   }
-};*/
+}; */
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
 const auth = getAuth();
 export const signInUser = (email, password) => {
@@ -26,7 +25,7 @@ export const signInUser = (email, password) => {
       // Signed in
       const user = userCredential.user;
       console.log(user);
-      window.alert('Usuario registrado correctamente')
+      window.alert('Usuario registrado correctamente');
       // ...
     })
     .catch((error) => {
@@ -43,16 +42,12 @@ export const signInUser = (email, password) => {
         firstPassword.textContent = 'La contraseña debe tener al menos 6 caracteres';
         equalPassword.appendChild(firstPassword);
       } else {
-        firstPassword.textContent = ('El correo electrónico ya está registrado' + error.message);
+        firstPassword.textContent = (`El correo electrónico ya está registrado${error.message}`);
         equalPassword.appendChild(firstPassword);
-
       }
 
       document.getElementById('formCrearcuenta').reset;
 
       // ..
     });
-}
-
-
-
+};

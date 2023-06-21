@@ -1,4 +1,4 @@
-import { newPost, getData, deletePost } from './feed.controller';
+import { newPost, getData } from './feed.controller';
 
 const feed = {
   loadHTML: () => `<main id="pageAllContent">
@@ -17,14 +17,7 @@ const feed = {
           <div id="feedMenu"><span class="material-symbols-menu">
                   menu
               </span>
-              <select class="menuSelects">
-                  <option value="opcion1">Perfil</option>
-                  <option value="opcion2">Risoterapia</option>
-                  <option value="opcion3">Adopciones</option>
-                  <option value="opcion4">Servicios</option>
-                  <option value="opcion5">Pet S.O.S</option>
-                  <option value="opcion6">Configuración</option>
-              </select>
+              
           </div>
           <section id="feedProfile">
               <div id="feedProfileImageContent"><img id="feedProfileImage" src="imgfeed/perfilFoto.jpg"
@@ -45,11 +38,7 @@ const feed = {
               <div class="randomAbeja"><img id="randomAbeja" src="imgfeed/abejita.png" alt="Abejita"></div>
               <div class="randomDog"><img id="randomDog" src="imgfeed/perritove.png" alt="Perrito"></div>
           </div>
-          <div id= "modalEliminar">
-            <h3>¿En serio quieres eliminar tu publicación?</h3>
-            <button id="cancelarEliminar" type="submit">Cancelar</button>
-                  <button id="aceptarEliminar" type="submit">Aceptar</button>
-            </div>
+          
           <section id="newPost">
               <h4 class="newPost">Crear nueva publicación</h4>
               <input type="text" id="feedNewPost" placeholder="Cuéntanos,  ¿Qué quieres compartir?...">
