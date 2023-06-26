@@ -13,7 +13,7 @@ export const navigation = async (path) => {
 
 // Evento al cargar la pagina
 window.addEventListener('load', () => {
-  const path = window.location.pathname;
+  const path = window.location.pathname; // Toma la ultima parte del url, el pathname es register
   navigation(path);
 });
 

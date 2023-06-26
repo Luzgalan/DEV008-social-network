@@ -1,31 +1,20 @@
-// import { collection, addDoc, getFirestore } from 'firebase/firestore';
-// import { async } from 'regenerator-runtime';
-/* import { app } from '../../firebase';
-//Para post
-const db = getFirestore(app);
-export const crearUsuario = async ({ nombre, email, edad }) => {
-  try {
-    const docRef = await addDoc(collection(db, 'usuario'), {
-      nombre,
-      email,
-      edad,
-    });
-    console.log('Document written with ID: ', docRef.id);
-  } catch (e) {
-    console.error('Error adding document: ', e);
-  }
-}; */
-
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider,
+} from 'firebase/auth';
 
 const auth = getAuth();
+
 export const signInUser = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
+      const equalPassword = document.getElementById('distintas-contrasenas');
+      const firstPassword = document.createElement('p');
       console.log(user);
-      window.alert('Usuario registrado correctamente');
+      document.getElementById('distintas-contrasenas').innerText = '';
+      firstPassword.textContent = 'Usuario registrado correctamente';
+      equalPassword.appendChild(firstPassword);
       // ...
     })
     .catch((error) => {
@@ -42,12 +31,29 @@ export const signInUser = (email, password) => {
         firstPassword.textContent = 'La contraseña debe tener al menos 6 caracteres';
         equalPassword.appendChild(firstPassword);
       } else {
-        firstPassword.textContent = (`El correo electrónico ya está registrado${error.message}`);
+        // firstPassword.textContent = (`El correo electrónico ya está registrado${error.message}`);
+        // equalPassword.appendChild(firstPassword);
+        firstPassword.textContent = '';
         equalPassword.appendChild(firstPassword);
       }
 
-      document.getElementById('formCrearcuenta').reset;
+      // document.getElementById('formCrearcuenta').reset;
 
       // ..
     });
 };
+const provider = new GoogleAuthProvider();
+
+export const authenticateWithGoogle = () => signInWithPopup(auth, provider)
+  .then((result) => {
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    const user = result.user;
+    // IdP data available using getAdditionalUserInfo(result)
+    // ...
+    return { token, user };
+  })
+  .catch((error) => {
+    console.error('Error during Google authentication:', error);
+    throw error;
+  });
