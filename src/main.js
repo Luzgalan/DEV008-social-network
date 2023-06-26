@@ -14,9 +14,6 @@ export const navigation = async (path) => {
 
 // Evento al cargar la pagina
 window.addEventListener('load', () => {
-<<<<<<< HEAD
-  const path = window.location.pathname; // Toma la ultima parte del url, el pathname es register
-=======
   let path = window.location.pathname;
   const token = localStorage.getItem('accessToken');
 
@@ -33,7 +30,6 @@ window.addEventListener('load', () => {
       window.location.pathname = path;
     }
   }
->>>>>>> develop
   navigation(path);
 });
 
