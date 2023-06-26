@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import {
   addDoc,
   collection,
@@ -30,16 +31,14 @@ const auth = getAuth();
  * @param {string} photoUrl imagen de usuario
  * @returns {*}
  */
-export const createUser = async (name, email, photoUrl) => {
-  try {
-    await addDoc(collection(db, 'usuarioPrueba'), {
-      name,
-      email,
-      photoUrl,
-    });
-  } catch (error) {
-    alert('Ocurrio un error al iniciar sesión =>', error);
-  }
+export const createUser = (name, email, photoUrl) => {
+  addDoc(collection(db, 'usuarioPrueba'), {
+    name,
+    email,
+    photoUrl,
+  }).catch((error) => {
+    throw error;
+  });
 };
 
 /**
@@ -50,53 +49,71 @@ export const createUser = async (name, email, photoUrl) => {
  * @param {string} email email del usuario
  * @returns {Object} El usuario si existe si
  */
-export const getUserByEmail = async (email) => {
+
+export const getUserByEmail = (email) => {
   const q = query(collection(db, 'usuarioPrueba'), where('email', '==', email));
-  const querySnapshot = await getDocs(q);
-  return querySnapshot;
+  return getDocs(q)
+    .then((arrayConsulta) => {
+      return arrayConsulta;
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 /**
  * Inicia el Login con Googl
  * @date 18/6/2023 - 22:18:00
  */
-export const loginWithGoogle = async () => {
+
+export const loginWithGoogle = () => {
   // Peticion de google para lanzar el modal
-  const userCrendential = await signInWithPopup(auth, provider);
+  return signInWithPopup(auth, provider)
+    .then((userCredential) => {
+      // Obtenemos el token y lo guardamos en el Local Storage
+      // const credential = GoogleAuthProvider.credentialFromResult(userCredential);
+      const token = userCredential._tokenResponse.oauthIdToken;
+      localStorage.setItem('accessToken', token);
 
-  // Obtenemos el token y lo guardamos en el Local Storage
-  const credential = GoogleAuthProvider.credentialFromResult(userCrendential);
-  const token = credential.accessToken;
-  localStorage.setItem('accessToken', token);
+      // Obtencion de la informacion del usuario que inicio sesion
+      const user = userCredential.user;
 
-  // Obtencion de la informacion del usuario que inicio sesion
-  const user = userCrendential.user;
-
-  // Verificacion si existe el usuario en Firestore si no existe lo creamos
-  const hasUser = await getUserByEmail(user.email);
-  if (hasUser.docs.length === 0) {
-    await createUser(user.displayName, user.email, user.photoURL);
-  }
-
-  //  Redireccionamiento del usuario al feeds
-  window.history.pushState({}, '', `${window.location.origin}/feed`);
-  window.dispatchEvent(new PopStateEvent('popstate'));
+      localStorage.setItem('email', userCredential.user.email);
+      // Verificacion si existe el usuario en Firestore si no existe lo creamos
+      return getUserByEmail(user.email)
+        .then((consulta) => {
+          if (consulta.docs.length === 0) {
+            createUser(user.displayName, user.email, user.photoURL);
+          }
+          return true;
+        })
+        .catch((error) => {
+          throw error;
+        });
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
+/**
+ * login por usuario y contraseña
+ * @date 21/6/2023 - 16:03:05
+ *
+ * @param {*} email
+ * @param {*} password
+ */
 export const loginWithPassword = (email, password) => {
-  signInWithEmailAndPassword(auth, email, password)
+  return signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Obtenemos el token  y el email y lo guardamos en el Local Storage
       const token = userCredential.user.accessToken;
       localStorage.setItem('accessToken', token);
       const mail = userCredential.user.email;
       localStorage.setItem('email', mail);
-      //  Redireccionamiento del usuario al feeds
-      window.history.pushState({}, '', `${window.location.origin}/feed`);
-      window.dispatchEvent(new PopStateEvent('popstate'));
+      return true;
     })
-    .catch(() => {
-      // const errorCode = error.code;
-      // const errorMessage = error.message;
+    .catch((error) => {
+      throw error;
     });
 };

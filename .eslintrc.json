@@ -29,6 +29,7 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error" ,
     "import/no-extraneous-dependencies":"off",   
-    "no-alert":"off"
+    "no-alert":"off",
+    "arrow-body-style":"off"
   }
 }
