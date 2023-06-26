@@ -25,6 +25,7 @@ const login = {
             <div>
 
                 <button id="btnLoginPassword" class="l-button-login">Ingresar</button>
+                <p id="messageError" style="display: none"> Usuario/contraseña son invalidos</p>
                 <p class="text-small">¿No tienes cuenta?
                     <span class="text-color-orange manita" id="spnNuevaCuenta">Crea una aquí</span>
                 </p>
@@ -43,7 +44,7 @@ const login = {
     </div>
 </div>`,
 
-  loadEvents: async () => {
+  loadEvents: () => {
     /* -------------------------- Navegacion a register ------------------------- */
     document.getElementById('spnNuevaCuenta').addEventListener('click', () => {
       window.history.pushState({}, '', `${window.location.origin}/register`);
@@ -54,7 +55,14 @@ const login = {
     document.getElementById('btnLoginGoogle').addEventListener('click', async () => {
       document.getElementById('btnLoginGoogle').disabled = true;
       // Inicio de sesion con google
-      await loginWithGoogle();
+      loginWithGoogle()
+        .then(() => {
+          //  Redireccionamiento del usuario al feeds
+          window.history.pushState({}, '', `${window.location.origin}/feed`);
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }).catch(() => {
+          document.getElementById('messageError').style.display = 'block';
+        });
     });
 
     /* ----------------- inciar sesion con usuario y contraseña ----------------- */
@@ -63,11 +71,22 @@ const login = {
       e.preventDefault();
       const email = document.getElementById('iptEmail').value;
       const password = document.getElementById('iptPassword').value;
-      console.log(email);
-      console.log(password);
 
-      loginWithPassword(email, password);
+      loginWithPassword(email, password)
+        .then(() => {
+          //  Redireccionamiento del usuario al feeds
+          window.history.pushState({}, '', `${window.location.origin}/feed`);
+          window.dispatchEvent(new PopStateEvent('popstate'));
+        }).catch(() => {
+          document.getElementById('messageError').style.display = 'block';
+        });
     });
+
+    function ocultarError() {
+      document.getElementById('messageError').style.display = 'none';
+    }
+    document.getElementById('iptEmail').addEventListener('focus', ocultarError);
+    document.getElementById('iptPassword').addEventListener('focus', ocultarError);
   },
 };
 export default login;
