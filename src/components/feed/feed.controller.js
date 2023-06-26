@@ -1,5 +1,5 @@
 import {
-  collection, addDoc, getFirestore, getDocs,
+  collection, addDoc, getFirestore, getDocs, doc, deleteDoc,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -28,10 +28,18 @@ export const getData = async () => {
 
 export const logoutSesion = async () => {
   try {
-    await signOut(auth);
-    console.log(signOut(auth));
+    const result = await signOut(auth);
+    console.log(result);
+    return (result);
     // Otras acciones después del cierre de sesión, si las hay...
   } catch (error) {
     console.error('Error during logout:', error);
+    throw new Error('Error during logout:');
   }
+};
+
+export const deletePost = async () => {
+  await deleteDoc(doc(db, 'nuevoPost'));
+  console.log(deletePost);
+  return deletePost;
 };

@@ -1,5 +1,8 @@
 /* import { async } from 'regenerator-runtime'; */
-import { newPost, getData, logoutSesion } from './feed.controller';
+
+import {
+  newPost, getData, logoutSesion, deletePost,
+} from './feed.controller';
 
 const feed = {
   loadHTML: () => `<main id="pageAllContent">
@@ -67,10 +70,15 @@ const feed = {
 
     const logout = document.getElementById('logoutfeed');
     logout.addEventListener('click', () => {
-      if (logoutSesion) {
-        // Redireccionamiento del usuario al login
+      try {
+        logoutSesion(); // Caducar token
+        // Eliminar token
+        localStorage.removeItem('accessToken');
+        //* / Redireccionamiento del usuario al login
         window.history.pushState({}, '', `${window.location.origin}/`);
         window.dispatchEvent(new PopStateEvent('popstate'));
+      } catch (error) {
+        console.error('Error during logout:', error);
       }
     });
 
@@ -111,7 +119,7 @@ const feed = {
           <button id="cancelarEliminar" type="button">Cancelar</button>
           <button id="aceptarEliminar" type="button">Aceptar</button>
         `;
-
+        // Crear el HTML donde el botón de aceptar tenga el id del doc
         // Agregar el modal al documento
         document.body.appendChild(modal);
 
@@ -121,8 +129,15 @@ const feed = {
         // Cerrar el modal al hacer clic en el botón de cancelar
         const cancelarEliminarBtn = document.getElementById('cancelarEliminar');
         cancelarEliminarBtn.addEventListener('click', () => {
-          modal.style.display = 'none';
-          console.log(cancelarEliminarBtn);
+          const traerModal = document.getElementById('modalEliminar');
+          traerModal.parentNode.removeChild(traerModal);
+          console.log(traerModal);
+        });
+
+        const aceptarEliminarBtn = document.getElementById('aceptarEliminar');
+        aceptarEliminarBtn.addEventListener('click', () => {
+          // Debo de imprimir en consola el id del doc que debo corrar al hacer click
+          /*   deletePost(); */
         });
       });
     };
