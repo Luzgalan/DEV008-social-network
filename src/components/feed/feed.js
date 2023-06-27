@@ -1,4 +1,8 @@
-import { newPost, getData } from './feed.controller';
+/* import { async } from 'regenerator-runtime'; */
+
+import {
+  newPost, getData, logoutSesion, deletePost,
+} from './feed.controller';
 
 const feed = {
   loadHTML: () => `<main id="pageAllContent">
@@ -10,7 +14,7 @@ const feed = {
           <input type="text" id="inputSearch" placeholder="Buscar">
           <div id="searchContent"><span class="material-symbols-search">search</span></div>
       </nav>
-      <span class="material-symbols-outlined">move_item</span>
+      <span class="material-symbols-outlined" id="logoutfeed">move_item</span>
   </header>
   <section id="feedAllContent">
       <aside id="feedAside">
@@ -38,7 +42,8 @@ const feed = {
               <div class="randomAbeja"><img id="randomAbeja" src="imgfeed/abejita.png" alt="Abejita"></div>
               <div class="randomDog"><img id="randomDog" src="imgfeed/perritove.png" alt="Perrito"></div>
           </div>
-          
+         
+
           <section id="newPost">
               <h4 class="newPost">Crear nueva publicación</h4>
               <input type="text" id="feedNewPost" placeholder="Cuéntanos,  ¿Qué quieres compartir?...">
@@ -62,6 +67,20 @@ const feed = {
     const clearInput = () => {
       document.getElementById('feedNewPost').value = '';
     };
+
+    const logout = document.getElementById('logoutfeed');
+    logout.addEventListener('click', () => {
+      try {
+        logoutSesion(); // Caducar token
+        // Eliminar token
+        localStorage.removeItem('accessToken');
+        //* / Redireccionamiento del usuario al login
+        window.history.pushState({}, '', `${window.location.origin}/`);
+        window.dispatchEvent(new PopStateEvent('popstate'));
+      } catch (error) {
+        console.error('Error during logout:', error);
+      }
+    });
 
     const renderNewElement = (data) => {
       const feedContainer = document.getElementById('feedScrollContent');
@@ -90,6 +109,37 @@ const feed = {
       newDiv.appendChild(parrafo);
 
       feedContainer.insertBefore(newDiv, feedContainer.firstChild);
+
+      spanDelete.addEventListener('click', () => {
+        // Crear el modal
+        const modal = document.createElement('div');
+        modal.id = 'modalEliminar';
+        modal.innerHTML = `
+          <h3>¿En serio quieres eliminar tu publicación?</h3>
+          <button id="cancelarEliminar" type="button">Cancelar</button>
+          <button id="aceptarEliminar" type="button">Aceptar</button>
+        `;
+        // Crear el HTML donde el botón de aceptar tenga el id del doc
+        // Agregar el modal al documento
+        document.body.appendChild(modal);
+
+        // Mostrar el modal
+        modal.style.display = 'block';
+
+        // Cerrar el modal al hacer clic en el botón de cancelar
+        const cancelarEliminarBtn = document.getElementById('cancelarEliminar');
+        cancelarEliminarBtn.addEventListener('click', () => {
+          const traerModal = document.getElementById('modalEliminar');
+          traerModal.parentNode.removeChild(traerModal);
+          console.log(traerModal);
+        });
+
+        const aceptarEliminarBtn = document.getElementById('aceptarEliminar');
+        aceptarEliminarBtn.addEventListener('click', () => {
+          // Debo de imprimir en consola el id del doc que debo corrar al hacer click
+          /*   deletePost(); */
+        });
+      });
     };
 
     document.getElementById('publish').addEventListener('click', async () => {
