@@ -1,5 +1,6 @@
+/* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, getDocs, doc, deleteDoc,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -18,10 +19,17 @@ export const newPost = async ({ publicacion }) => {
   }
 };
 
-export const getData = async () => {
-  const querySnapshot = await getDocs(collection(db, 'nuevoPost'));
-  console.log(querySnapshot);
-  return querySnapshot;
+export const subscribeToDataChanges = (actualizarFeed) => {
+  return onSnapshot((collection(db, 'nuevoPost')), (snapshot) => {
+    const data = [];
+    snapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+    actualizarFeed(data);
+  });
 };
 
 export const logoutSesion = async () => {

@@ -1,7 +1,7 @@
 /* import { async } from 'regenerator-runtime'; */
 
 import {
-  newPost, getData, logoutSesion, deletePost,
+  newPost, /*  getData, */ logoutSesion, deletePost, subscribeToDataChanges,
 } from './feed.controller';
 
 const feed = {
@@ -175,24 +175,15 @@ const feed = {
       }
     });
 
-    const publicaciones = await getData();
-    const publicacionesReversas = publicaciones.docs.reverse();
-    // Invierte el orden del array de publicaciones
-    publicacionesReversas.forEach((item) => {
-      console.log(item.id);
-      renderNewElement({ publicacion: item.data().publicacion, id: item.id });
-      console.log();
-    });
-
-    // Escucha los cambios en tiempo real de Firebase
-    getData().onSnapshot((snapshot) => {
-      snapshot.docChanges().forEach((change) => {
-        const data = change.doc.data();
-        if (change.type === 'added') {
-          renderNewElement({ publicacion: data.publicacion });
-        }
+    const actualizarFeed = (data) => {
+      const feedContainer = document.getElementById('feedScrollContent');
+      feedContainer.innerHTML = '';
+      data.forEach((item) => {
+        renderNewElement({ publicacion: item.publicacion, id: item.id });
       });
-    });
+    };
+
+    subscribeToDataChanges(actualizarFeed);
   },
 };
 
