@@ -3,9 +3,6 @@ import {
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
-/* import { async } from 'regenerator-runtime'; */
-
-/* import { async } from 'regenerator-runtime'; */
 import { app } from '../../firebase';
 
 const auth = getAuth();
@@ -23,6 +20,7 @@ export const newPost = async ({ publicacion }) => {
 
 export const getData = async () => {
   const querySnapshot = await getDocs(collection(db, 'nuevoPost'));
+  console.log(querySnapshot);
   return querySnapshot;
 };
 
@@ -38,8 +36,12 @@ export const logoutSesion = async () => {
   }
 };
 
-export const deletePost = async () => {
-  await deleteDoc(doc(db, 'nuevoPost'));
-  console.log(deletePost);
-  return deletePost;
+export const deletePost = async (docId) => {
+  console.log(docId);
+  try {
+    await deleteDoc(doc(db, 'nuevoPost', docId));
+    console.log(`Documento eliminado: ${docId}`);
+  } catch (error) {
+    console.error('Error al eliminar el documento:', error);
+  }
 };
