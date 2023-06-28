@@ -1,11 +1,9 @@
+/* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, getDocs, doc, deleteDoc,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
-/* import { async } from 'regenerator-runtime'; */
-
-/* import { async } from 'regenerator-runtime'; */
 import { app } from '../../firebase';
 
 const auth = getAuth();
@@ -21,9 +19,17 @@ export const newPost = async ({ publicacion }) => {
   }
 };
 
-export const getData = async () => {
-  const querySnapshot = await getDocs(collection(db, 'nuevoPost'));
-  return querySnapshot;
+export const subscribeToDataChanges = (actualizarFeed) => {
+  return onSnapshot((collection(db, 'nuevoPost')), (snapshot) => {
+    const data = [];
+    snapshot.forEach((doc) => {
+      data.push({
+        id: doc.id,
+        ...doc.data(),
+      });
+    });
+    actualizarFeed(data);
+  });
 };
 
 export const logoutSesion = async () => {
@@ -38,8 +44,12 @@ export const logoutSesion = async () => {
   }
 };
 
-export const deletePost = async () => {
-  await deleteDoc(doc(db, 'nuevoPost'));
-  console.log(deletePost);
-  return deletePost;
+export const deletePost = async (docId) => {
+  console.log(docId);
+  try {
+    await deleteDoc(doc(db, 'nuevoPost', docId));
+    console.log(`Documento eliminado: ${docId}`);
+  } catch (error) {
+    console.error('Error al eliminar el documento:', error);
+  }
 };

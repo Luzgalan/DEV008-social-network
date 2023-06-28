@@ -1,7 +1,7 @@
 /* import { async } from 'regenerator-runtime'; */
 
 import {
-  newPost, getData, logoutSesion, deletePost,
+  newPost, /*  getData, */ logoutSesion, deletePost, subscribeToDataChanges,
 } from './feed.controller';
 
 const feed = {
@@ -83,6 +83,7 @@ const feed = {
     });
 
     const renderNewElement = (data) => {
+      console.log(data);
       const feedContainer = document.getElementById('feedScrollContent');
       const newDiv = document.createElement('div');
       const parrafo = document.createElement('p');
@@ -98,6 +99,8 @@ const feed = {
       spanEdit.textContent = 'edit_square';
       const spanDelete = document.createElement('span');
       spanDelete.className = 'material-symbols-delete';
+      spanDelete.setAttribute('data-id', data.id);
+      console.log(data.id);
       spanDelete.textContent = 'delete';
 
       likeEditDeleteDiv.appendChild(spanLike);
@@ -109,6 +112,20 @@ const feed = {
       newDiv.appendChild(parrafo);
 
       feedContainer.insertBefore(newDiv, feedContainer.firstChild);
+
+      spanEdit.addEventListener('click', () => {
+        const modalEdit = document.createElement('div');
+        modalEdit.id = 'modalEditar';
+        modalEdit.innerHTML = `
+<h3>Edita tu publicación</h3>
+<input type="text" id="feedEditPost">
+<button id="cancelarEditar" type="button">Cancelar</button>
+<button id="guardarEditar" type="button">Actualizar</button>
+`;
+
+        document.body.appendChild(modalEdit);
+        modalEdit.style.display = 'block';
+      });
 
       spanDelete.addEventListener('click', () => {
         // Crear el modal
@@ -135,39 +152,38 @@ const feed = {
         });
 
         const aceptarEliminarBtn = document.getElementById('aceptarEliminar');
-        aceptarEliminarBtn.addEventListener('click', () => {
-          // Debo de imprimir en consola el id del doc que debo corrar al hacer click
-          /*   deletePost(); */
+        aceptarEliminarBtn.setAttribute('data-id', data.id);
+        aceptarEliminarBtn.addEventListener('click', (event) => {
+          const traerModal = document.getElementById('modalEliminar');
+          traerModal.parentNode.removeChild(traerModal);
+          const docId = event.currentTarget.getAttribute('data-id');
+          console.log(docId);
+          deletePost(docId);
         });
       });
     };
-
+    // Debo de imprimir en consola el id del doc que debo corrar al hacer click
+    /*   deletePost(); */
     document.getElementById('publish').addEventListener('click', async () => {
       const obtenerRelleno = document.getElementById('feedNewPost').value;
       if (obtenerRelleno.length !== 0) {
         await newPost({ publicacion: obtenerRelleno });
-        console.log(obtenerRelleno);
-        renderNewElement({ publicacion: obtenerRelleno }); // Agrega el nuevo elemento al principio
+        /*  console.log(obtenerRelleno);
+        renderNewElement({ publicacion: obtenerRelleno });  */
+        // Agrega el nuevo elemento al principio
         clearInput(); // Limpia el contenido del campo de entrada
       }
     });
 
-    const publicaciones = await getData();
-    const publicacionesReversas = publicaciones.docs.reverse();
-    // Invierte el orden del array de publicaciones
-    publicacionesReversas.forEach((item) => {
-      renderNewElement({ publicacion: item.data().publicacion });
-    });
-
-    // Escucha los cambios en tiempo real de Firebase
-    getData().onSnapshot((snapshot) => {
-      snapshot.docChanges().forEach((change) => {
-        const data = change.doc.data();
-        if (change.type === 'added') {
-          renderNewElement({ publicacion: data.publicacion });
-        }
+    const actualizarFeed = (data) => {
+      const feedContainer = document.getElementById('feedScrollContent');
+      feedContainer.innerHTML = '';
+      data.forEach((item) => {
+        renderNewElement({ publicacion: item.publicacion, id: item.id });
       });
-    });
+    };
+
+    subscribeToDataChanges(actualizarFeed);
   },
 };
 
