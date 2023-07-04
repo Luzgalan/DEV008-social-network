@@ -162,10 +162,14 @@ border: #FFA500 solid 1px;
 /* -------------------------------------------------------------------------- */
 
 
+
+
+@media only screen and (min-width: 20px) {
 #pageAllContent {
     width: 100%;
     max-width: 1000px;
-    margin:auto;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 #feedHeader {
@@ -306,6 +310,7 @@ span.material-symbols-menu {
     width: 75%;
     height: auto;
     text-align: center;
+    margin: 10px 10px;
 }
 
 #feedScroll {
@@ -320,11 +325,10 @@ span.material-symbols-menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
 }
 
 section#newPost {
-    width: 80%;
+    width: 90%;
     height: auto;
     background-color:#f3a1257e;
     border-radius: 8px;
@@ -336,7 +340,7 @@ section#newPost {
 }
 
 input#feedNewPost {
-    width: 100%;
+    width: 95%;
     height: 50px;
     background-color: #cd6d3245;
     border-radius: 8px;
@@ -375,6 +379,11 @@ input#feedNewPost {
     color: aliceblue;
 }
 
+#feedNewPost::placeholder {
+    font-size: 16px;
+    font-weight: lighter;
+}
+
 div#randomImages {
     width: 100%;
     height: 200px;
@@ -387,7 +396,8 @@ div#randomImages {
 
 #adoptionLetter {
     width: 40%;
-    font-family: "Grobold";
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
     font-size: 25px;
     color: #CD3B32;
     text-align: center;
@@ -421,7 +431,7 @@ img#randomDog {
 }
 
 #feedScrollContent {
-    width: 80%;
+    width: 90%;
     height: auto;
     background-color:antiquewhite;
     margin: 10px 0 10px 0;
@@ -459,8 +469,7 @@ span.material-symbols-delete {
     margin: 10px 0 10 px 0;   
 }
 
-#modalEliminar,
-#modalEditar {
+div#modalEliminar {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -470,7 +479,270 @@ span.material-symbols-delete {
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 9999;
+    font-size: 12px;
+    text-align: center;
   }
+
+  #cancelarEliminar,
+  #aceptarEliminar {
+    margin:5px 5px;
+    border-radius: 7px;
+    background-color: #CD3B32;
+    border: none;
+    padding: 5px 5px;
+    font-size: 12px;
+    color: aliceblue;
+  }
+}
+
+@media only screen and (max-width: 281px){
+    .randomAbeja {
+        display: none;
+    }
+    
+    img#randomAbeja {
+        display: none;  
+    }
+
+    span.material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    #feedProfileImageContent {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    span.material-symbols-menu {
+        padding: 1px; 
+        font-size: 20px;
+    }
+
+    #feedProfileImageContent {
+        width: 60%;
+    }
+
+    #feedNameProfile {
+        margin: 10px 10px;
+        font-size: 12px;
+    }
+
+    #feedWelcome {
+        font-size: 12px;
+    }
+
+    #feedIntroduction {
+        font-size: 12px;
+    }
+
+    .feedNameLogo {
+        font-size: 16px;
+    }
+
+    div#randomImages {
+        height: 105px;
+    }
+    
+    #adoptionLetter {
+        font-size: 16px;
+        margin: 10px 20px 10px 20px;
+    }
+    
+    .randomAbeja {
+        padding: 15px;
+    }
+    
+    img#randomAbeja {
+        height: 60px;
+        
+    }
+    
+    img#randomDog {
+        height: 160px;
+    }
+
+    section#newPost {
+        width: 90%;
+    }
+    
+    input#feedNewPost {
+        width: 100%;
+    }
+    
+    .newPost {
+        font-size: 12px;
+    }
+    
+    .botones {
+        width: 90%;
+    }
+    
+    #feedcategory,
+    #publish,
+    #cancel {
+        margin:3px 3px;
+        font-size: 10px;
+    }
+
+    #feedScrollContent {
+        width: 90%;
+        margin: 0;
+        border-radius: 8px;
+    }
+
+    #feedNewPost::placeholder {
+        font-size: 12px;
+        font-weight: lighter;
+    }
+
+    div#modalEliminar {
+        padding: 10px;
+      }
+
+      #feedScrollContent p {
+        font-size: 14px;   
+     }
+
+     span.material-symbols-like,
+span.material-symbols-edit,
+span.material-symbols-delete {
+    font-size: 16px;
+}
+
+span.material-symbols-outlined {
+    font-size: 20px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+    #feedAllContent {
+        flex-direction: column;
+    }
+
+    #feedAside {
+        width: 100%;
+        height: 100%;
+    }
+
+    #feedScroll {
+        width: 100%;
+    }
+
+    #feedIntroduction {
+        display: none;
+    }
+
+    #feedProfile {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+    
+    #feedProfileImageContent {
+        width: 20%;
+    }
+
+    #feedNameProfile {
+        margin: 10px 10px;
+        font-size: 16px;
+    }
+
+    #feedWelcome {
+        display: none;
+    }
+
+    #feedMenu {
+        padding: 1px 0 1px 0;
+        margin: 1px 0 1px 0;
+    }
+
+    span.material-symbols-menu {
+        padding: 1px; 
+    }
+
+    #feedLogoContent {
+        width: 30%;
+    }
+
+    div#randomImages {
+        height: 105px;
+    }
+    
+    #adoptionLetter {
+        font-size: 16px;
+        margin: 10px 20px 10px 20px;
+    }
+    
+    .randomAbeja {
+        padding: 15px;
+    }
+    
+    img#randomAbeja {
+        height: 60px;
+        
+    }
+    
+    img#randomDog {
+        height: 160px;
+    }
+
+    section#newPost {
+        width: 100%;
+    }
+    
+    input#feedNewPost {
+        width: 90%;
+    }
+    
+    .newPost {
+        font-size: 12px;
+    }
+    
+    .botones {
+        width: 90%;
+    }
+    
+    #feedcategory,
+    #publish,
+    #cancel {
+        margin:3px 3px;
+        font-size: 10px;
+    }
+
+    #feedScrollContent {
+        width: 100%;
+        margin: 0;
+        border-radius: 8px;
+    }
+
+    #feedNewPost::placeholder {
+        font-size: 12px;
+        font-weight: lighter;
+    }
+
+    div#modalEliminar {
+        padding: 10px;
+      }
+
+      #feedScrollContent p {
+       font-size: 12px;   
+    }
+
+    span.material-symbols-like,
+span.material-symbols-edit,
+span.material-symbols-delete {
+    font-size: 16px;
+  
+}
+
+span.material-symbols-outlined {
+    font-size: 20px;
+}
+}
+
+
 
 /* -------------------------------------------------------------------------- */
 

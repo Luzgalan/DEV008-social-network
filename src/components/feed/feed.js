@@ -10,10 +10,7 @@ const feed = {
       <div id="feedLogoContent">
           <img id="feedLogo" src="imgfeed/logo-eslogan.png" alt="Logotype">
       </div>
-      <nav id="feedGeneralSearch">
-          <input type="text" id="inputSearch" placeholder="Buscar">
-          <div id="searchContent"><span class="material-symbols-search">search</span></div>
-      </nav>
+     
       <span class="material-symbols-outlined" id="logoutfeed">move_item</span>
   </header>
   <section id="feedAllContent">
@@ -27,13 +24,14 @@ const feed = {
               <div id="feedProfileImageContent"><img id="feedProfileImage" src="imgfeed/perfilFoto.jpg"
                       alt="Foto de perfil"></div>
               <h2 id="feedNameProfile">Liliana Vega</h2>
+            
               <h3 id="feedWelcome">¡Bienvenid@!</h3>
               <p id="feedIntroduction">En <span class="feedNameLogo">Pet Lovers...</span>
-                  puedes encontrar el contenido que necesitas, visita nuestras categorías donde podrás buscar o
-                  encontrar a tu
+                  encuentra a tu
                   mascota
-                  perdida, reírte de los reyes del hogar o encontrar u ofrecer servicios relacionados.
+                  perdida, ríete de los reyes del hogar u ofrece servicios relacionados.
               </p>
+             
           </section>
       </aside>
       <section id="feedScroll">
@@ -48,13 +46,6 @@ const feed = {
               <h4 class="newPost">Crear nueva publicación</h4>
               <input type="text" id="feedNewPost" placeholder="Cuéntanos,  ¿Qué quieres compartir?...">
               <div class="botones">
-                  <select id="feedcategory">
-                      <option value="" disabled selected>Categorías</option>
-                      <option value="risoterapia" id="risoterapia">Risoterapia</option>
-                      <option value="adopciones" id="adopciones">Adopciones</option>
-                      <option value="servicios" id="servicios">Servicios</option>
-                      <option value="petSos" id="petSos">Pet S.O.S</option>
-                  </select>
                   <button id="publish" type="submit">Publicar</button>
                   <button id="cancel" type="submit">Cancelar</button>
               </div>
@@ -114,17 +105,7 @@ const feed = {
       feedContainer.insertBefore(newDiv, feedContainer.firstChild);
 
       spanEdit.addEventListener('click', () => {
-        const modalEdit = document.createElement('div');
-        modalEdit.id = 'modalEditar';
-        modalEdit.innerHTML = `
-<h3>Edita tu publicación</h3>
-<input type="text" id="feedEditPost">
-<button id="cancelarEditar" type="button">Cancelar</button>
-<button id="guardarEditar" type="button">Actualizar</button>
-`;
 
-        document.body.appendChild(modalEdit);
-        modalEdit.style.display = 'block';
       });
 
       spanDelete.addEventListener('click', () => {
