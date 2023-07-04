@@ -5,6 +5,8 @@ const login = {
   <div class="l-div">
     <div class="l-container">
         <div class="l-container-login">
+        <img class="imgResponsive" src="./../../img/logo.png" >
+
             <p class="text-title">Inicia sesión</p>
             <div id="btnLoginGoogle">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#FFA500" width="30" height="30" viewBox="0 0 64 64">
@@ -13,17 +15,19 @@ const login = {
                 </svg>
             </div>
             <p class="text-small">O con tu cuenta</p>
-            <form id="formLogin">
+            <form id="formLogin" class="l-container-form">
+
             <div class="l-input-with-icon">
                 <input type="email" required id="iptEmail" placeholder="Correo electrónico">
                 <i class="fas fa-user"></i>
             </div>
+
             <div class="l-input-with-icon">
                 <input type="password" required id="iptPassword"  placeholder="Contraseña">
                 <i class="fas fa-lock"></i>
             </div>
-            <div>
 
+            <div>
                 <button id="btnLoginPassword" class="l-button-login">Ingresar</button>
                 <p id="messageError" style="display: none"> Usuario/contraseña son invalidos</p>
                 <p class="text-small">¿No tienes cuenta?
