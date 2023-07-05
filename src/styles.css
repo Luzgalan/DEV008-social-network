@@ -818,7 +818,7 @@ border-radius: 20px 0px 0px 20px;
     border-bottom: 1px solid #B8B8B8;
     outline: none;
     font-size: medium;
-    margin-top: 3%;
+    margin-top: 5%;
 }
 
 
@@ -885,4 +885,28 @@ h1 {
     font-weight: 700;
    
 }
+
+.imgResponsive{
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .logo-cuenta {
+      display: none;
+    }
+    .formulario-cuenta {
+        border-radius: 20px 20px 20px 20px;
+    }
+    .imgResponsive{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 150px;
+      
+
+       }
+    .text-title{
+        padding-bottom: 0px !important;    }
+  }
+
 
