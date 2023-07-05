@@ -81,6 +81,7 @@ const feed = {
       textAreaPub.textContent = data.publicacion;
       textAreaPub.id = `ta${data.id}`;
       console.log(textAreaPub.id);
+      // Está deshabilitado hasta que el usuario le de click al ícono editar.
       textAreaPub.disabled = true;
 
       const likeEditDeleteDiv = document.createElement('section');
@@ -112,10 +113,18 @@ const feed = {
       spanSave.value = data.id;
       spanSave.style.display = 'none';
 
+      const spanCancel = document.createElement('span');
+      spanCancel.className = 'material-symbols-cancel';
+      spanCancel.textContent = 'cancel';
+      spanCancel.id = `ca${data.id}`;
+      spanCancel.value = data.id;
+      spanCancel.style.display = 'none';
+
       likeEditDeleteDiv.appendChild(spanLike);
       likeEditDeleteDiv.appendChild(spanEdit);
       likeEditDeleteDiv.appendChild(spanDelete);
       likeEditDeleteDiv.appendChild(spanSave);
+      likeEditDeleteDiv.appendChild(spanCancel);
 
       newDiv.appendChild(textAreaPub);
       newDiv.appendChild(likeEditDeleteDiv);
@@ -127,10 +136,21 @@ const feed = {
         const textModificado = document.getElementById(`ta${editId}`);
         textModificado.disabled = false;
         textModificado.focus();
+        textModificado.setSelectionRange(textModificado.value.length, textModificado.value.length);
         document.getElementById(`ed${data.id}`).style.display = 'none';
         document.getElementById(`li${data.id}`).style.display = 'none';
         document.getElementById(`de${data.id}`).style.display = 'none';
         document.getElementById(`sa${data.id}`).style.display = 'flex';
+        document.getElementById(`ca${data.id}`).style.display = 'flex';
+      });
+
+      spanCancel.addEventListener('click', () => {
+        textAreaPub.disabled = true;
+        document.getElementById(`ed${data.id}`).style.display = 'flex';
+        document.getElementById(`li${data.id}`).style.display = 'flex';
+        document.getElementById(`de${data.id}`).style.display = 'flex';
+        document.getElementById(`sa${data.id}`).style.display = 'none';
+        document.getElementById(`ca${data.id}`).style.display = 'none';
       });
 
       spanSave.addEventListener('click', (e) => {
@@ -138,7 +158,7 @@ const feed = {
         console.log(saveId);
         const textAreaModificado = document.getElementById(`ta${data.id}`);
         console.log(textAreaModificado);
-        const publicacionMod = textAreaModificado.value;
+        const publicacionMod = textAreaModificado.value.trim();
         console.log(publicacionMod.value);
         updatePost(saveId, publicacionMod);
       });

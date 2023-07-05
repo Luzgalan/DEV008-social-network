@@ -465,7 +465,7 @@ img#randomDog {
     border-radius: 8px;
 }
 
-div#likeEditDelete {
+section#likeEditDelete {
     width: 100%;
     height: auto;
     display: flex;
@@ -477,7 +477,8 @@ div#likeEditDelete {
 span.material-symbols-like,
 span.material-symbols-edit,
 span.material-symbols-delete,
-span.material-symbols-save {
+span.material-symbols-save,
+span.material-symbols-cancel {
     color: rgb(0, 0, 0);
     font-family: 'Material Symbols Outlined', sans-serif;
     font-size: 20px;
