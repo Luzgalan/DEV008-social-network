@@ -186,7 +186,7 @@ const feed = {
       if (obtenerRelleno.length !== 0) {
         await newPost({ publicacion: obtenerRelleno });
         /*  console.log(obtenerRelleno);
-      renderNewElement({ publicacion: obtenerRelleno });  */
+  renderNewElement({ publicacion: obtenerRelleno });  */
         // Agrega el nuevo elemento al principio
         clearInput(); // Limpia el contenido del campo de entrada
       }

@@ -347,6 +347,7 @@ section#newPost {
     border: none;
     background-color: #cd6d3200;
     width: 100%;
+    resize: none;
 }
 
 #feedScrollContent div {
