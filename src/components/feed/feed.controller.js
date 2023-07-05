@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -52,4 +52,10 @@ export const deletePost = async (docId) => {
   } catch (error) {
     console.error('Error al eliminar el documento:', error);
   }
+};
+
+export const updatePost = async (saveId, publicacion) => {
+  return updateDoc(doc(db, 'nuevoPost', saveId), {
+    publicacion,
+  });
 };
