@@ -1,7 +1,7 @@
 /* import { async } from 'regenerator-runtime'; */
 
 import {
-  newPost, /*  getData, */ logoutSesion, deletePost, subscribeToDataChanges,
+  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost,
 } from './feed.controller';
 
 const feed = {
@@ -140,6 +140,7 @@ const feed = {
         console.log(textAreaModificado);
         const publicacionMod = textAreaModificado.value;
         console.log(publicacionMod.value);
+        updatePost(saveId, publicacionMod);
       });
 
       spanDelete.addEventListener('click', () => {
