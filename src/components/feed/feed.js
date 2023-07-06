@@ -64,7 +64,7 @@ const feed = {
       try {
         logoutSesion(); // Caducar token
         // Eliminar token
-        localStorage.removeItem('accessToken');
+        localStorage.removeItem('accessToken'); // Cambiar por : localStorage.clear()
         //* / Redireccionamiento del usuario al login
         window.history.pushState({}, '', `${window.location.origin}/`);
         window.dispatchEvent(new PopStateEvent('popstate'));
@@ -97,7 +97,6 @@ const feed = {
       spanEdit.textContent = 'edit_square';
       spanEdit.id = `ed${data.id}`;
       spanEdit.value = data.id;
-      console.log(spanEdit.id);
 
       const spanDelete = document.createElement('span');
       spanDelete.className = 'material-symbols-delete';
@@ -134,32 +133,37 @@ const feed = {
       spanEdit.addEventListener('click', (e) => {
         const editId = e.target.value;
         const textModificado = document.getElementById(`ta${editId}`);
+        // Guardamos temporalmente el origina en el local storage
+        localStorage.setItem('publicacionOriginal', textModificado.value);
         textModificado.disabled = false;
         textModificado.focus();
         textModificado.setSelectionRange(textModificado.value.length, textModificado.value.length);
-        document.getElementById(`ed${data.id}`).style.display = 'none';
-        document.getElementById(`li${data.id}`).style.display = 'none';
-        document.getElementById(`de${data.id}`).style.display = 'none';
-        document.getElementById(`sa${data.id}`).style.display = 'flex';
-        document.getElementById(`ca${data.id}`).style.display = 'flex';
+        document.getElementById(`ed${editId}`).style.display = 'none';
+        document.getElementById(`li${editId}`).style.display = 'none';
+        document.getElementById(`de${editId}`).style.display = 'none';
+        document.getElementById(`sa${editId}`).style.display = 'flex';
+        document.getElementById(`ca${editId}`).style.display = 'flex';
       });
 
-      spanCancel.addEventListener('click', () => {
+      spanCancel.addEventListener('click', (e) => {
+        const editId = e.target.value;
         textAreaPub.disabled = true;
-        document.getElementById(`ed${data.id}`).style.display = 'flex';
-        document.getElementById(`li${data.id}`).style.display = 'flex';
-        document.getElementById(`de${data.id}`).style.display = 'flex';
-        document.getElementById(`sa${data.id}`).style.display = 'none';
-        document.getElementById(`ca${data.id}`).style.display = 'none';
+        document.getElementById(`ed${editId}`).style.display = 'flex';
+        document.getElementById(`li${editId}`).style.display = 'flex';
+        document.getElementById(`de${editId}`).style.display = 'flex';
+        document.getElementById(`sa${editId}`).style.display = 'none';
+        document.getElementById(`ca${editId}`).style.display = 'none';
+        // Recuperamos la publicacion original y lo asignamos al cuadro de texto
+        document.getElementById(`ta${editId}`).value = localStorage.getItem('publicacionOriginal');
+        // Borramos de el local storage
+        localStorage.removeItem('publicacionOriginal');
       });
 
       spanSave.addEventListener('click', (e) => {
         const saveId = e.target.value;
-        console.log(saveId);
         const textAreaModificado = document.getElementById(`ta${data.id}`);
-        console.log(textAreaModificado);
         const publicacionMod = textAreaModificado.value.trim();
-        console.log(publicacionMod.value);
+        // Cuando se confirma el guardado simplemente borramos
         updatePost(saveId, publicacionMod);
       });
 
