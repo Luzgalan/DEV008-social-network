@@ -3,7 +3,7 @@
 body{
     height: 100%;
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: 'Arial';
     background-color: #fafafa;
 }
 .fondo-naranja {
@@ -239,7 +239,8 @@ span.material-symbols-outlined {
     font-size: 25px;
     display: flex;
     align-items: center;
-    filter: brightness(100%); 
+    filter: brightness(100%);
+    cursor: pointer; 
 }
 
 #feedAllContent {
@@ -329,6 +330,7 @@ span.material-symbols-menu {
 
 div#feedScrollContent {
     width: 95%;
+    margin: 0 0 50px 0;
 }
 
 section#newPost {
@@ -345,9 +347,17 @@ section#newPost {
 
 #feedScrollContent textarea {
     border: none;
-    background-color: #cd6d3200;
-    width: 100%;
+    background-color: #ffffff33;
+    width: 98%;
+    min-height: 100px;
+    border-radius: 8px;
     resize: none;
+    font-size: 16px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    /* font-weight: bold; */
+    margin: 10px 5px;
+    box-sizing: border-box;
+    padding: 15px 15px;
 }
 
 
@@ -356,7 +366,7 @@ section#newPost {
     height: auto;
     background-color:#f3a1257e;
     border-radius: 8px;
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
   padding: 10px 10px;
     display: flex;
     flex-direction: column;
@@ -364,12 +374,12 @@ section#newPost {
 }
 
 input#feedNewPost {
-    width: 95%;
+    width: 93%;
     height: 50px;
-    background-color: #cd6d3245;
+    background-color: #ffffff45;
     border-radius: 8px;
     border: none;
-    margin: 10px 0 10px 0;
+    margin: 10px 10px;
     padding: 10px 10px;
     display: flex;
     align-items: flex-start;
@@ -388,13 +398,13 @@ input#feedNewPost {
 }
 
 .botones {
-    width: 100%;
+    width: 95%;
     height: auto;
     display: flex;
     justify-content: end;
+    margin-bottom: 10px;
 }
 
-#feedcategory,
 #publish,
 #cancel {
     margin:5px 5px;
@@ -404,6 +414,7 @@ input#feedNewPost {
     padding: 5px 5px;
     font-size: 14px;
     color: aliceblue;
+    cursor: pointer;
 }
 
 #feedNewPost::placeholder {
@@ -490,13 +501,13 @@ span.material-symbols-cancel {
 }
 
 #feedScrollContent p {
-    background-color:#f3a1256d;
-    width: 97%;
-    min-height:50px ;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 10px 10px;
-    margin: 10px 0 10 px 0;   
+    background-color:#f3a12500;
+    width: 95%;
+   height: auto;
+    font-size: 12px;
+    text-align: end;
+    padding: 0;
+    margin: 5px 10px;   
 }
 
 div#modalEliminar {

@@ -74,15 +74,23 @@ const feed = {
     });
 
     const renderNewElement = (data) => {
-      console.log(data);
       const feedContainer = document.getElementById('feedScrollContent');
       const newDiv = document.createElement('div');
       const textAreaPub = document.createElement('textarea');
       textAreaPub.textContent = data.publicacion;
       textAreaPub.id = `ta${data.id}`;
-      console.log(textAreaPub.id);
       // Está deshabilitado hasta que el usuario le de click al ícono editar.
       textAreaPub.disabled = true;
+
+      /*   const datePost = document.createElement('p');
+      datePost.textContent = 'fecha';
+      datePost.id = `date${data.id}`;
+      datePost.value = data.id; */
+
+      const datePost = document.createElement('p');
+      const setDate = new Date();
+      const formatoDate = `Fecha de creación ${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
+      datePost.textContent = formatoDate;
 
       const likeEditDeleteDiv = document.createElement('section');
       likeEditDeleteDiv.id = 'likeEditDelete';
@@ -125,6 +133,7 @@ const feed = {
       likeEditDeleteDiv.appendChild(spanSave);
       likeEditDeleteDiv.appendChild(spanCancel);
 
+      newDiv.appendChild(datePost);
       newDiv.appendChild(textAreaPub);
       newDiv.appendChild(likeEditDeleteDiv);
 
@@ -202,18 +211,19 @@ const feed = {
         });
       });
     };
-    // Debo de imprimir en consola el id del doc que debo corrar al hacer click
-    /*   deletePost(); */
+    // Debo de imprimir en consola el id del doc que debo correr al hacer click
+
     document.getElementById('publish').addEventListener('click', async () => {
       const obtenerRelleno = document.getElementById('feedNewPost').value;
       console.log(obtenerRelleno);
       if (obtenerRelleno.length !== 0) {
         await newPost({ publicacion: obtenerRelleno });
-        /*  console.log(obtenerRelleno);
-  renderNewElement({ publicacion: obtenerRelleno });  */
-        // Agrega el nuevo elemento al principio
         clearInput(); // Limpia el contenido del campo de entrada
       }
+    });
+
+    document.getElementById('cancel').addEventListener('click', () => {
+      clearInput();
     });
 
     const actualizarFeed = (data) => {
