@@ -3,6 +3,7 @@
 import {
   newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost,
 } from './feed.controller';
+import { createUser } from '../login/login.controller';
 
 const feed = {
   loadHTML: () => `<main id="pageAllContent">
@@ -235,6 +236,13 @@ const feed = {
     };
 
     subscribeToDataChanges(actualizarFeed);
+
+    const feedNameProfile = document.getElementById('feedNameProfile');
+    feedNameProfile.textContent = name;
+
+    const feedProfileImage = document.getElementById('feedProfileImage');
+    feedProfileImage.src = photoUrl;
+    feedProfileImage.alt = 'Foto de perfil';
   },
 };
 
