@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -12,6 +12,7 @@ export const newPost = async ({ publicacion }) => {
   try {
     const docRef = await addDoc(collection(db, 'nuevoPost'), {
       publicacion,
+      createdAt: Date.now(),
     });
     console.log('Document written with ID: ', docRef.id);
   } catch (e) {
@@ -20,7 +21,7 @@ export const newPost = async ({ publicacion }) => {
 };
 
 export const subscribeToDataChanges = (actualizarFeed) => {
-  return onSnapshot((collection(db, 'nuevoPost')), (snapshot) => {
+  return onSnapshot(query(collection(db, 'nuevoPost'), orderBy('createdAt', 'asc')), (snapshot) => {
     const data = [];
     snapshot.forEach((doc) => {
       data.push({

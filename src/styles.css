@@ -486,6 +486,7 @@ span.material-symbols-cancel {
     height: 100%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 #feedScrollContent p {
