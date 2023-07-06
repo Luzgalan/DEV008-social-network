@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 /* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query, getDocs, where, getDoc,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -13,6 +14,7 @@ export const newPost = async ({ publicacion }) => {
     const docRef = await addDoc(collection(db, 'nuevoPost'), {
       publicacion,
       createdAt: Date.now(),
+      author: localStorage.getItem('username'), // Le asignamos el autor al post
     });
 
     console.log('Document written with ID: ', docRef.id);
@@ -60,4 +62,17 @@ export const updatePost = async (saveId, publicacion) => {
   return updateDoc(doc(db, 'nuevoPost', saveId), {
     publicacion,
   });
+};
+
+// Consulta para traer un usuario
+export const getDataUser = () => {
+  const q = query(collection(db, 'usuarioPrueba'), where('email', '==', localStorage.getItem('email')));
+  return getDocs(q)
+    .then((querySnapshot) => {
+      console.log(querySnapshot);
+      return querySnapshot.docs[0].data();
+    })
+    .catch((error) => {
+      throw error;
+    });
 };

@@ -1,7 +1,7 @@
 /* import { async } from 'regenerator-runtime'; */
 
 import {
-  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost,
+  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost, getDataUser,
 } from './feed.controller';
 
 const feed = {
@@ -55,6 +55,12 @@ const feed = {
 </main>`,
 
   loadEvents: async () => {
+    // Vamos por los datos del usuario cuando carga el feed
+    getDataUser().then((usuario) => {
+      console.log('Usuario logueado', usuario);
+      localStorage.setItem('username', usuario.name);
+    });
+
     const clearInput = () => {
       document.getElementById('feedNewPost').value = '';
     };
@@ -77,7 +83,7 @@ const feed = {
       const feedContainer = document.getElementById('feedScrollContent');
       const newDiv = document.createElement('div');
       const textAreaPub = document.createElement('textarea');
-      textAreaPub.textContent = data.publicacion;
+      textAreaPub.textContent = data.publicacion.publicacion;
       textAreaPub.id = `ta${data.id}`;
       // Está deshabilitado hasta que el usuario le de click al ícono editar.
       textAreaPub.disabled = true;
@@ -128,8 +134,12 @@ const feed = {
       spanCancel.style.display = 'none';
 
       likeEditDeleteDiv.appendChild(spanLike);
-      likeEditDeleteDiv.appendChild(spanEdit);
-      likeEditDeleteDiv.appendChild(spanDelete);
+      /* - Verficamos si el autor de la publicacion es el mismo del Local Storage - */
+      if (data.publicacion.author === localStorage.getItem('username')) {
+        likeEditDeleteDiv.appendChild(spanEdit);
+        likeEditDeleteDiv.appendChild(spanDelete);
+      }
+
       likeEditDeleteDiv.appendChild(spanSave);
       likeEditDeleteDiv.appendChild(spanCancel);
 
@@ -144,6 +154,7 @@ const feed = {
         const textModificado = document.getElementById(`ta${editId}`);
         // Guardamos temporalmente el origina en el local storage
         localStorage.setItem('publicacionOriginal', textModificado.value);
+
         textModificado.disabled = false;
         textModificado.focus();
         textModificado.setSelectionRange(textModificado.value.length, textModificado.value.length);
@@ -230,7 +241,7 @@ const feed = {
       const feedContainer = document.getElementById('feedScrollContent');
       feedContainer.innerHTML = '';
       data.forEach((item) => {
-        renderNewElement({ publicacion: item.publicacion, id: item.id });
+        renderNewElement({ publicacion: item, id: item.id });
       });
     };
 
