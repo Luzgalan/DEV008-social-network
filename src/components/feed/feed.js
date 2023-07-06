@@ -94,7 +94,8 @@ const feed = {
       datePost.value = data.id; */
 
       const datePost = document.createElement('p');
-      const setDate = new Date();
+      const setDate = new Date(data.publicacion.createdAt);
+      console.log(setDate);
       const formatoDate = `Fecha de creación ${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
       datePost.textContent = formatoDate;
 

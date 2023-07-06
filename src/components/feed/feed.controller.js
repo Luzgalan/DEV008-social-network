@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query, getDocs, where, getDoc,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query, getDocs, where,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
