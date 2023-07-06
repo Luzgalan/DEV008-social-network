@@ -2,6 +2,14 @@ import {
   getAuth, createUserWithEmailAndPassword,
 } from 'firebase/auth';
 
+import {
+  addDoc,
+  collection,
+  getFirestore,
+} from 'firebase/firestore';
+
+import { app } from '../../firebase';
+
 const auth = getAuth();
 
 export const signInUser = (email, password) => {
@@ -28,4 +36,15 @@ export const signInUser = (email, password) => {
         document.getElementById('7-letter').style.display = 'block';
       }
     });
+};
+
+const db = getFirestore(app);
+
+export const createUserwithRegister = (name, email) => {
+  addDoc(collection(db, 'usuarioPrueba'), {
+    name,
+    email,
+  }).catch((error) => {
+    throw error;
+  });
 };

@@ -59,6 +59,8 @@ const feed = {
     getDataUser().then((usuario) => {
       console.log('Usuario logueado', usuario);
       localStorage.setItem('username', usuario.name);
+      document.getElementById('feedNameProfile').textContent = usuario.name;
+      document.getElementById('feedProfileImage').src = usuario.photoUrl;
     });
 
     const clearInput = () => {
