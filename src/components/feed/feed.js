@@ -72,7 +72,8 @@ const feed = {
       try {
         logoutSesion(); // Caducar token
         // Eliminar token
-        localStorage.removeItem('accessToken'); // Cambiar por : localStorage.clear()
+        localStorage.clear();
+        // Cambiar por : localStorage.clear() Remueve todos los elementos en localStorage.
         //* / Redireccionamiento del usuario al login
         window.history.pushState({}, '', `${window.location.origin}/`);
         window.dispatchEvent(new PopStateEvent('popstate'));
@@ -96,7 +97,8 @@ const feed = {
       datePost.value = data.id; */
 
       const datePost = document.createElement('p');
-      const setDate = new Date();
+      const setDate = new Date(data.publicacion.createdAt);
+      console.log(setDate);
       const formatoDate = `Fecha de creación ${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
       datePost.textContent = formatoDate;
 
