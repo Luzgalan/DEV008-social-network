@@ -87,20 +87,19 @@ const feed = {
       const newDiv = document.createElement('div');
       const textAreaPub = document.createElement('textarea');
       textAreaPub.textContent = data.publicacion.publicacion;
+      console.log(textAreaPub.textContent);
       textAreaPub.id = `ta${data.id}`;
       // Está deshabilitado hasta que el usuario le de click al ícono editar.
       textAreaPub.disabled = true;
-
-      /*   const datePost = document.createElement('p');
-      datePost.textContent = 'fecha';
-      datePost.id = `date${data.id}`;
-      datePost.value = data.id; */
 
       const datePost = document.createElement('p');
       const setDate = new Date(data.publicacion.createdAt);
       console.log(setDate);
       const formatoDate = `Fecha de creación ${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
       datePost.textContent = formatoDate;
+
+      const fotoNombrePost = document.createElement('span');
+      fotoNombrePost.textContent = localStorage.getItem('username');
 
       const likeEditDeleteDiv = document.createElement('section');
       likeEditDeleteDiv.id = 'likeEditDelete';
@@ -147,6 +146,7 @@ const feed = {
       likeEditDeleteDiv.appendChild(spanSave);
       likeEditDeleteDiv.appendChild(spanCancel);
 
+      newDiv.appendChild(fotoNombrePost);
       newDiv.appendChild(datePost);
       newDiv.appendChild(textAreaPub);
       newDiv.appendChild(likeEditDeleteDiv);
