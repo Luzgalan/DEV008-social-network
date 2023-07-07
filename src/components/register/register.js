@@ -48,13 +48,15 @@ const register = {
   loadEvents: () => {
     document.getElementById('formCrearcuenta').addEventListener('submit', (event) => {
       event.preventDefault();
-      /* const nombre = document.getElementById('nombre').value; */
+      const nombre = document.getElementById('nombre').value;
       const email = document.getElementById('correo').value;
       const contrasena = document.getElementById('contrasena').value;
       const confirmarContrasena = document.getElementById('confirmar-contrasena').value;
 
       if (contrasena === confirmarContrasena) {
-        signInUser(email, contrasena);
+        signInUser(nombre, email, contrasena);
+
+        console.log(nombre, email);
       } else {
         document.getElementById('repeat-password').style.display = 'block';
       }
