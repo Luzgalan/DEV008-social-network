@@ -13,9 +13,10 @@ const auth = getAuth();
 
 const db = getFirestore(app);
 export const docRef1 = (nombre, email) => {
-  addDoc(collection(db, 'UsuarioRegistrado'), {
-    nombre,
+  addDoc(collection(db, 'usuarioPrueba'), {
+    name: nombre,
     email,
+    photoUrl: 'https://definicion.de/wp-content/uploads/2019/07/perfil-de-usuario.png',
   });
 };
 
