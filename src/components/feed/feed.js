@@ -99,7 +99,7 @@ const feed = {
       datePost.textContent = formatoDate;
 
       const fotoNombrePost = document.createElement('span');
-      fotoNombrePost.textContent = localStorage.getItem('username');
+      fotoNombrePost.textContent = data.publicacion.author;
 
       const likeEditDeleteDiv = document.createElement('section');
       likeEditDeleteDiv.id = 'likeEditDelete';
@@ -147,9 +147,10 @@ const feed = {
       likeEditDeleteDiv.appendChild(spanCancel);
 
       newDiv.appendChild(fotoNombrePost);
-      newDiv.appendChild(datePost);
       newDiv.appendChild(textAreaPub);
       newDiv.appendChild(likeEditDeleteDiv);
+
+      fotoNombrePost.appendChild(datePost);
 
       feedContainer.insertBefore(newDiv, feedContainer.firstChild);
 

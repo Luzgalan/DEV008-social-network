@@ -314,9 +314,9 @@ span.material-symbols-menu {
     margin: 10px 10px;
 }
 
-#feedScroll {
+section#feedScroll {
     width: 95%;
-    height: 2000px;
+    min-height: 2000px;
     margin: 0 0 0 5px;
     display: flex;
     flex-direction: column;
@@ -362,15 +362,27 @@ section#newPost {
 
 
 #feedScrollContent div {
-    width: 97%;
+    width: 100%;
     height: auto;
     background-color:#f3a1257e;
     border-radius: 8px;
+    box-sizing: border-box;
     margin: 20px 0 20px 0;
-  padding: 10px 10px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#feedScrollContent div span {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 input#feedNewPost {
@@ -501,9 +513,10 @@ span.material-symbols-cancel {
 }
 
 #feedScrollContent p {
+    position: absolute;
     background-color:#f3a12500;
     width: 95%;
-   height: auto;
+    height: auto;
     font-size: 12px;
     text-align: end;
     padding: 0;
@@ -604,11 +617,11 @@ div#modalEliminar {
     }
 
     section#newPost {
-        width: 90%;
+        width: 95%;
     }
     
     input#feedNewPost {
-        width: 100%;
+        width: 90%;
     }
     
     .newPost {
@@ -642,7 +655,11 @@ div#modalEliminar {
       }
 
       #feedScrollContent p {
-        font-size: 14px;   
+        font-size: 12px;   
+     }
+
+     #feedScrollContent div span {
+        font-size: 14px;
      }
 
      span.material-symbols-like,
