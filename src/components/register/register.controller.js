@@ -3,19 +3,27 @@ import {
 } from 'firebase/auth';
 
 import {
-  addDoc,
-  collection,
-  getFirestore,
+  collection, addDoc, getFirestore,
+
 } from 'firebase/firestore';
 
 import { app } from '../../firebase';
 
 const auth = getAuth();
 
-export const signInUser = (email, password) => {
+const db = getFirestore(app);
+export const docRef1 = (nombre, email) => {
+  addDoc(collection(db, 'UsuarioRegistrado'), {
+    nombre,
+    email,
+  });
+};
+
+export const signInUser = (nombre, email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
+      docRef1(nombre, email);
       const user = userCredential.user;
       window.history.pushState({}, '', `${window.location.origin}/`);
       window.dispatchEvent(new PopStateEvent('popstate'));
@@ -36,15 +44,4 @@ export const signInUser = (email, password) => {
         document.getElementById('7-letter').style.display = 'block';
       }
     });
-};
-
-const db = getFirestore(app);
-
-export const createUserwithRegister = (name, email) => {
-  addDoc(collection(db, 'usuarioPrueba'), {
-    name,
-    email,
-  }).catch((error) => {
-    throw error;
-  });
 };
