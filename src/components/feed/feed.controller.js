@@ -16,6 +16,7 @@ export const newPost = async ({ publicacion }) => {
       publicacion,
       createdAt: Date.now(),
       author: localStorage.getItem('username'), // Le asignamos el autor al post
+      likes: [],
     });
 
     console.log('Document written with ID: ', docRef.id);
