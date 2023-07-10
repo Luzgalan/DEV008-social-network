@@ -1,7 +1,7 @@
 /* import { async } from 'regenerator-runtime'; */
 
 import {
-  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost, getDataUser,
+  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost, getDataUser, updatePostLike,
 } from './feed.controller';
 
 const feed = {
@@ -10,7 +10,6 @@ const feed = {
       <div id="feedLogoContent">
           <img id="feedLogo" src="imgfeed/logo-eslogan.png" alt="Logotype">
       </div>
-     
       <span class="material-symbols-outlined" id="logoutfeed">move_item</span>
   </header>
   <section id="feedAllContent">
@@ -18,7 +17,6 @@ const feed = {
           <div id="feedMenu"><span class="material-symbols-menu">
                   menu
               </span>
-              
           </div>
           <section id="feedProfile">
               <div id="feedProfileImageContent"><img id="feedProfileImage" src="imgfeed/perfilFoto.jpg"
@@ -31,7 +29,6 @@ const feed = {
                   mascota
                   perdida, ríete de los reyes del hogar u ofrece servicios relacionados.
               </p>
-             
           </section>
       </aside>
       <section id="feedScroll">
@@ -40,8 +37,6 @@ const feed = {
               <div class="randomAbeja"><img id="randomAbeja" src="imgfeed/abejita.png" alt="Abejita"></div>
               <div class="randomDog"><img id="randomDog" src="imgfeed/perritove.png" alt="Perrito"></div>
           </div>
-         
-
           <section id="newPost">
               <h4 class="newPost">Crear nueva publicación</h4>
               <input type="text" id="feedNewPost" placeholder="Cuéntanos,  ¿Qué quieres compartir?...">
@@ -87,27 +82,32 @@ const feed = {
       const newDiv = document.createElement('div');
       const textAreaPub = document.createElement('textarea');
       textAreaPub.textContent = data.publicacion.publicacion;
-      console.log(textAreaPub.textContent);
+      /*  console.log(textAreaPub.textContent); */
       textAreaPub.id = `ta${data.id}`;
       // Está deshabilitado hasta que el usuario le de click al ícono editar.
       textAreaPub.disabled = true;
 
       const datePost = document.createElement('p');
       const setDate = new Date(data.publicacion.createdAt);
-      console.log(setDate);
-      const formatoDate = `Fecha de creación ${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
+      /* console.log(setDate); */
+      const formatoDate = `${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
       datePost.textContent = formatoDate;
 
       const fotoNombrePost = document.createElement('span');
-      fotoNombrePost.textContent = data.publicacion.author;
+      fotoNombrePost.textContent = data.publicacion.author ? data.publicacion.author : 'Usuario Pet Lover';
 
       const likeEditDeleteDiv = document.createElement('section');
       likeEditDeleteDiv.id = 'likeEditDelete';
+
       const spanLike = document.createElement('span');
       spanLike.className = 'material-symbols-like';
       spanLike.textContent = 'favorite';
       spanLike.id = `li${data.id}`;
       spanLike.value = data.id;
+
+      const spanCount = document.createElement('span');
+      spanCount.id = `count${data.id}`;
+      spanCount.textContent = 0;
 
       const spanEdit = document.createElement('span');
       spanEdit.className = 'material-symbols-edit';
@@ -137,6 +137,7 @@ const feed = {
       spanCancel.style.display = 'none';
 
       likeEditDeleteDiv.appendChild(spanLike);
+      likeEditDeleteDiv.appendChild(spanCount);
       /* - Verficamos si el autor de la publicacion es el mismo del Local Storage - */
       if (data.publicacion.author === localStorage.getItem('username')) {
         likeEditDeleteDiv.appendChild(spanEdit);
@@ -153,6 +154,34 @@ const feed = {
       fotoNombrePost.appendChild(datePost);
 
       feedContainer.insertBefore(newDiv, feedContainer.firstChild);
+
+      const spanWithLikes = document.getElementById(`li${data.id}`);
+
+      spanWithLikes.addEventListener('click', async (event) => {
+        const saveId = event.target.value;
+        console.log(saveId);
+        const spanCounts = document.getElementById(`count${saveId}`);
+        console.log(spanCounts);
+        let like = 0;
+        console.log(like);
+        const currentCount = parseInt(spanCounts.textContent);
+        console.log(currentCount);
+
+        if (currentCount === 1) {
+          like -= 1;
+          spanCount.textContent = (currentCount - 1).toString();
+        } else {
+          like += 1;
+          spanCount.textContent = (currentCount + 1).toString();
+        }
+
+        try {
+          await updatePostLike(saveId, { newLike: like });
+          console.log('Se actualizó likes');
+        } catch (error) {
+          console.error('Error en likes', error);
+        }
+      });
 
       spanEdit.addEventListener('click', (e) => {
         const editId = e.target.value;

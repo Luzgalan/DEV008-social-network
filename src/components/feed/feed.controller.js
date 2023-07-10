@@ -5,6 +5,7 @@ import {
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
+/* import { async } from 'regenerator-runtime'; */
 import { app } from '../../firebase';
 
 const auth = getAuth();
@@ -61,6 +62,12 @@ export const deletePost = async (docId) => {
 export const updatePost = async (saveId, publicacion) => {
   return updateDoc(doc(db, 'nuevoPost', saveId), {
     publicacion,
+  });
+};
+
+export const updatePostLike = async (saveId, newLike) => {
+  return updateDoc(doc(db, 'nuevoPost', saveId), {
+    likes: newLike,
   });
 };
 
