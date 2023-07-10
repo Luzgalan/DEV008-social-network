@@ -107,7 +107,7 @@ const feed = {
 
       const spanCount = document.createElement('span');
       spanCount.id = `count${data.id}`;
-      spanCount.textContent = 0;
+      spanCount.textContent = data.publicacion.likes.length;
 
       const spanEdit = document.createElement('span');
       spanEdit.className = 'material-symbols-edit';
@@ -158,29 +158,33 @@ const feed = {
       const spanWithLikes = document.getElementById(`li${data.id}`);
 
       spanWithLikes.addEventListener('click', async (event) => {
-        const saveId = event.target.value;
-        console.log(saveId);
-        const spanCounts = document.getElementById(`count${saveId}`);
-        console.log(spanCounts);
-        let like = 0;
-        console.log(like);
-        const currentCount = parseInt(spanCounts.textContent);
-        console.log(currentCount);
+        // hacer console.log de el id del documento que quieres editar
+        // hacer console.log de el correo de la persona
+        // saber si hay un like previo arreglo.include author o correo.
+        // puedes hacer un if para ejecutar arrayUnion o arrayRemove
+        /*  const saveId = event.target.value;
+          console.log(saveId);
+          const spanCounts = document.getElementById(`count${saveId}`);
+          console.log(spanCounts);
+          let like = 0;
+          console.log(like);
+          const currentCount = parseInt(spanCounts.textContent, 10);
+          console.log(currentCount);
 
-        if (currentCount === 1) {
-          like -= 1;
-          spanCount.textContent = (currentCount - 1).toString();
-        } else {
-          like += 1;
-          spanCount.textContent = (currentCount + 1).toString();
-        }
+          if (currentCount === 1) {
+            like -= 1;
+            spanCount.textContent = (currentCount - 1).toString();
+          } else {
+            like += 1;
+            spanCount.textContent = (currentCount + 1).toString();
+          }
 
-        try {
-          await updatePostLike(saveId, { newLike: like });
-          console.log('Se actualizó likes');
-        } catch (error) {
-          console.error('Error en likes', error);
-        }
+          try {
+            await updatePostLike(saveId, { newLike: like });
+            console.log('Se actualizó likes');
+          } catch (error) {
+            console.error('Error en likes', error);
+          } */
       });
 
       spanEdit.addEventListener('click', (e) => {
