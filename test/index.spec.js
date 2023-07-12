@@ -1,8 +1,9 @@
 // importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+/* import { feedMock } from '../src/components/feed/feed.mock'; */
+import { updatePostLike } from '../src/components/feed/feed.controller';
 
-describe('myFunction', () => {
+describe('updatePostLike', () => {
   it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+    expect(typeof updatePostLike).toBe('function');
   });
 });
