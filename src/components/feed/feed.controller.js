@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-shadow */
 import {
-  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query, getDocs, where,
+  collection, addDoc, getFirestore, onSnapshot, doc, deleteDoc, updateDoc, orderBy, query, getDocs, where, arrayUnion, arrayRemove,
 } from 'firebase/firestore';
 import { signOut, getAuth } from 'firebase/auth';
 
@@ -66,9 +66,15 @@ export const updatePost = async (saveId, publicacion) => {
   });
 };
 
-export const updatePostLike = async (saveId, newLike) => {
-  return updateDoc(doc(db, 'nuevoPost', saveId), {
-    likes: newLike,
+export const updatePostLike = (id, tipo) => {
+  const email = localStorage.getItem('email');
+  if (tipo === 'union') {
+    return updateDoc(doc(db, 'nuevoPost', id), {
+      likes: arrayUnion(email),
+    });
+  }
+  return updateDoc(doc(db, 'nuevoPost', id), {
+    likes: arrayRemove(email),
   });
 };
 
