@@ -1,7 +1,8 @@
 /* import { async } from 'regenerator-runtime'; */
 
 import {
-  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost, getDataUser, updatePostLike,
+  newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost, getDataUser,
+  updatePostLike,
 } from './feed.controller';
 
 const feed = {
@@ -103,7 +104,7 @@ const feed = {
       spanLike.className = 'material-symbols-like';
       spanLike.textContent = 'favorite';
       spanLike.id = `li${data.id}`;
-      spanLike.value = data.id;
+      spanLike.value = data;
 
       const spanCount = document.createElement('span');
       spanCount.id = `count${data.id}`;
@@ -157,7 +158,19 @@ const feed = {
 
       const spanWithLikes = document.getElementById(`li${data.id}`);
 
-      spanWithLikes.addEventListener('click', async (event) => {
+      spanWithLikes.addEventListener('click', (event) => {
+        /*  const spanCount = document.getElementById(`count${saveId}`); */
+        const likesActuales = event.target.value.publicacion.likes;
+        console.log(likesActuales);
+        const arrayEmail = localStorage.email;
+        const hasLike = likesActuales.includes(arrayEmail);
+
+        if (hasLike) {
+          updatePostLike(event.target.value.id, 'remove');
+        } else {
+          updatePostLike(event.target.value.id, 'union');
+        }
+
         // hacer console.log de el id del documento que quieres editar
         // hacer console.log de el correo de la persona
         // saber si hay un like previo arreglo.include author o correo.
