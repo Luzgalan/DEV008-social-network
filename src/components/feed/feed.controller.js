@@ -41,7 +41,7 @@ export const subscribeToDataChanges = (actualizarFeed) => {
 export const logoutSesion = async () => {
   try {
     const result = await signOut(auth);
-    console.log(result);
+    /*  console.log(result); */
     return (result);
     // Otras acciones después del cierre de sesión, si las hay...
   } catch (error) {
@@ -51,10 +51,10 @@ export const logoutSesion = async () => {
 };
 
 export const deletePost = async (docId) => {
-  console.log(docId);
+  /*   console.log(docId); */
   try {
     await deleteDoc(doc(db, 'nuevoPost', docId));
-    console.log(`Documento eliminado: ${docId}`);
+    /*  console.log(`Documento eliminado: ${docId}`); */
   } catch (error) {
     console.error('Error al eliminar el documento:', error);
   }
@@ -83,7 +83,7 @@ export const getDataUser = () => {
   const q = query(collection(db, 'usuarioPrueba'), where('email', '==', localStorage.getItem('email')));
   return getDocs(q)
     .then((querySnapshot) => {
-      console.log(querySnapshot);
+      /*  console.log(querySnapshot); */
       return querySnapshot.docs[0].data();
     })
     .catch((error) => {
