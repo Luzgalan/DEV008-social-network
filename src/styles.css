@@ -190,8 +190,6 @@ border: #FFA500 solid 1px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   /*  border-top-left-radius: 10px;
-    border-top-right-radius: 10px; */
     border-bottom: 5px solid #CD3B32;
 }
 
@@ -203,7 +201,6 @@ img#feedLogo {
     width: 120px;
     height: 80px;
     background: cover;
-    padding: 0%;
     margin: 0%;
     display: flex;
     align-items: center;
@@ -269,10 +266,8 @@ span.material-symbols-outlined {
     height: auto;
     background-color:  rgba(250, 235, 215, 0.5);
     margin: 0 0 10px 0;
-    /* border-radius: 0 5px 5px 5px; */
     display: flex;
     flex-direction: column;
-    /* box-shadow: 2px 2px 4px 2px rgba(0.2, 0.2, 0.2, 0.2); */
     align-items: start;
     }
 
@@ -536,22 +531,11 @@ span.material-symbols-like,
 span.material-symbols-count, 
 span.material-symbols-edit, 
 span.material-symbols-delete {
-    font-size: 48px;
+    font-size: 40px;
     display: flex; 
     justify-content: center;
   }
 
-/*span.material-symbols-count {
-    margin: 0; 
-    left: -150px; 
-    padding-left: 0px;
-
-}
-
-span.material-symbols-edit {
-    padding-left: 0px;
-    left: -100px;
-}*/ 
 
 
 #feedScrollContent p {

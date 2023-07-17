@@ -11,6 +11,7 @@ import { app } from '../../firebase';
 
 const auth = getAuth();
 
+// Guardamos el nombre, correo y foto para mostrar en el feed
 const db = getFirestore(app);
 export const docRef1 = (nombre, email) => {
   addDoc(collection(db, 'usuarioPrueba'), {
@@ -20,10 +21,11 @@ export const docRef1 = (nombre, email) => {
   });
 };
 
+// Funcion para registrarse por formulario
 export const signInUser = (nombre, email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
+      // si se registra correctamente se direcciona al feed tomando el nombre y correo electronico
       docRef1(nombre, email);
       const user = userCredential.user;
       window.history.pushState({}, '', `${window.location.origin}/`);
@@ -32,14 +34,13 @@ export const signInUser = (nombre, email, password) => {
       console.log(user);
     })
     .catch((error) => {
+      // si existe algun error aparecen errores si el email ya se encuentra registrado,
+      // o si tiene mas de 6 caracteres
       const errorCode = error.code;
-      const errorMessage = error.message;
 
-      console.log(errorCode, errorMessage);
-
-      if (error.code === 'auth/email-already-in-use') {
+      if (errorCode === 'auth/email-already-in-use') {
         document.getElementById('repeat-email').style.display = 'block';
-      } else if (error.code === 'auth/weak-password') {
+      } else if (errorCode === 'auth/weak-password') {
         document.getElementById('6-letters').style.display = 'block';
       } else {
         document.getElementById('7-letter').style.display = 'block';
