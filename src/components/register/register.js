@@ -46,29 +46,34 @@ const register = {
   </section>`,
   loadEvents: () => {
     document.getElementById('formCrearcuenta').addEventListener('submit', (event) => {
+      // para que no se recargue la pagina
       event.preventDefault();
+      // Tomamos los valores de los inputs nombre, correo, contrasena y confirmar contrasena
       const nombre = document.getElementById('nombre').value;
       const email = document.getElementById('correo').value;
       const contrasena = document.getElementById('contrasena').value;
       const confirmarContrasena = document.getElementById('confirmar-contrasena').value;
 
       if (contrasena === confirmarContrasena) {
+        // si la contrasena coincide con el confirmar contrasena continua con la funcion signuser
+        // como no tiene guardado el token se redirecciona a login
         signInUser(nombre, email, contrasena);
-
-        console.log(nombre, email);
       } else {
+        // si no coinciden aparece un mensaje de error
         document.getElementById('repeat-password').style.display = 'block';
       }
     });
 
     /* -------------------------- Navegacion a login ------------------------- */
+    /* Si da clic en que tiene ya una cuenta registrada le redirecciona a Login */
     document.getElementById('spnRegistro').addEventListener('click', () => {
       window.history.pushState({}, '', `${window.location.origin}/`);
       /* ----- Dispara manualmente el evento popstate para actualizar la ruta ----- */
       window.dispatchEvent(new PopStateEvent('popstate'));
     });
     /* ----------------------------- Iniciar sesion con google---------------------------- */
-
+    /* Al momento de dar clic en el icono Google se dispara la funcion de Google LoginWithGoogle
+    Se encuentra en login.controller.js */
     document.getElementById('btnLoginGoogle').addEventListener('click', async () => {
       document.getElementById('btnLoginGoogle').disabled = true;
       // Inicio de sesion con google
@@ -83,6 +88,7 @@ const register = {
     });
 
     function ocultarError() {
+      /* Al momento de dar clic en cualquiera de los inputs desaparecen los mensajes de error */
       document.getElementById('repeat-password').style.display = 'none';
       document.getElementById('repeat-email').style.display = 'none';
       document.getElementById('6-letters').style.display = 'none';
@@ -91,6 +97,7 @@ const register = {
     document.getElementById('correo').addEventListener('focus', ocultarError);
     document.getElementById('contrasena').addEventListener('focus', ocultarError);
     document.getElementById('confirmar-contrasena').addEventListener('focus', ocultarError);
+    document.getElementById('nombre').addEventListener('focus', ocultarError);
   },
 };
 
