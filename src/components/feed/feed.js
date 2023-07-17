@@ -9,7 +9,7 @@ const feed = {
   loadHTML: () => `<main id="pageAllContent">
   <header id="feedHeader">
       <div id="feedLogoContent">
-          <img id="feedLogo" src="imgfeed/logo-eslogan.png" alt="Logotype">
+          <img id="feedLogo" src="imgfeed/logo-corto.png" alt="Logotype">
       </div>
       <span class="material-symbols-outlined" id="logoutfeed">move_item</span>
   </header>
@@ -108,8 +108,10 @@ const feed = {
       spanLike.value = data;
 
       const spanCount = document.createElement('span');
+      spanCount.className = 'material-symbols-count';
       spanCount.id = `count${data.id}`;
       spanCount.textContent = data.publicacion.likes.length;
+      console.log(spanCount.textContent);
 
       const spanEdit = document.createElement('span');
       spanEdit.className = 'material-symbols-edit';
