@@ -9,7 +9,7 @@ body{
 .fondo-naranja {
     background-color: #F39F25;
 }
-/* --------------------- Definicion de tamaños de letrs --------------------- */
+/* --------------------- Definicion de tamaños de letra --------------------- */
 .text-small {
     font-size: small;
 }
@@ -54,6 +54,7 @@ color: #ffffff;
     height: 100%;
     display: flex;
     padding: 80px;
+    
 }
 
 .l-container-login{
@@ -168,9 +169,10 @@ border: #FFA500 solid 1px;
 
 @media only screen and (min-width: 20px) {
 
-    div#app {
+    body#bodyApp {
         background-image: url(img/image-huella-naranja.png);
         background-color: antiquewhite;
+        
     }
 
 #pageAllContent {
@@ -182,7 +184,7 @@ border: #FFA500 solid 1px;
 
 #feedHeader {
     width: 100%;
-    height: 50px;
+    height: 90px;
     background-color: #f39f25;
     border-top: 3px solid #f39f25;
     display: flex;
@@ -198,8 +200,8 @@ border: #FFA500 solid 1px;
 }
 
 img#feedLogo {
-    width: 80%;
-    height: 100%;
+    width: 120px;
+    height: 80px;
     background: cover;
     padding: 0%;
     margin: 0%;
@@ -237,14 +239,14 @@ input#inputSearch {
 
 span.material-symbols-search {
     color: aliceblue;
-    font-family: 'Material Symbols Outlined', sans-serif;
+    font-family: 'Arial';
     font-size: 20px;
 }
 
 span.material-symbols-outlined {
     padding: 5px;
     font-family: 'Material Symbols Outlined', sans-serif;
-    font-size: 25px;
+    font-size: 40px;
     display: flex;
     align-items: center;
     filter: brightness(100%);
@@ -257,21 +259,22 @@ span.material-symbols-outlined {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    background-color: antiquewhite;
+    background-color:  rgba(250, 235, 215, 0.5);
     box-shadow: 2px 2px 4px 2px rgba(0.2, 0.2, 0.2, 0.2), -2px 2px 4px 2px rgba(0.2, 0.2, 0.2, 0.2);
+    
 }
 
 #feedAside {
     width: 25%;
     height: auto;
-    background-color: antiquewhite;
+    background-color:  rgba(250, 235, 215, 0.5);
     margin: 0 0 10px 0;
     /* border-radius: 0 5px 5px 5px; */
     display: flex;
     flex-direction: column;
     /* box-shadow: 2px 2px 4px 2px rgba(0.2, 0.2, 0.2, 0.2); */
     align-items: start;
-}
+    }
 
 #feedMenu {
     width: 95%;
@@ -317,7 +320,8 @@ span.material-symbols-menu {
 .feedNameLogo {
     color: #CD3B32;
     font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Arial';
+    font-weight: 400;
 }
 
 #feedIntroduction {
@@ -335,11 +339,12 @@ section#feedScroll {
     flex-direction: column;
     align-items: center;
    /*  border-radius: 5px 0 5px 5px; */
-    background-color: antiquewhite;
+    background-color:  rgba(250, 235, 215, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2), 5px 0 5px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+    
 }
 
 div#feedScrollContent {
@@ -367,7 +372,7 @@ section#newPost {
     border-radius: 8px;
     resize: none;
     font-size: 16px;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:'Arial';
     /* font-weight: bold; */
     margin: 10px 5px;
     box-sizing: border-box;
@@ -416,7 +421,7 @@ input#feedNewPost {
 .newPost {
     font-size: 16px;
     font-weight: bolder;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial';
     color: #CD3B32;
     display: flex;
     align-items: end;
@@ -519,13 +524,35 @@ span.material-symbols-save,
 span.material-symbols-cancel {
     color: rgb(0, 0, 0);
     font-family: 'Material Symbols Outlined', sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
+
+span.material-symbols-like,
+span.material-symbols-count, 
+span.material-symbols-edit, 
+span.material-symbols-delete {
+    font-size: 48px;
+    display: flex; 
+    justify-content: center;
+  }
+
+/*span.material-symbols-count {
+    margin: 0; 
+    left: -150px; 
+    padding-left: 0px;
+
+}
+
+span.material-symbols-edit {
+    padding-left: 0px;
+    left: -100px;
+}*/ 
+
 
 #feedScrollContent p {
     position: absolute;
@@ -822,10 +849,14 @@ span.material-symbols-outlined {
 /* -------------------------------------------------------------------------- */
 /*                                  Register                                  */
 /* -------------------------------------------------------------------------- */
+
+
+
 section{
     display: flex;
     justify-content: center;
     align-items: center;
+    /*background-image: url(img/image-huella-naranja.png);*/
 }
 .contenedor-crear-cuenta{
     height: 100%;
