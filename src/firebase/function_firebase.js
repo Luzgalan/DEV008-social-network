@@ -1,6 +1,6 @@
-//import { auth } from "./firebase";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { app } from "../firebase";
+// import { auth } from "./firebase";
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../firebase';
 
 export const createUser = (email, contrasena) => {
   const auth = getAuth(app);
@@ -16,4 +16,4 @@ export const createUser = (email, contrasena) => {
       const errorMessage = error.message;
       // ..
     });
-}
+};

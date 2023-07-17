@@ -53,7 +53,7 @@ const feed = {
   loadEvents: async () => {
     // Vamos por los datos del usuario cuando carga el feed
     getDataUser().then((usuario) => {
-      console.log('Usuario logueado', usuario);
+      /* console.log('Usuario logueado', usuario); */
       localStorage.setItem('username', usuario.name);
       document.getElementById('feedNameProfile').textContent = usuario.name;
       document.getElementById('feedProfileImage').src = usuario.photoUrl;
@@ -74,13 +74,14 @@ const feed = {
         window.history.pushState({}, '', `${window.location.origin}/`);
         window.dispatchEvent(new PopStateEvent('popstate'));
       } catch (error) {
-        console.error('Error during logout:', error);
+        alert.error('Error during logout:', error);
       }
     });
 
     const renderNewElement = (data) => {
       const feedContainer = document.getElementById('feedScrollContent');
       const newDiv = document.createElement('div');
+      newDiv.id = 'newPostFeed';
       const textAreaPub = document.createElement('textarea');
       textAreaPub.textContent = data.publicacion.publicacion;
       /*  console.log(textAreaPub.textContent); */
@@ -163,7 +164,7 @@ const feed = {
       spanWithLikes.addEventListener('click', (event) => {
         /*  const spanCount = document.getElementById(`count${saveId}`); */
         const likesActuales = event.target.value.publicacion.likes;
-        console.log(likesActuales);
+        /*  console.log(likesActuales); */
         const arrayEmail = localStorage.email;
         const hasLike = likesActuales.includes(arrayEmail);
 
@@ -261,7 +262,7 @@ const feed = {
         cancelarEliminarBtn.addEventListener('click', () => {
           const traerModal = document.getElementById('modalEliminar');
           traerModal.parentNode.removeChild(traerModal);
-          console.log(traerModal);
+          /*  console.log(traerModal); */
         });
 
         const aceptarEliminarBtn = document.getElementById('aceptarEliminar');
@@ -270,7 +271,7 @@ const feed = {
           const traerModal = document.getElementById('modalEliminar');
           traerModal.parentNode.removeChild(traerModal);
           const docId = event.currentTarget.getAttribute('data-id');
-          console.log(docId);
+          /*  console.log(docId); */
           deletePost(docId);
         });
       });
@@ -279,7 +280,7 @@ const feed = {
 
     document.getElementById('publish').addEventListener('click', async () => {
       const obtenerRelleno = document.getElementById('feedNewPost').value;
-      console.log(obtenerRelleno);
+      /*   console.log(obtenerRelleno); */
       if (obtenerRelleno.length !== 0) {
         await newPost({ publicacion: obtenerRelleno });
         clearInput(); // Limpia el contenido del campo de entrada
