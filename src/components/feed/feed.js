@@ -53,7 +53,7 @@ const feed = {
   loadEvents: async () => {
     // Vamos por los datos del usuario cuando carga el feed
     getDataUser().then((usuario) => {
-      /* console.log('Usuario logueado', usuario); */
+      /* Mostrar la imagen y nombre */
       localStorage.setItem('username', usuario.name);
       document.getElementById('feedNameProfile').textContent = usuario.name;
       document.getElementById('feedProfileImage').src = usuario.photoUrl;
@@ -173,34 +173,6 @@ const feed = {
         } else {
           updatePostLike(event.target.value.id, 'union');
         }
-
-        // hacer console.log de el id del documento que quieres editar
-        // hacer console.log de el correo de la persona
-        // saber si hay un like previo arreglo.include author o correo.
-        // puedes hacer un if para ejecutar arrayUnion o arrayRemove
-        /*  const saveId = event.target.value;
-          console.log(saveId);
-          const spanCounts = document.getElementById(`count${saveId}`);
-          console.log(spanCounts);
-          let like = 0;
-          console.log(like);
-          const currentCount = parseInt(spanCounts.textContent, 10);
-          console.log(currentCount);
-
-          if (currentCount === 1) {
-            like -= 1;
-            spanCount.textContent = (currentCount - 1).toString();
-          } else {
-            like += 1;
-            spanCount.textContent = (currentCount + 1).toString();
-          }
-
-          try {
-            await updatePostLike(saveId, { newLike: like });
-            console.log('Se actualizó likes');
-          } catch (error) {
-            console.error('Error en likes', error);
-          } */
       });
 
       spanEdit.addEventListener('click', (e) => {
