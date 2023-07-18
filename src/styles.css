@@ -170,8 +170,8 @@ border: #FFA500 solid 1px;
 @media only screen and (min-width: 20px) {
 
     body#bodyApp {
-        background-image: url(img/image-huella-naranja.png);
-        background-color: antiquewhite;
+     /*    background-image: url(img/image-huella-naranja.png); */
+        background-color: rgba(250, 235, 215, 0.655);
         
     }
 
@@ -184,7 +184,7 @@ border: #FFA500 solid 1px;
 
 #feedHeader {
     width: 100%;
-    height: 90px;
+    height: 60px;
     background-color: #f39f25;
     border-top: 3px solid #f39f25;
     display: flex;
@@ -198,8 +198,8 @@ border: #FFA500 solid 1px;
 }
 
 img#feedLogo {
-    width: 120px;
-    height: 80px;
+    width: 100px;
+    height: 55px;
     background: cover;
     margin: 0%;
     display: flex;
@@ -243,7 +243,7 @@ span.material-symbols-search {
 span.material-symbols-outlined {
     padding: 5px;
     font-family: 'Material Symbols Outlined', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     display: flex;
     align-items: center;
     filter: brightness(100%);
@@ -256,15 +256,15 @@ span.material-symbols-outlined {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    background-color:  rgba(250, 235, 215, 0.5);
-    box-shadow: 2px 2px 4px 2px rgba(0.2, 0.2, 0.2, 0.2), -2px 2px 4px 2px rgba(0.2, 0.2, 0.2, 0.2);
+    background-color:  rgb(250, 235, 215);
+    
     
 }
 
 #feedAside {
     width: 25%;
     height: auto;
-    background-color:  rgba(250, 235, 215, 0.5);
+    background-color:  rgb(250, 235, 215);
     margin: 0 0 10px 0;
     display: flex;
     flex-direction: column;
@@ -288,7 +288,7 @@ span.material-symbols-menu {
 }
 
 #feedProfile {
-    width: 100%;
+    width: 90%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -310,6 +310,13 @@ span.material-symbols-menu {
    height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+
+#feedNameProfile {
+    margin: 10px 10px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .feedNameLogo {
@@ -452,6 +459,7 @@ input#feedNewPost {
 div#randomImages {
     width: 100%;
     height: 200px;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -576,6 +584,19 @@ div#modalEliminar {
 }
 
 @media only screen and (max-width: 281px){
+    #feedLogoContent {
+        width: 10%;
+    }
+    
+    img#feedLogo {
+        width: 70px;
+        height: 50px;
+    }
+    
+    #feedHeader {
+        height: 50px;
+    }
+   
     .randomAbeja {
         display: none;
     }
