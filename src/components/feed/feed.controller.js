@@ -7,9 +7,10 @@ import { signOut, getAuth } from 'firebase/auth';
 
 /* import { async } from 'regenerator-runtime'; */
 import { app } from '../../firebase';
-
+// Se utiliza auth y db para hacer el logout
 const auth = getAuth();
 const db = getFirestore(app);
+// Se exporta función que crea un nuevo documento (post con propiedades) en Firebase
 export const newPost = async ({ publicacion }) => {
   try {
     const docRef = await addDoc(collection(db, 'nuevoPost'), {
@@ -24,7 +25,7 @@ export const newPost = async ({ publicacion }) => {
     console.error('Error adding document: ', e);
   }
 };
-
+// Función que nos permite visualizar todos los post en tiempo real
 export const subscribeToDataChanges = (actualizarFeed) => {
   return onSnapshot(query(collection(db, 'nuevoPost'), orderBy('createdAt', 'asc')), (snapshot) => {
     const data = [];
@@ -37,7 +38,7 @@ export const subscribeToDataChanges = (actualizarFeed) => {
     actualizarFeed(data);
   });
 };
-
+// Función que nos permite cerrar sesión
 export const logoutSesion = async () => {
   try {
     const result = await signOut(auth);
@@ -49,7 +50,7 @@ export const logoutSesion = async () => {
     throw new Error('Error during logout:');
   }
 };
-
+// Función que nos permite eliminar post
 export const deletePost = async (docId) => {
   /*   console.log(docId); */
   try {
@@ -59,13 +60,13 @@ export const deletePost = async (docId) => {
     console.error('Error al eliminar el documento:', error);
   }
 };
-
+// Función que nos permite guardar los cambios en post editado
 export const updatePost = async (saveId, publicacion) => {
   return updateDoc(doc(db, 'nuevoPost', saveId), {
     publicacion,
   });
 };
-
+// Función que nos permite guardar en nuestro array el usuario que ya dio like por post o remover
 export const updatePostLike = (id, tipo) => {
   const email = localStorage.getItem('email');
   if (tipo === 'union') {
