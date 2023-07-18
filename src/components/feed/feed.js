@@ -190,7 +190,7 @@ const feed = {
         textModificado.focus();
         textModificado.setSelectionRange(textModificado.value.length, textModificado.value.length);
         document.getElementById(`ed${editId}`).style.display = 'none';
-        document.getElementById(`li${editId}`).style.display = 'none';
+        //  k document.getElementById(`li${editId}`).style.display = 'none';
         document.getElementById(`de${editId}`).style.display = 'none';
         document.getElementById(`sa${editId}`).style.display = 'flex';
         document.getElementById(`ca${editId}`).style.display = 'flex';
