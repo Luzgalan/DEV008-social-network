@@ -4,58 +4,48 @@ Colaboradoras: Katherine Cevallos, Luz María Vázquez, Ana Karen Morales.
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
+* [1. Definición del Producto](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
+* [3. Objetivos generales del proyecto](#3-objetivos-de-aprendizaje)
+* [4. Objetivos de Aprendizaje](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Hacker edition](#6-hacker-edition)
 * [7. Entrega](#7-entrega)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 
-## 1. Preámbulo
+## 1. Definición del Producto
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
-
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
-
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+¡Bienvenido a Pet Lovers, la red social creada exclusivamente para personas apasionadas por las mascotas! Ya seas dueño de un tierno cachorro, un gato curioso o cualquier otra adorable criatura, este es el lugar perfecto para conectarte con otros amantes de los animales y encontrar todo lo que necesitas para cuidar y disfrutar al máximo de la compañía de tus queridas mascotas.
 
 ## 2. Resumen del proyecto
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco),
-de la [Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+Características principales de Pet Lovers:
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de acceso
-y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+Comunidad de Amantes de las Mascotas: Únete a una comunidad en línea de personas que comparten tu amor por los animales. Comparte historias de tus mascotas, y encuentra inspiración en las experiencias de otros propietarios.
+Consejos y Recomendaciones: En Pet Lovers, encontrarás una abundancia de consejos prácticos y recomendaciones sobre el cuidado de mascotas. Nuestra comunidad está llena de expertos y personas con experiencia que estarán encantados de compartir su sabiduría contigo.
+Ayuda para Mascotas Perdidas: Si has perdido a tu querida mascota, no estás solo. Publica detalles sobre tu mascota perdida y su última ubicación conocida, y permite que la comunidad te ayude en la búsqueda para reunirte con tu peludo amigo.
+Proveedores de Alimentos y Productos para Mascotas: Encuentra proveedores locales y en línea de alimentos saludables y productos de alta calidad para tus mascotas. Lee reseñas, comparte tus recomendaciones y descubre nuevos productos que harán la vida de tus animales más feliz.
+Eventos y Encuentros: Mantente informado sobre eventos y encuentros locales para amantes de las mascotas. Organiza paseos grupales, encuentros en parques para perros y otras actividades divertidas para que tus mascotas socialicen y hagan nuevos amigos peludos.
+Adopción y Rescate: Fomentamos la adopción responsable y apoyamos a refugios y organizaciones de rescate. Encuentra mascotas que necesiten un hogar amoroso y ayuda a difundir su búsqueda de una familia cariñosa.
+Estilo de Vida Saludable: En Pet Lovers, creemos en un estilo de vida saludable para nuestras mascotas. Encuentra información sobre ejercicios, alimentación, entrenamiento y cuidados veterinarios para mantener a tus animales en óptimas condiciones. 
 
-Por lo tanto, en este proyecto construirás una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos**.
+## 3. Objetivos generales del proyecto
 
-### Los objetivos generales de este proyecto son los siguientes
+A continuación se detallan las acciones que el usuario podrá realizar en la red social "Pet Lovers":
 
-* Desarrollar una SPA con temática de red social
-* Aplicar los conceptos de responsividad en el desarrollo de las vistas (templates)
-* Implementar un router para la navegación entre las diferentes vistas de la aplicación
-* Emplear un servicio externo para la persistencia de datos de la aplicación
-* Crear una suite de pruebas unitarias que permitan testear código asíncrono
+* Se desarrolló una SPA con temática de red social para mascotas.
+* El usuario podrá crear su cuenta desde Google authentication.
+* El usuario ingresará con su correo y contraseña.
+* El usuario podrá crear su cuenta desde el formulario de registro para acceder a la red social.
+* El usuario podrá visualizar su foto de perfil y nombre en el feed, cuando haya ingresado desde Google Authentication.
+* El usuario podrá visualizar una imagen predeterminada cuando haya ingresado por email y contraseña.
+* El usuario podrá crear una publicación.
+* El usuario podrá visualizar todas las publicaciones de manera ordenada por fecha de creación.
+* El usuario podrá eliminar y editar una publicación que sea de su autoría.
+* El usuario podrá dar like a las publicaciones que desee.
+* El usuario podrá cerrar sesión y será redireccionado al módulo de Log in.
 
-Para lograr estos objetivos, deberás aprender y hacer uso de las siguientes
-herramientas o habilidades técnicas:
-
-## 3. Objetivos de aprendizaje
+## 4. Objetivos de aprendizaje
 
 Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
 
@@ -345,80 +335,101 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
 
-## 5. Criterios de aceptación mínimos del proyecto
+## 5. Criterios de aceptación 
 
-### 5.1 Boilerplate
+### 5.1 Definición del producto
 
-Este proyecto no incluye un _boilerplate_ completo, solo algunos archivos de
-configuración basico, así es que tendrás que definir la estructura de carpetas
-y escribir tus propias Pruebas Unitarias (_tests_). Para hacerlo, puedes guiarte
-de los proyectos anteriores y/o organizar los archivos siguiendo una estructura
-de [Modelo-Vista-Controlador](https://developer.mozilla.org/es/docs/Glossary/MVC).
+* ¿Quiénes son los principales usuarios de producto?
 
-En este proyecto vamos a usar una herramienta llamada
-[Vite](https://es.vitejs.dev/) para empaquetar nuestros módulos y arrancar
-el servidor de desarrollo, el cual provee nuestros archivos utilizando
-la estrategia `Hot Module Replacement`
-[(HMR)](https://es.vitejs.dev/guide/features.html#hot-module-replacement),
-esto significa que cuando hagas cambios en los archivos que estén siendo
-servidos, el navegador automáticamente se actualizará sin tener que refrescar
-y volver a cargar todo el sitio. Debes tener especial cuidado de no tener
-ninguna _dependencia circular_ en tu código ya que
-[eso puede ocasionar problemas con HMR](https://es.vitejs.dev/guide/troubleshooting.html#ocurre-un-refresco-completo-en-lugar-de-hmr).
-(`eslint-plugin-import` tiene una regla
-[import/no-cycle](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md)
-que va a avisar si las tiene.)
+Personas de todas las edades que puedan acceder a esta red social de ayuda para los amantes de los animales.
 
-### 5.2 Definición del producto
+* ¿Qué problema resuelve el producto / para qué le servirá a estos usuarios?
 
-En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
-usuarios y cómo llegaste a la definición final de tu producto. Es importante
-que detalles:
+Dentro de las características más importantes están:
 
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
+Ayudar a las personas a encontrar a sus mascotas perdidas.
 
-### 5.3 Historias de usuario
+Ofrecer servicios relevantes a la tenencia responsable de mascotas.
 
-Una vez que entiendas las necesidades de tus usuarixs, escribe las Historias de
-Usuario que representen todo lo que necesitan hacer/ver en la Red Social. Cada
-una de tus Historias de Usuario debe tener:
+### 5.2 Historias de usuario
 
-* **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
-  necesidades del usuario.
+**HU-10 Crear publicación en el Feed.**
 
-* **Definición de terminado:** todos los aspectos técnicos que deben cumplirse
-  para que, como equipo, sepan que esa historia está terminada y lista
-  para publicarse. **Todas** tus Historias de Usuario (salvo excepciones), deben
-  incluir estos aspectos en su Definición de Terminado (más todo lo que
-  necesiten agregar):
+* **Criterios de Aceptación:** 
 
-  - Debe ser una SPA.
-  - Debe ser _responsive_.
-  - Deben haber recibido _code review_ de al menos una compañera de otro equipo.
-  - Hicieron los _test_ unitarios
-  - Testearon manualmente buscando errores e imperfecciones simples.
-  - Hicieron _pruebas_ de usabilidad e incorporaron el _feedback_ de los
-    usuarios como mejoras.
-  - Desplegaron su aplicación y etiquetaron la versión (git tag).
+El usuario podrá crear una nueva publicación en tiempo real y observarla en el feed.
 
-### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
+Al publicar, se debe validar que exista contenido en la casilla de texto.
 
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseña la Interfaz de Usuario (UI por sus siglas en inglés) que
-siga este flujo.
+**HU-11 Mostrar todas las publicaciones en el Feed por fecha de creación.**
 
-### 5.5 Responsive
+* **Criterios de Aceptación:** 
 
-Debe verse bien en dispositivos de pantallas grandes
-(computadoras/es, laptops, etc.) y pequeñas (_tablets_, celulares, etc.). Te
-sugerimos seguir la técnica de _`mobile first`_ (más detalles sobre esta técnica
-al final).
+El usuario podrá ver todas las publicaciones creadas en el feed.
 
-### 5.6 Consideraciones del comportamiento de la interfaz de usuario (UI)
+Las publicaciones se mostrarán en el feed basándose en su fecha de creación.
 
-Estas consideraciones te ayudarán a escribir las Definiciones de Terminado de
-tus H.U.:
+**HU-12 Eliminar publicación.**
+
+* **Criterios de Aceptación:** 
+
+Se debe poder eliminar un post específico.
+
+Al dar click para eliminar un post, se mostrará un modal que pida la confirmación para eliminar dicho post.
+
+Dentro del modal, al dar click en aceptar, se eliminará dicho post y dejará de aparecer en el feed.
+
+Dentro del modal, al dar click en cancelar, se revertirá dicha acción.
+
+Únicamente el usuario que crea el post es capaz de eliminarlo.
+
+
+**HU-13 Editar publicación.**
+
+* **Criterios de Aceptación:** 
+
+Al dar click para editar un post, se mostrará el post seleccionado, donde se debe cambiar el texto por un input que permita editar el texto y luego guardar los cambios.
+
+Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la información editada sobre el feed actualizado.
+
+Al dar click en Cancelar, se revertirá la acción y el post se mostrará intacto.
+
+Únicamente el usuario que crea el post es capaz de editarlo.
+
+**HU-14 Dar like o dislike a una publación.**
+
+Se registrará un like por usuario en cada publicación.
+
+Se registrará la eliminación o colocación del like en el contador de likes del feed.
+
+**HU-15 Cerrar sesión del Usuario.**
+
+* **Criterios de Aceptación:** 
+
+Al dar click en el ícono de Logout, debería cerrarse la sesión del usuario y no mostrar más el feed.
+
+Al cerrar sesión, se debería mostrar la página de Login.
+
+**HU-16 Mostrar la fecha de publicación de cada post.**
+
+* **Criterios de Aceptación:** 
+
+Se debe mostrar la fecha de creación de cada publicación en el feed.
+
+
+### 5.3 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+
+Prototipo de alta fidelidad para Inicio de sesión del Usuario.
+
+![Inicio de sesión](./src/img/log-in.PNG)
+
+Prototipo de alta fidelidad para Registro del Usuario.
+
+![Inicio de sesión](./src/img/register.PNG)
+
+Prototipo de alta fidelidad para componente Feed del Usuario.
+
+![Inicio de sesión](./src/img/feed.PNG)
 
 #### Creación de cuenta de usuario e inicio de sesión
 
@@ -454,7 +465,7 @@ tus H.U.:
     información editada.
   - Al recargar la página debo de poder ver los textos editados.
 
-### 5.7 Consideraciones técnicas Front-end
+### 5.4 Consideraciones técnicas Front-end
 
 * Separar la manipulación del DOM de la lógica (Separación de responsabilidades).
 * Contar con múltiples vistas. Para esto, tu aplicación debe ser una
@@ -472,39 +483,9 @@ tus H.U.:
 * Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
   _lines_, y _branches_.
 
-### 5.8 Consideraciones técnicas UX
-
-* Hacer al menos 2 entrevistas con usuarios.
-* Hacer un  prototipo de baja fidelidad.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de _testing de usabilidad_ con el producto en HTML.
-
-## 6. Hacker edition
-
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
-
-* Permite crear posts con imágenes.
-* Permite buscar usuarios, agregar y eliminar "amigos".
-* Permite definir la privacidad de los _posts_ (público o solamente para amigos).
-* Permite ver su muro de cualquier usuario "no-amigo" (solamente los
-  posts _públicos_).
-* Permite comentar o responder una publicación.
-* Permite editar perfil.
-
-## 7. Entrega
-
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages u otro servicio de hosting
-(Firebase, Netlify, Vercel, etc) que puedas haber encontrado en el camino.
-Revisa la [documentación de Vite](https://vitejs.dev/guide/static-deploy.html)
-para guiarte con eso.
-
 ***
 
-## 8. Pistas, tips y Lecturas complementarias
+## 6. Pistas, tips y Lecturas complementarias
 
 Súmate al canal de Slack
 [#project-social-network](https://claseslaboratoria.slack.com/archives/C03SE63GFJQ)

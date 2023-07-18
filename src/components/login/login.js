@@ -39,7 +39,7 @@ const login = {
             <p class="text-title text-color-white">Bienvenidos a:</p>
             <img src="./../../img/logo.png" alt="">
             <p class="text-color-white">Somos un espacio en donde podras consultar o publicar información acerca de
-                nuestros amigos de 4 patitas
+                nuestros amigos de 4 patitas.
             </p>
         </div>
     </div>
