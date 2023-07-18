@@ -11,7 +11,7 @@ const register = {
             <img src="../../img/logo.png" class="marca">
             <p class="text-color-white">Somos un espacio en donde podrás consultar o publicar información acerca de
                 nuestros amigos de 4
-                patitas
+                patitas.
             </p>
         </div>
   
