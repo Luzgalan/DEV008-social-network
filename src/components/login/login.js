@@ -54,7 +54,6 @@ const login = {
     });
     /* ----------------------------- Inniciar sesion con google---------------------------- */
     document.getElementById('btnLoginGoogle').addEventListener('click', async () => {
-      document.getElementById('btnLoginGoogle').disabled = true;
       // Inicio de sesion con google
       loginWithGoogle()
         .then(() => {

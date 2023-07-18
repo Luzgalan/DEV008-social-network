@@ -1,15 +1,14 @@
 import { routes } from './routes.js';
 
 // Funcion para navegar entre componentes
-export const navigation = async (path) => {
+export const navigation = (path) => {
   const root = document.getElementById('app');
   // Buscamos que  componente corresponde a la ruta en el objeto routes
   const component = routes[path];
   // Cargamos el HTML
-
   root.innerHTML = component.loadHTML();
   // Cargamos los eventos
-  await component.loadEvents();
+  component.loadEvents();
 };
 
 // Evento al cargar la pagina
@@ -18,9 +17,8 @@ window.addEventListener('load', () => {
   const token = localStorage.getItem('accessToken');
 
   if (path === '/' || path === '/register') {
+    // Para ir al login o register no debe haber token
     if (token !== null) {
-      // crear una funcion para validar el token desde auth
-      // firebase(ya existe un metodo para validar el token)
       path = '/feed';
       window.location.pathname = path;
     }

@@ -50,8 +50,7 @@ const feed = {
       </section>
 </main>`,
 
-  // Se cargan todos los eventos del DOM y funciones exportadas de feed.controller.js
-  loadEvents: async () => {
+  loadEvents: () => {
     // Vamos por los datos del usuario cuando carga el feed
     getDataUser().then((usuario) => {
       /* Mostrar la imagen y nombre */
@@ -196,7 +195,7 @@ const feed = {
         // establecer la selección de texto dentro de un elemento
         textModificado.setSelectionRange(textModificado.value.length, textModificado.value.length);
         document.getElementById(`ed${editId}`).style.display = 'none';
-        document.getElementById(`li${editId}`).style.display = 'none';
+        //  k document.getElementById(`li${editId}`).style.display = 'none';
         document.getElementById(`de${editId}`).style.display = 'none';
         document.getElementById(`sa${editId}`).style.display = 'flex';
         document.getElementById(`ca${editId}`).style.display = 'flex';
