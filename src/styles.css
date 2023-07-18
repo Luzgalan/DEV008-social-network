@@ -12,6 +12,7 @@ body{
 /* --------------------- Definicion de tamaños de letra --------------------- */
 .text-small {
     font-size: small;
+    font-weight: bold;
 }
 .text-medium {
     font-size: medium;
@@ -28,9 +29,11 @@ body{
 }
 .text-color-white{
 color: #ffffff;
+font-size: 18px;
+margin: 10px 10px;
 }
 .text-color-orange{
-    color: #FFA500;
+    color: #CD3B32;
 }
 
 .manita{
@@ -51,36 +54,39 @@ color: #ffffff;
     align-items: center;
 }
 .l-container{
+    width: 800px;
     height: 100%;
+    min-height: 550px;
     display: flex;
     padding: 80px;
     
 }
 
 .l-container-login{
-max-width: 400px;
-min-width: 350px;
+width: 500px;
 display: flex;
 flex-direction: column;
 background-color: #fff;
 text-align: center;
-padding-top: 2em;
-box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+padding-top: 6em;
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 20px 0px 0px 20px;
 gap: 0.5em;
 }
+
 .l-container-form{
     display: flex;
     flex-direction: column;
     margin: 0em 3em 3em 3em;
 }
+
 .l-container-informacion{
  max-width: 400px;
-padding: 1em;
+padding: 60px 10px;
 text-align: center;
 /* background: rgba(243, 237, 206, 0.33); */
 background: #FFA500;
-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 0px 20px 20px 0px;
 }
 img{
@@ -112,6 +118,9 @@ img{
 
 }
 
+.fa-user:before {
+    background-color: #fafafa;
+}
 
 .l-titulo-info{
     color: #fff;
@@ -123,29 +132,39 @@ width: 180px;
 height: 50px;
 left: 115px;
 top: 579px;
-
+margin-bottom: 30px;
 font-size: medium;
-border: #FFA500 solid 1px;
-    background-color: #FFFFFF;
-    color: #FFA500;
+border:  #CD3B32 solid 1px;
+    background-color:  #CD3B32;
+    color: #FFFFFF;
+  
 
 }
 
 .l-button-login:hover {
-    background-color: #FFA500;
+    background-color: #9e2721;
 
     border: none;
  color: #FFFFFF;
     cursor: pointer;
 }
 
+p#messageError {
+    min-height: 15px;
+}
+
 @media only screen and (max-width: 800px) {
     .l-container-informacion {
       display: none;
     }
+
+    
     .l-container-login{
+        width: 350px;
+        padding-top: 3em;
         border-radius: 20px 20px 20px 20px;
     }
+
     .imgResponsive{
         display:block;
         margin-left: auto;
@@ -166,7 +185,7 @@ border: #FFA500 solid 1px;
 /* -------------------------------------------------------------------------- */
 
 
-
+/* se modificó header */
 
 @media only screen and (min-width: 20px) {
 
@@ -876,7 +895,7 @@ section{
 background-color: #fff;
 text-align: center;
 padding: 3em;
-box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 0px 20px 20px 0px;
 }
 
@@ -886,7 +905,7 @@ padding: 1em;
 text-align: center;
 /* background: rgba(243, 237, 206, 0.33); */
 background: #FFA500;
-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 20px 0px 0px 20px;
 }
 .marca{
@@ -922,8 +941,8 @@ width: 180px;
 height: 50px;
 font-size: medium;
 border: #CD3B32 solid 1px;
-background-color: #FFFFFF;
-color: #CD3B32;
+background-color: #CD3B32;
+color: #ffffff;
 margin-top: 30px;
 margin-left: 20%;
 margin-bottom: 30px;
@@ -931,7 +950,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #Crearcuenta:hover {
-    background-color: #CD3B32;
+    background-color: #9e2721;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
