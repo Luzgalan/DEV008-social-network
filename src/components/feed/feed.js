@@ -101,6 +101,8 @@ const feed = {
       const likeEditDeleteDiv = document.createElement('section');
       likeEditDeleteDiv.id = 'likeEditDelete';
 
+      const contenedorLikes = document.createElement('section');
+
       const spanLike = document.createElement('span');
       spanLike.className = 'material-symbols-like';
       spanLike.textContent = 'favorite';
@@ -111,7 +113,9 @@ const feed = {
       spanCount.className = 'material-symbols-count';
       spanCount.id = `count${data.id}`;
       spanCount.textContent = data.publicacion.likes.length;
-      console.log(spanCount.textContent);
+
+      contenedorLikes.appendChild(spanLike);
+      contenedorLikes.appendChild(spanCount);
 
       const spanEdit = document.createElement('span');
       spanEdit.className = 'material-symbols-edit';
@@ -140,8 +144,9 @@ const feed = {
       spanCancel.value = data.id;
       spanCancel.style.display = 'none';
 
-      likeEditDeleteDiv.appendChild(spanLike);
-      likeEditDeleteDiv.appendChild(spanCount);
+      // likeEditDeleteDiv.appendChild(spanLike);
+      // likeEditDeleteDiv.appendChild(spanCount);
+      likeEditDeleteDiv.appendChild(contenedorLikes);
       /* - Verficamos si el autor de la publicacion es el mismo del Local Storage - */
       if (data.publicacion.author === localStorage.getItem('username')) {
         likeEditDeleteDiv.appendChild(spanEdit);
