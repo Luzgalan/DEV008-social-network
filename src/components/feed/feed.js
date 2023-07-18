@@ -10,7 +10,7 @@ const feed = {
   loadHTML: () => `<main id="pageAllContent">
   <header id="feedHeader">
       <div id="feedLogoContent">
-          <img id="feedLogo" src="imgfeed/logo-eslogan.png" alt="Logotype">
+          <img id="feedLogo" src="imgfeed/logo-corto.png" alt="Logotype">
       </div>
       <span class="material-symbols-outlined" id="logoutfeed">move_item</span>
   </header>
@@ -54,7 +54,7 @@ const feed = {
   loadEvents: async () => {
     // Vamos por los datos del usuario cuando carga el feed
     getDataUser().then((usuario) => {
-      /* console.log('Usuario logueado', usuario); */
+      /* Mostrar la imagen y nombre */
       localStorage.setItem('username', usuario.name);
       document.getElementById('feedNameProfile').textContent = usuario.name;
       document.getElementById('feedProfileImage').src = usuario.photoUrl;
@@ -110,6 +110,7 @@ const feed = {
       spanLike.value = data;
       // Contador de Likes
       const spanCount = document.createElement('span');
+      spanCount.className = 'material-symbols-count';
       spanCount.id = `count${data.id}`;
       spanCount.textContent = data.publicacion.likes.length;
       // Editar post
