@@ -50,7 +50,7 @@ const feed = {
       </section>
 </main>`,
 
-  loadEvents: async () => {
+  loadEvents: () => {
     // Vamos por los datos del usuario cuando carga el feed
     getDataUser().then((usuario) => {
       /* Mostrar la imagen y nombre */

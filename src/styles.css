@@ -59,6 +59,7 @@ color: #ffffff;
 
 .l-container-login{
 max-width: 400px;
+min-width: 350px;
 display: flex;
 flex-direction: column;
 background-color: #fff;
