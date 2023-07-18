@@ -5,6 +5,7 @@ import {
   updatePostLike,
 } from './feed.controller';
 
+// Objeto feed, se cargan los elementos del HTML.
 const feed = {
   loadHTML: () => `<main id="pageAllContent">
   <header id="feedHeader">
@@ -23,7 +24,6 @@ const feed = {
               <div id="feedProfileImageContent"><img id="feedProfileImage" src="imgfeed/perfilFoto.jpg"
                       alt="Foto de perfil"></div>
               <h2 id="feedNameProfile">Liliana Vega</h2>
-            
               <h3 id="feedWelcome">¡Bienvenid@!</h3>
               <p id="feedIntroduction">En <span class="feedNameLogo">Pet Lovers...</span>
                   encuentra a tu
@@ -50,6 +50,7 @@ const feed = {
       </section>
 </main>`,
 
+  // Se cargan todos los eventos del DOM y funciones exportadas de feed.controller.js
   loadEvents: async () => {
     // Vamos por los datos del usuario cuando carga el feed
     getDataUser().then((usuario) => {
@@ -58,86 +59,87 @@ const feed = {
       document.getElementById('feedNameProfile').textContent = usuario.name;
       document.getElementById('feedProfileImage').src = usuario.photoUrl;
     });
-
+    // Al terminar de escribirse el nuevo post, se limpia el input de entrada.
     const clearInput = () => {
       document.getElementById('feedNewPost').value = '';
     };
-
+    // Se cierra la sesión del usuario
     const logout = document.getElementById('logoutfeed');
     logout.addEventListener('click', () => {
       try {
         logoutSesion(); // Caducar token
         // Eliminar token
         localStorage.clear();
-        // Cambiar por : localStorage.clear() Remueve todos los elementos en localStorage.
-        //* / Redireccionamiento del usuario al login
+        // Remueve todos los elementos en localStorage.
+        // Redireccionamiento del usuario al login
         window.history.pushState({}, '', `${window.location.origin}/`);
         window.dispatchEvent(new PopStateEvent('popstate'));
       } catch (error) {
         alert.error('Error during logout:', error);
       }
     });
-
+    // Función que nos ayuda a crear cada nuevo post, con sus propios elementos.
     const renderNewElement = (data) => {
       const feedContainer = document.getElementById('feedScrollContent');
       const newDiv = document.createElement('div');
       newDiv.id = 'newPostFeed';
-      const textAreaPub = document.createElement('textarea');
-      textAreaPub.textContent = data.publicacion.publicacion;
-      /*  console.log(textAreaPub.textContent); */
-      textAreaPub.id = `ta${data.id}`;
+      const textPostArea = document.createElement('textarea');
+      textPostArea.textContent = data.publicacion.publicacion;
+      /*  console.log(textPostArea.textContent); */
+      textPostArea.id = `ta${data.id}`;
       // Está deshabilitado hasta que el usuario le de click al ícono editar.
-      textAreaPub.disabled = true;
+      textPostArea.disabled = true;
 
+      // Traemos la fecha de creación y la mostramos en cada post.
       const datePost = document.createElement('p');
       const setDate = new Date(data.publicacion.createdAt);
       /* console.log(setDate); */
       const formatoDate = `${setDate.getDate()}/${setDate.getMonth() + 1}/${setDate.getFullYear()}`;
       datePost.textContent = formatoDate;
-
+      // Traemos el nombre del ususario creador de cada post y lo mostramos en cada post.
       const fotoNombrePost = document.createElement('span');
       fotoNombrePost.textContent = data.publicacion.author ? data.publicacion.author : 'Usuario Pet Lover';
-
+      // Section contenedora para mostrar los iconos
       const likeEditDeleteDiv = document.createElement('section');
       likeEditDeleteDiv.id = 'likeEditDelete';
-
+      // Likes
       const spanLike = document.createElement('span');
       spanLike.className = 'material-symbols-like';
       spanLike.textContent = 'favorite';
       spanLike.id = `li${data.id}`;
       spanLike.value = data;
-
+      // Contador de Likes
       const spanCount = document.createElement('span');
       spanCount.id = `count${data.id}`;
       spanCount.textContent = data.publicacion.likes.length;
-
+      // Editar post
       const spanEdit = document.createElement('span');
       spanEdit.className = 'material-symbols-edit';
       spanEdit.textContent = 'edit_square';
       spanEdit.id = `ed${data.id}`;
       spanEdit.value = data.id;
-
+      // Eliminar post
       const spanDelete = document.createElement('span');
       spanDelete.className = 'material-symbols-delete';
       spanDelete.setAttribute('data-id', data.id);
       spanDelete.textContent = 'delete';
       spanDelete.id = `de${data.id}`;
       spanDelete.value = data.id;
-
+      // Guardar cambios de Editar
       const spanSave = document.createElement('span');
       spanSave.className = 'material-symbols-save';
       spanSave.textContent = 'save';
       spanSave.id = `sa${data.id}`;
       spanSave.value = data.id;
       spanSave.style.display = 'none';
-
+      // Cancelar cambios de post
       const spanCancel = document.createElement('span');
       spanCancel.className = 'material-symbols-cancel';
       spanCancel.textContent = 'cancel';
       spanCancel.id = `ca${data.id}`;
       spanCancel.value = data.id;
       spanCancel.style.display = 'none';
-
+      // Mostramos los nodos hijos de cada nodo padre
       likeEditDeleteDiv.appendChild(spanLike);
       likeEditDeleteDiv.appendChild(spanCount);
       /* - Verficamos si el autor de la publicacion es el mismo del Local Storage - */
@@ -145,62 +147,34 @@ const feed = {
         likeEditDeleteDiv.appendChild(spanEdit);
         likeEditDeleteDiv.appendChild(spanDelete);
       }
-
+      // Mostramos los nodos hijos de cada nodo padre
       likeEditDeleteDiv.appendChild(spanSave);
       likeEditDeleteDiv.appendChild(spanCancel);
 
       newDiv.appendChild(fotoNombrePost);
-      newDiv.appendChild(textAreaPub);
+      newDiv.appendChild(textPostArea);
       newDiv.appendChild(likeEditDeleteDiv);
 
       fotoNombrePost.appendChild(datePost);
-
+      // Manipulamos la forma en que se muestran
       feedContainer.insertBefore(newDiv, feedContainer.firstChild);
 
+      // Traemos la función que nos permite mostrar la longitud del arreglo = likes
       const spanWithLikes = document.getElementById(`li${data.id}`);
-
       spanWithLikes.addEventListener('click', (event) => {
-        /*  const spanCount = document.getElementById(`count${saveId}`); */
         const likesActuales = event.target.value.publicacion.likes;
         /*  console.log(likesActuales); */
         const arrayEmail = localStorage.email;
         const hasLike = likesActuales.includes(arrayEmail);
-
+        // Utilizamos métodos de remove y union en Firebase. Importamos updatePostLike.
         if (hasLike) {
           updatePostLike(event.target.value.id, 'remove');
         } else {
           updatePostLike(event.target.value.id, 'union');
         }
-
-        // hacer console.log de el id del documento que quieres editar
-        // hacer console.log de el correo de la persona
-        // saber si hay un like previo arreglo.include author o correo.
-        // puedes hacer un if para ejecutar arrayUnion o arrayRemove
-        /*  const saveId = event.target.value;
-          console.log(saveId);
-          const spanCounts = document.getElementById(`count${saveId}`);
-          console.log(spanCounts);
-          let like = 0;
-          console.log(like);
-          const currentCount = parseInt(spanCounts.textContent, 10);
-          console.log(currentCount);
-
-          if (currentCount === 1) {
-            like -= 1;
-            spanCount.textContent = (currentCount - 1).toString();
-          } else {
-            like += 1;
-            spanCount.textContent = (currentCount + 1).toString();
-          }
-
-          try {
-            await updatePostLike(saveId, { newLike: like });
-            console.log('Se actualizó likes');
-          } catch (error) {
-            console.error('Error en likes', error);
-          } */
       });
-
+      // Funciones que nos permiten modificar el contenido del post, guardar y cancelar, mostrar y
+      // no mostrar elementos de iconos.
       spanEdit.addEventListener('click', (e) => {
         const editId = e.target.value;
         const textModificado = document.getElementById(`ta${editId}`);
@@ -219,7 +193,7 @@ const feed = {
 
       spanCancel.addEventListener('click', (e) => {
         const editId = e.target.value;
-        textAreaPub.disabled = true;
+        textPostArea.disabled = true;
         document.getElementById(`ed${editId}`).style.display = 'flex';
         document.getElementById(`li${editId}`).style.display = 'flex';
         document.getElementById(`de${editId}`).style.display = 'flex';
@@ -238,7 +212,7 @@ const feed = {
         // Cuando se confirma el guardado simplemente borramos
         updatePost(saveId, publicacionMod);
       });
-
+      // Funciones para Eliminar post.
       spanDelete.addEventListener('click', () => {
         // Crear el modal
         const modal = document.createElement('div');
@@ -262,33 +236,33 @@ const feed = {
           traerModal.parentNode.removeChild(traerModal);
           /*  console.log(traerModal); */
         });
-
+        // Eliminar post al dar click en aceptarEliminarBtn
         const aceptarEliminarBtn = document.getElementById('aceptarEliminar');
         aceptarEliminarBtn.setAttribute('data-id', data.id);
         aceptarEliminarBtn.addEventListener('click', (event) => {
           const traerModal = document.getElementById('modalEliminar');
           traerModal.parentNode.removeChild(traerModal);
           const docId = event.currentTarget.getAttribute('data-id');
-          /*  console.log(docId); */
+          // Se manda llamar función de eliminar post de Firebase
           deletePost(docId);
         });
       });
     };
     // Debo de imprimir en consola el id del doc que debo correr al hacer click
-
     document.getElementById('publish').addEventListener('click', async () => {
       const obtenerRelleno = document.getElementById('feedNewPost').value;
-      /*   console.log(obtenerRelleno); */
+      // El valor del input debe ser distinto a vacío
       if (obtenerRelleno.length !== 0) {
         await newPost({ publicacion: obtenerRelleno });
         clearInput(); // Limpia el contenido del campo de entrada
       }
     });
-
+    // Click en botón cancel del input de Nuevo post, se manda a llamar función clearInput.
     document.getElementById('cancel').addEventListener('click', () => {
       clearInput();
     });
-
+    // Función que nos permite mandar a llamar actualizarFeed y ejecuta función de crear nuevo
+    // post con todos sus elementos hijos.
     const actualizarFeed = (data) => {
       const feedContainer = document.getElementById('feedScrollContent');
       feedContainer.innerHTML = '';
@@ -296,7 +270,6 @@ const feed = {
         renderNewElement({ publicacion: item, id: item.id });
       });
     };
-
     subscribeToDataChanges(actualizarFeed);
   },
 };

@@ -1,4 +1,6 @@
-# Creando una Red Social
+# Creando una Red Social - PET LOVERS
+
+Colaboradoras: Katherine Cevallos, Luz María Vázquez, Ana Karen Morales.
 
 ## Índice
 
