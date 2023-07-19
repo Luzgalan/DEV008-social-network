@@ -25,6 +25,7 @@ body{
         font-size: 25px;
         font-weight: 500;
         margin: 5px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
 }
 .text-color-white{
@@ -161,6 +162,7 @@ p#messageError {
     
     .l-container-login{
         width: 350px;
+        height: 600px;
         padding-top: 3em;
         border-radius: 20px 20px 20px 20px;
     }
@@ -277,12 +279,10 @@ span.material-symbols-outlined {
     flex-direction: row;
     align-items: flex-start;
     background-color:  rgb(250, 235, 215);
-    
-    
 }
 
 #feedAside {
-    width: 25%;
+    width: 30%;
     height: auto;
     background-color:  rgb(250, 235, 215);
     margin: 0 0 10px 0;
@@ -308,16 +308,16 @@ span.material-symbols-menu {
 }
 
 #feedProfile {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #feedProfileImageContent {
-    width: 80%;
+    width: 90%;
     height: auto;
     border-radius: 50%;
     overflow: hidden;
@@ -335,7 +335,7 @@ span.material-symbols-menu {
 
 #feedNameProfile {
     margin: 10px 10px;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
 }
 
@@ -354,18 +354,18 @@ span.material-symbols-menu {
 }
 
 section#feedScroll {
-    width: 95%;
+    width: 97%;
     min-height: 2000px;
     margin: 0 0 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-   /*  border-radius: 5px 0 5px 5px; */
     background-color:  rgba(250, 235, 215, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2), 5px 0 5px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+    /* box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2), 5px 0 5px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2); */
     
 }
 
@@ -379,7 +379,7 @@ section#newPost {
     height: auto;
     background-color:#f3a1257e;
     border-radius: 8px;
-    margin: 10px 0 10px 0;
+    margin: 15px 0 10px 0;
     /* padding: 10px 10px; */
     display: flex;
     flex-direction: column;
@@ -455,20 +455,29 @@ input#feedNewPost {
     width: 95%;
     height: auto;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     margin-bottom: 10px;
+    /* justify-content: space-around; */
 }
 
 #publish,
 #cancel {
-    margin:5px 5px;
+    /* margin:5px 5px; */
+    width: 45%;
     border-radius: 7px;
     background-color: #CD3B32;
     border: none;
-    padding: 5px 5px;
-    font-size: 14px;
+    padding: 10px 10px;
+    font-size: 16px;
     color: aliceblue;
     cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#publish:hover,
+#cancel:hover {
+    background-color: #9e2721;
 }
 
 #feedNewPost::placeholder {
@@ -484,12 +493,12 @@ div#randomImages {
     flex-direction: row;
     justify-content: space-around;
     border-bottom: solid 5px #010101;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 #adoptionLetter {
     width: 40%;
-    font-family: 'Indie Flower', cursive;
+   /*  font-family: 'Indie Flower', cursive; */
     font-weight: bolder;
     font-size: 25px;
     color: #CD3B32;
@@ -535,9 +544,10 @@ section#likeEditDelete {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: flex-center;
-    padding: 10px 10px;
+    justify-content:end;
 }
+
+
 
 span.material-symbols-like,
 span.material-symbols-edit,
@@ -546,24 +556,40 @@ span.material-symbols-save,
 span.material-symbols-cancel {
     color: rgb(0, 0, 0);
     font-family: 'Material Symbols Outlined', sans-serif;
-    font-size: 30px;
-    width: 100%;
+    border-radius: 8px;
+    background-color: #fafafa1f;
+    font-size: 20px !important;
+    max-width: 65px !important;
     height: 100%;
+    padding: 5px 5px !important;
+    margin: 0 5px;
     display: flex;
     justify-content: center;
     cursor: pointer;
 }
 
-span.material-symbols-like,
-span.material-symbols-count, 
-span.material-symbols-edit, 
-span.material-symbols-delete {
-    font-size: 40px;
-    display: flex; 
-    justify-content: center;
-  }
 
 
+
+span.material-symbols-count {
+    padding: 10px 2px !important;
+}
+
+span.material-symbols-like.liked {
+    margin: none !important;
+    background-color: rgb(172, 11, 11) !important;
+}
+
+
+
+
+span.material-symbols-like:hover,
+span.material-symbols-edit:hover,
+span.material-symbols-delete:hover,
+span.material-symbols-save:hover,
+span.material-symbols-cancel:hover {
+    background-color: #f39f25;
+}
 
 #feedScrollContent p {
     position: absolute;
@@ -625,7 +651,7 @@ div#modalEliminar {
     }
 
     span.material-symbols-outlined {
-        font-size: 18px;
+        font-size: 30px;
     }
 
     #feedProfileImageContent {
@@ -634,18 +660,21 @@ div#modalEliminar {
 }
 
 @media only screen and (max-width: 767px){
+    #feedProfile {
+        min-height: 60px;
+    }
     span.material-symbols-menu {
         padding: 1px; 
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #feedProfileImageContent {
-        width: 60%;
+        width: 90%;
     }
 
     #feedNameProfile {
         margin: 10px 10px;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     #feedWelcome {
@@ -735,7 +764,7 @@ span.material-symbols-delete {
 }
 
 span.material-symbols-outlined {
-    font-size: 20px;
+    font-size: 25px;
 }
 }
 
@@ -857,12 +886,12 @@ span.material-symbols-outlined {
     span.material-symbols-like,
 span.material-symbols-edit,
 span.material-symbols-delete {
-    font-size: 16px;
+    font-size: 30px;
   
 }
 
 span.material-symbols-outlined {
-    font-size: 20px;
+    font-size: 25px;
 }
 }
 
@@ -944,7 +973,7 @@ border: #CD3B32 solid 1px;
 background-color: #CD3B32;
 color: #ffffff;
 margin-top: 30px;
-margin-left: 20%;
+margin-left: 10%;
 margin-bottom: 30px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -997,6 +1026,7 @@ h1 {
       display: none;
     }
     .formulario-cuenta {
+       
         border-radius: 20px 20px 20px 20px;
     }
     .imgResponsive{
