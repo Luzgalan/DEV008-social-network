@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@300&display=swap');@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat:wght@500&display=swap');
+
 body{
     height: 100%;
     margin: 0;
@@ -35,18 +35,12 @@ margin: 10px 10px;
 .text-color-orange{
     color: #CD3B32;
 }
-
 .manita{
     cursor: pointer;
 }
-
-
-
-
 /* -------------------------------------------------------------------------- */
 /*                                Clases Login                                */
 /* -------------------------------------------------------------------------- */
-
 .l-div{
     height: 100%;
     display: flex;
@@ -61,7 +55,6 @@ margin: 10px 10px;
     padding: 80px;
     
 }
-
 .l-container-login{
 width: 500px;
 display: flex;
@@ -73,13 +66,11 @@ box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 20px 0px 0px 20px;
 gap: 0.5em;
 }
-
 .l-container-form{
     display: flex;
     flex-direction: column;
     margin: 0em 3em 3em 3em;
 }
-
 .l-container-informacion{
  max-width: 400px;
 padding: 60px 10px;
@@ -100,14 +91,12 @@ img{
     display: inline-block;
     margin-bottom: 1em;
 }
-
 .l-input-with-icon i {
     position: absolute;
     right: 5px; /* Ajusta el valor según sea necesario */
     top: 50%;
     transform: translateY(-50%);
 }
-
 .l-input-with-icon input {
     /* padding-right: 30px; Ajusta el valor según sea necesario */
     border: none;
@@ -117,11 +106,9 @@ img{
     width: 100%; /* Establece el ancho al 100% del contenedor */
 
 }
-
 .fa-user:before {
     background-color: #fafafa;
 }
-
 .l-titulo-info{
     color: #fff;
 }
@@ -140,7 +127,6 @@ border:  #CD3B32 solid 1px;
   
 
 }
-
 .l-button-login:hover {
     background-color: #9e2721;
 
@@ -148,11 +134,9 @@ border:  #CD3B32 solid 1px;
  color: #FFFFFF;
     cursor: pointer;
 }
-
 p#messageError {
     min-height: 15px;
 }
-
 @media only screen and (max-width: 800px) {
     .l-container-informacion {
       display: none;
@@ -176,17 +160,10 @@ p#messageError {
     .text-title{
         padding-bottom: 0px !important;    }
   }
-
-
-
 /* -------------------------------------------------------------------------- */
 /*                                Clases feed                                */
-
 /* -------------------------------------------------------------------------- */
-
-
 /* se modificó header */
-
 @media only screen and (min-width: 20px) {
 
     body#bodyApp {
@@ -601,7 +578,6 @@ div#modalEliminar {
     color: aliceblue;
   }
 }
-
 @media only screen and (max-width: 281px){
     #feedLogoContent {
         width: 10%;
@@ -632,7 +608,6 @@ div#modalEliminar {
         width: 30%;
     }
 }
-
 @media only screen and (max-width: 767px){
     span.material-symbols-menu {
         padding: 1px; 
@@ -738,7 +713,6 @@ span.material-symbols-outlined {
     font-size: 20px;
 }
 }
-
 @media only screen and (max-width: 480px) {
     #feedAllContent {
         flex-direction: column;
@@ -865,17 +839,10 @@ span.material-symbols-outlined {
     font-size: 20px;
 }
 }
-
-
-
 /* -------------------------------------------------------------------------- */
-
 /* -------------------------------------------------------------------------- */
 /*                                  Register                                  */
 /* -------------------------------------------------------------------------- */
-
-
-
 section{
     display: flex;
     justify-content: center;
@@ -887,7 +854,6 @@ section{
     display: flex;
     padding: 80px;
 }
-
 .formulario-cuenta{
     max-width: 400px;
     display: flex;
@@ -898,7 +864,6 @@ padding: 3em;
 box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 0px 20px 20px 0px;
 }
-
 .logo-cuenta{
     max-width: 400px;
 padding: 1em;
@@ -911,7 +876,6 @@ border-radius: 20px 0px 0px 20px;
 .marca{
     max-width: 300px;
 }
-
 .ingresa {
     position: relative;
     display: inline-block;
@@ -922,8 +886,6 @@ border-radius: 20px 0px 0px 20px;
     font-size: medium;
     margin-top: 5%;
 }
-
-
 .ingresa input {
     padding-right: 30px; /* Ajusta el valor según sea necesario */
     border: none;
@@ -931,9 +893,6 @@ border-radius: 20px 0px 0px 20px;
     outline: none;
     font-size: medium;
 }
-
-
-
 #Crearcuenta {
 mix-blend-mode: normal;
 border-radius: 50px;
@@ -948,14 +907,12 @@ margin-left: 20%;
 margin-bottom: 30px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 #Crearcuenta:hover {
     background-color: #9e2721;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
 }
-
 #Google {
     height: 60px;
     width: 60px;
@@ -963,35 +920,28 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-top: 30px;
     margin-left: 40%;
 }
-
 #Google:hover {
     cursor: pointer;
     
 }
-
 .text-title{
     padding-bottom: 25px ;
 }
-
 #bienvenido {
     margin-top: 40px;
 }
-
 h1 {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
 #distintas-contrasenas {
     font-size: large;
     color: #000000;
     font-weight: 700;
    
 }
-
 .imgResponsive{
     display: none;
 }
-
 @media only screen and (max-width: 800px) {
     .logo-cuenta {
       display: none;
