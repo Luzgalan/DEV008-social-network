@@ -20,8 +20,8 @@
     "start": "npm run dev",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "gh-pages -d src",
     "testonly": "jest --verbose --coverage"
-
   },
   "devDependencies": {
     "@babel/preset-env": "^7.19.4",
@@ -48,6 +48,7 @@
   "dependencies": {
     "@firebase/database": "^0.14.4",
     "@firebase/firestore": "^3.12.2",
-    "firebase": "^9.22.2"
+    "firebase": "^9.22.2",
+    "gh-pages": "^5.0.0"
   }
 }

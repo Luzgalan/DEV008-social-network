@@ -105,6 +105,7 @@ const feed = {
       // Likes
 
       const contenedorLikes = document.createElement('section');
+      contenedorLikes.id = 'contenedorLikes';
 
       const spanLike = document.createElement('span');
       spanLike.className = 'material-symbols-like';
@@ -147,15 +148,15 @@ const feed = {
       spanCancel.value = data.id;
       spanCancel.style.display = 'none';
       // Mostramos los nodos hijos de cada nodo padre
-      /* likeEditDeleteDiv.appendChild(spanLike);
-      likeEditDeleteDiv.appendChild(spanCount); */
+      likeEditDeleteDiv.appendChild(spanLike);
+      likeEditDeleteDiv.appendChild(spanCount);
 
-      likeEditDeleteDiv.appendChild(contenedorLikes);
       /* - Verficamos si el autor de la publicacion es el mismo del Local Storage - */
       if (data.publicacion.author === localStorage.getItem('username')) {
         likeEditDeleteDiv.appendChild(spanEdit);
         likeEditDeleteDiv.appendChild(spanDelete);
       }
+      likeEditDeleteDiv.appendChild(contenedorLikes);
       // Mostramos los nodos hijos de cada nodo padre
       likeEditDeleteDiv.appendChild(spanSave);
       likeEditDeleteDiv.appendChild(spanCancel);
@@ -171,16 +172,20 @@ const feed = {
       // Traemos la función que nos permite mostrar la longitud del arreglo = likes
       const spanWithLikes = document.getElementById(`li${data.id}`);
       spanWithLikes.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar que la página se recargue
         const likesActuales = event.target.value.publicacion.likes;
-        /*  console.log(likesActuales); */
         const arrayEmail = localStorage.email;
         const hasLike = likesActuales.includes(arrayEmail);
+
         // Utilizamos métodos de remove y union en Firebase. Importamos updatePostLike.
         if (hasLike) {
           updatePostLike(event.target.value.id, 'remove');
         } else {
           updatePostLike(event.target.value.id, 'union');
         }
+
+        // Aplicar el toggle para agregar/quitar la clase .liked
+        spanWithLikes.classList.toggle('liked');
       });
       // Funciones que nos permiten modificar el contenido del post, guardar y cancelar, mostrar y
       // no mostrar elementos de iconos.
@@ -277,7 +282,11 @@ const feed = {
       const feedContainer = document.getElementById('feedScrollContent');
       feedContainer.innerHTML = '';
       data.forEach((item) => {
-        renderNewElement({ publicacion: item, id: item.id });
+        const postElement = renderNewElement({ publicacion: item, id: item.id });
+        // Verificar si el post tiene un "Me gusta" en el localStorage
+        if (localStorage.getItem(`like_${item.id}`) === 'true') {
+          postElement.querySelector('.material-symbols-like').classList.add('liked');
+        }
       });
     };
     subscribeToDataChanges(actualizarFeed);

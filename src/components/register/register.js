@@ -30,7 +30,7 @@ const register = {
             <p id="6-letters" style="display: none"> La contraseña debe contener al menos 6 caracteres </p> 
             <p id="7-letters" style="display: none"> Correo o contraseña inválidos </p> 
             
-            <p class="text-small">¿Ya tienes una cuenta registrada?
+            <p class="text-small">¿Ya tienes una cuenta?
                     <span class="text-color-orange manita" id="spnRegistro">Ingresa aquí</span>
                 </p>
               
