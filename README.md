@@ -353,6 +353,34 @@ Ofrecer servicios relevantes a la tenencia responsable de mascotas.
 
 ### 5.2 Historias de usuario
 
+**HU-07 Crear inicio de sesión de usuario a través de su cuenta de Google**
+
+* **Criterios de Aceptación:** 
+
+El usuario podrá dar clic en el icono de Google y con ello podrá acceder al sistema y ver la sección de publicaciones. Siempre y cuando tenga una cuenta disponible en Google podrá acceder al feed. 
+
+**HU-07 Enlace de crear cuenta desde login**
+
+* **Criterios de Aceptación:** 
+
+El usuario podra dar clic en CREAR CUENTA AQUI.
+
+Al dar click debera mostrarse la pantalla de crear cuenta.
+
+**HU-09 Registrarse con un nuevo correo electrónico**
+
+* **Criterios de Aceptación:** 
+
+El usuario podrá registrarse con su correo y contraseña dando clic en el botón crear cuenta, en caso de que el correo ya se encuentre registrado no podrá ingresar y le permitirá ir a la página de login.
+
+ Validar el campo de contraseña cuando no coinciden y mostrar un mensaje de “Las contraseñas no coinciden“.
+
+Validar el campo de contraseña  deberá tener al menos 6 caracteres sino mostrar mensaje “La contraseña debe tener al menos 6 caracteres“.
+
+Validar el campo de correo electronico no se puede repetir con un correo ya registrado sino mostrar mensaje “El correo ya está registrado”.
+
+Desaparecer los mensajes cuando ya hay ingresado los datos correctos. 
+
 **HU-10 Crear publicación en el Feed.**
 
 * **Criterios de Aceptación:** 
@@ -396,6 +424,19 @@ Al dar click en Cancelar, se revertirá la acción y el post se mostrará intact
 
 Únicamente el usuario que crea el post es capaz de editarlo.
 
+**HU-13.1 Botón cancelar para editar publicación**
+
+* **Criterios de Aceptación:** 
+
+El usuario final dara clic en el botón cancelar inmediatamente la publicación mantendrá su texto original sin modificaciones.
+
+**HU-13.2 Botón guardar para editar publicación**
+
+* **Criterios de Aceptación:** 
+
+Al dar click en el botón GUARDAR la publicación se actualizara y se guardara en firebase.
+
+
 **HU-14 Dar like o dislike a una publación.**
 
 Se registrará un like por usuario en cada publicación.
@@ -416,20 +457,39 @@ Al cerrar sesión, se debería mostrar la página de Login.
 
 Se debe mostrar la fecha de creación de cada publicación en el feed.
 
+**HU-17 Mostrar datos de usuario en el feed.**
+
+* **Criterios de Aceptación:** 
+
+Una vez que el usuario se encuentre registrado, el usuario podrá visualizar en el feed su foto de perfil y nombre. 
 
 ### 5.3 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-Prototipo de alta fidelidad para Inicio de sesión del Usuario.
+Prototipo de baja fidelidad para Inicio y registro de sesión del Usuario.
+
+![Inicio de sesión](./src/img/20230609_111228.jpg)
+
+Prototipo de baja fidelidad para componente Feed del Usuario incluido el registro e inicio de sesión.
+
+![Inicio de sesión](./src/img/image%20(1).png)
+
+
+### 5.4 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+
+
 
 ![Inicio de sesión](./src/img/log-in.PNG)
 
-Prototipo de alta fidelidad para Registro del Usuario.
+Prototipo de alta fidelidad para Inicio de sesión del Usuario.
 
 ![Inicio de sesión](./src/img/register.PNG)
 
-Prototipo de alta fidelidad para componente Feed del Usuario.
+Prototipo de alta fidelidad para Registro de sesión de Usuario.
 
 ![Inicio de sesión](./src/img/feed.PNG)
+
+Prototipo de alta fidelidad para componente Feed del Usuario.
+
 
 #### Creación de cuenta de usuario e inicio de sesión
 
