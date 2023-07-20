@@ -3,15 +3,16 @@
 body{
     height: 100%;
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: 'Arial';
     background-color: #fafafa;
 }
 .fondo-naranja {
     background-color: #F39F25;
 }
-/* --------------------- Definicion de tamaños de letrs --------------------- */
+/* --------------------- Definicion de tamaños de letra --------------------- */
 .text-small {
     font-size: small;
+    font-weight: bold;
 }
 .text-medium {
     font-size: medium;
@@ -24,13 +25,16 @@ body{
         font-size: 25px;
         font-weight: 500;
         margin: 5px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
 }
 .text-color-white{
 color: #ffffff;
+font-size: 18px;
+margin: 10px 10px;
 }
 .text-color-orange{
-    color: #FFA500;
+    color: #CD3B32;
 }
 
 .manita{
@@ -43,40 +47,47 @@ color: #ffffff;
 /* -------------------------------------------------------------------------- */
 /*                                Clases Login                                */
 /* -------------------------------------------------------------------------- */
+
 .l-div{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .l-container{
+    width: 800px;
     height: 100%;
+    min-height: 550px;
     display: flex;
     padding: 80px;
+    
 }
 
 .l-container-login{
-max-width: 400px;
+width: 500px;
 display: flex;
 flex-direction: column;
 background-color: #fff;
 text-align: center;
-padding-top: 2em;
-box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+padding-top: 6em;
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 20px 0px 0px 20px;
 gap: 0.5em;
 }
+
 .l-container-form{
     display: flex;
     flex-direction: column;
     margin: 0em 3em 3em 3em;
 }
+
 .l-container-informacion{
  max-width: 400px;
-padding: 1em;
+padding: 60px 10px;
 text-align: center;
 /* background: rgba(243, 237, 206, 0.33); */
 background: #FFA500;
-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 0px 20px 20px 0px;
 }
 img{
@@ -108,6 +119,9 @@ img{
 
 }
 
+.fa-user:before {
+    background-color: #fafafa;
+}
 
 .l-titulo-info{
     color: #fff;
@@ -119,29 +133,40 @@ width: 180px;
 height: 50px;
 left: 115px;
 top: 579px;
-
+margin-bottom: 30px;
 font-size: medium;
-border: #FFA500 solid 1px;
-    background-color: #FFFFFF;
-    color: #FFA500;
+border:  #CD3B32 solid 1px;
+    background-color:  #CD3B32;
+    color: #FFFFFF;
+  
 
 }
 
 .l-button-login:hover {
-    background-color: #FFA500;
+    background-color: #9e2721;
 
     border: none;
  color: #FFFFFF;
     cursor: pointer;
 }
 
+p#messageError {
+    min-height: 15px;
+}
+
 @media only screen and (max-width: 800px) {
     .l-container-informacion {
       display: none;
     }
+
+    
     .l-container-login{
+        width: 350px;
+        height: 600px;
+        padding-top: 3em;
         border-radius: 20px 20px 20px 20px;
     }
+
     .imgResponsive{
         display:block;
         margin-left: auto;
@@ -162,9 +187,16 @@ border: #FFA500 solid 1px;
 /* -------------------------------------------------------------------------- */
 
 
-
+/* se modificó header */
 
 @media only screen and (min-width: 20px) {
+
+    body#bodyApp {
+     /*    background-image: url(img/image-huella-naranja.png); */
+        background-color: rgba(250, 235, 215, 0.655);
+        
+    }
+
 #pageAllContent {
     width: 100%;
     max-width: 1000px;
@@ -174,14 +206,12 @@ border: #FFA500 solid 1px;
 
 #feedHeader {
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #f39f25;
     border-top: 3px solid #f39f25;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
     border-bottom: 5px solid #CD3B32;
 }
 
@@ -190,10 +220,9 @@ border: #FFA500 solid 1px;
 }
 
 img#feedLogo {
-    width: 80%;
-    height: 100%;
+    width: 100px;
+    height: 55px;
     background: cover;
-    padding: 0%;
     margin: 0%;
     display: flex;
     align-items: center;
@@ -229,35 +258,38 @@ input#inputSearch {
 
 span.material-symbols-search {
     color: aliceblue;
-    font-family: 'Material Symbols Outlined', sans-serif;
+    font-family: 'Arial';
     font-size: 20px;
 }
 
 span.material-symbols-outlined {
     padding: 5px;
     font-family: 'Material Symbols Outlined', sans-serif;
-    font-size: 25px;
+    font-size: 30px;
     display: flex;
     align-items: center;
-    filter: brightness(100%); 
+    filter: brightness(100%);
+    cursor: pointer; 
 }
 
 #feedAllContent {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    align-items: flex-start;
+    background-color:  rgb(250, 235, 215);
 }
 
 #feedAside {
-    width: 25%;
-    height: 2000px;
-    background-color: antiquewhite;
-    margin: 0 10px 10px 0;
-    border-radius: 0 5px 5px 5px;
+    width: 30%;
+    height: auto;
+    background-color:  rgb(250, 235, 215);
+    margin: 0 0 10px 0;
     display: flex;
     flex-direction: column;
-}
+    align-items: start;
+    }
 
 #feedMenu {
     width: 95%;
@@ -277,15 +309,15 @@ span.material-symbols-menu {
 
 #feedProfile {
     width: 100%;
-    height: auto;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #feedProfileImageContent {
-    width: 80%;
+    width: 90%;
     height: auto;
     border-radius: 50%;
     overflow: hidden;
@@ -300,10 +332,18 @@ span.material-symbols-menu {
     object-position: center;
 }
 
+
+#feedNameProfile {
+    margin: 10px 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
 .feedNameLogo {
     color: #CD3B32;
     font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Arial';
+    font-weight: 400;
 }
 
 #feedIntroduction {
@@ -313,22 +353,25 @@ span.material-symbols-menu {
     margin: 10px 10px;
 }
 
-#feedScroll {
-    width: 95%;
-    height: 2000px;
+section#feedScroll {
+    width: 97%;
+    min-height: 2000px;
     margin: 0 0 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px 0 5px 5px;
-    background-color: antiquewhite;
+    background-color:  rgba(250, 235, 215, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.2);
+    /* box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2), 5px 0 5px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.2); */
+    
 }
 
 div#feedScrollContent {
     width: 95%;
+    margin: 0 0 50px 0;
 }
 
 section#newPost {
@@ -336,7 +379,7 @@ section#newPost {
     height: auto;
     background-color:#f3a1257e;
     border-radius: 8px;
-    margin: 10px 0 10px 0;
+    margin: 15px 0 10px 0;
     /* padding: 10px 10px; */
     display: flex;
     flex-direction: column;
@@ -345,31 +388,52 @@ section#newPost {
 
 #feedScrollContent textarea {
     border: none;
-    background-color: #cd6d3200;
-    width: 100%;
+    background-color: #ffffff33;
+    width: 98%;
+    min-height: 100px;
+    border-radius: 8px;
     resize: none;
+    font-size: 16px;
+    font-family:'Arial';
+    /* font-weight: bold; */
+    margin: 10px 5px;
+    box-sizing: border-box;
+    padding: 15px 15px;
 }
 
 
 #feedScrollContent div {
-    width: 97%;
+    width: 100%;
     height: auto;
     background-color:#f3a1257e;
     border-radius: 8px;
-    margin: 10px 0 10px 0;
-  padding: 10px 10px;
+    box-sizing: border-box;
+    margin: 20px 0 20px 0;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+#feedScrollContent div span {
+    position: relative;
+    width: 100%;
+    min-height: 20px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
 input#feedNewPost {
-    width: 95%;
+    width: 93%;
     height: 50px;
-    background-color: #cd6d3245;
+    background-color: #ffffff45;
     border-radius: 8px;
     border: none;
-    margin: 10px 0 10px 0;
+    margin: 10px 10px;
     padding: 10px 10px;
     display: flex;
     align-items: flex-start;
@@ -379,7 +443,7 @@ input#feedNewPost {
 .newPost {
     font-size: 16px;
     font-weight: bolder;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Arial';
     color: #CD3B32;
     display: flex;
     align-items: end;
@@ -388,22 +452,32 @@ input#feedNewPost {
 }
 
 .botones {
-    width: 100%;
+    width: 95%;
     height: auto;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    margin-bottom: 10px;
+    /* justify-content: space-around; */
 }
 
-#feedcategory,
 #publish,
 #cancel {
-    margin:5px 5px;
+    /* margin:5px 5px; */
+    width: 45%;
     border-radius: 7px;
     background-color: #CD3B32;
     border: none;
-    padding: 5px 5px;
-    font-size: 14px;
+    padding: 10px 10px;
+    font-size: 16px;
     color: aliceblue;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#publish:hover,
+#cancel:hover {
+    background-color: #9e2721;
 }
 
 #feedNewPost::placeholder {
@@ -414,16 +488,17 @@ input#feedNewPost {
 div#randomImages {
     width: 100%;
     height: 200px;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     border-bottom: solid 5px #010101;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 }
 
 #adoptionLetter {
     width: 40%;
-    font-family: 'Indie Flower', cursive;
+   /*  font-family: 'Indie Flower', cursive; */
     font-weight: bolder;
     font-size: 25px;
     color: #CD3B32;
@@ -469,10 +544,10 @@ section#likeEditDelete {
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 10px 10px;
+    justify-content:end;
 }
+
+
 
 span.material-symbols-like,
 span.material-symbols-edit,
@@ -481,21 +556,50 @@ span.material-symbols-save,
 span.material-symbols-cancel {
     color: rgb(0, 0, 0);
     font-family: 'Material Symbols Outlined', sans-serif;
-    font-size: 20px;
-    width: 100%;
+    border-radius: 8px;
+    background-color: #fafafa1f;
+    font-size: 20px !important;
+    max-width: 65px !important;
     height: 100%;
+    padding: 5px 5px !important;
+    margin: 0 5px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
+}
+
+
+
+
+span.material-symbols-count {
+    padding: 10px 2px !important;
+}
+
+span.material-symbols-like.liked {
+    margin: none !important;
+    background-color: rgb(172, 11, 11) !important;
+}
+
+
+
+
+span.material-symbols-like:hover,
+span.material-symbols-edit:hover,
+span.material-symbols-delete:hover,
+span.material-symbols-save:hover,
+span.material-symbols-cancel:hover {
+    background-color: #f39f25;
 }
 
 #feedScrollContent p {
-    background-color:#f3a1256d;
-    width: 97%;
-    min-height:50px ;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 10px 10px;
-    margin: 10px 0 10 px 0;   
+    position: absolute;
+    background-color:#f3a12500;
+    width: 95%;
+    height: auto;
+    font-size: 12px;
+    text-align: end;
+    padding: 0;
+    margin: 2px 10px 10px 10px;   
 }
 
 div#modalEliminar {
@@ -525,6 +629,19 @@ div#modalEliminar {
 }
 
 @media only screen and (max-width: 281px){
+    #feedLogoContent {
+        width: 10%;
+    }
+    
+    img#feedLogo {
+        width: 70px;
+        height: 50px;
+    }
+    
+    #feedHeader {
+        height: 50px;
+    }
+   
     .randomAbeja {
         display: none;
     }
@@ -534,7 +651,7 @@ div#modalEliminar {
     }
 
     span.material-symbols-outlined {
-        font-size: 18px;
+        font-size: 30px;
     }
 
     #feedProfileImageContent {
@@ -542,19 +659,22 @@ div#modalEliminar {
     }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
+    #feedProfile {
+        min-height: 60px;
+    }
     span.material-symbols-menu {
         padding: 1px; 
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #feedProfileImageContent {
-        width: 60%;
+        width: 90%;
     }
 
     #feedNameProfile {
         margin: 10px 10px;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     #feedWelcome {
@@ -592,11 +712,11 @@ div#modalEliminar {
     }
 
     section#newPost {
-        width: 90%;
+        width: 95%;
     }
     
     input#feedNewPost {
-        width: 100%;
+        width: 90%;
     }
     
     .newPost {
@@ -630,7 +750,11 @@ div#modalEliminar {
       }
 
       #feedScrollContent p {
-        font-size: 14px;   
+        font-size: 12px;   
+     }
+
+     #feedScrollContent div span {
+        font-size: 14px;
      }
 
      span.material-symbols-like,
@@ -640,7 +764,7 @@ span.material-symbols-delete {
 }
 
 span.material-symbols-outlined {
-    font-size: 20px;
+    font-size: 25px;
 }
 }
 
@@ -762,12 +886,12 @@ span.material-symbols-outlined {
     span.material-symbols-like,
 span.material-symbols-edit,
 span.material-symbols-delete {
-    font-size: 16px;
+    font-size: 30px;
   
 }
 
 span.material-symbols-outlined {
-    font-size: 20px;
+    font-size: 25px;
 }
 }
 
@@ -778,10 +902,14 @@ span.material-symbols-outlined {
 /* -------------------------------------------------------------------------- */
 /*                                  Register                                  */
 /* -------------------------------------------------------------------------- */
+
+
+
 section{
     display: flex;
     justify-content: center;
     align-items: center;
+    /*background-image: url(img/image-huella-naranja.png);*/
 }
 .contenedor-crear-cuenta{
     height: 100%;
@@ -796,7 +924,7 @@ section{
 background-color: #fff;
 text-align: center;
 padding: 3em;
-box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 0px 20px 20px 0px;
 }
 
@@ -806,7 +934,7 @@ padding: 1em;
 text-align: center;
 /* background: rgba(243, 237, 206, 0.33); */
 background: #FFA500;
-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.25);
 border-radius: 20px 0px 0px 20px;
 }
 .marca{
@@ -842,16 +970,16 @@ width: 180px;
 height: 50px;
 font-size: medium;
 border: #CD3B32 solid 1px;
-background-color: #FFFFFF;
-color: #CD3B32;
+background-color: #CD3B32;
+color: #ffffff;
 margin-top: 30px;
-margin-left: 20%;
+margin-left: 10%;
 margin-bottom: 30px;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #Crearcuenta:hover {
-    background-color: #CD3B32;
+    background-color: #9e2721;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
@@ -898,6 +1026,7 @@ h1 {
       display: none;
     }
     .formulario-cuenta {
+       
         border-radius: 20px 20px 20px 20px;
     }
     .imgResponsive{

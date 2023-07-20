@@ -1,558 +1,265 @@
-# Creando una Red Social
+# Creando una Red Social - PET LOVERS
+
+Colaboradoras: Katherine Cevallos, Luz María Vázquez, Ana Karen Morales.
 
 ## Índice
 
-* [1. Preámbulo](#1-preámbulo)
+* [1. Definición del Producto](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
+* [3. Objetivos generales del proyecto](#3-objetivos-de-aprendizaje)
+* [4. Objetivos de Aprendizaje](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Hacker edition](#6-hacker-edition)
 * [7. Entrega](#7-entrega)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 
-## 1. Preámbulo
+## 1. Definición del Producto
 
-Instagram, Snapchat, Twitter, Facebook, Twitch, Linkedin, etc. Las redes
-sociales han invadido nuestras vidas. Las amamos u odiamos, y muchos no podemos
-vivir sin ellas.
-
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
-
-Hay redes sociales de todo tipo y para todo tipo de intereses. Por ejemplo,
-en una ronda de financiamiento con inversionistas, se presentó una red social
-para químicos en la que los usuarios podían publicar artículos sobre sus
-investigaciones, comentar en los artículos de sus colegas, y filtrar artículos
-de acuerdo a determinadas etiquetas o su popularidad, lo más reciente, o lo
-más comentado.
+¡Bienvenido a Pet Lovers, la red social creada exclusivamente para personas apasionadas por las mascotas! Ya seas dueño de un tierno cachorro, un gato curioso o cualquier otra adorable criatura, este es el lugar perfecto para conectarte con otros amantes de los animales y encontrar todo lo que necesitas para cuidar y disfrutar al máximo de la compañía de tus queridas mascotas.
 
 ## 2. Resumen del proyecto
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
-Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
-salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
-o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco),
-de la [Feijoada](https://es.wikipedia.org/wiki/Feijoada), o de lo que sea.
+Características principales de Pet Lovers:
 
-Tu Red Social tendrá que permitir a cualquier usuario crear una cuenta de acceso
-y loguearse con ella; crear, editar, borrar y _"likear"_ publicacciones.
+Comunidad de Amantes de las Mascotas: Únete a una comunidad en línea de personas que comparten tu amor por los animales. Comparte historias de tus mascotas, y encuentra inspiración en las experiencias de otros propietarios.
+Consejos y Recomendaciones: En Pet Lovers, encontrarás una abundancia de consejos prácticos y recomendaciones sobre el cuidado de mascotas. Nuestra comunidad está llena de expertos y personas con experiencia que estarán encantados de compartir su sabiduría contigo.
+Ayuda para Mascotas Perdidas: Si has perdido a tu querida mascota, no estás solo. Publica detalles sobre tu mascota perdida y su última ubicación conocida, y permite que la comunidad te ayude en la búsqueda para reunirte con tu peludo amigo.
+Proveedores de Alimentos y Productos para Mascotas: Encuentra proveedores locales y en línea de alimentos saludables y productos de alta calidad para tus mascotas. Lee reseñas, comparte tus recomendaciones y descubre nuevos productos que harán la vida de tus animales más feliz.
+Eventos y Encuentros: Mantente informado sobre eventos y encuentros locales para amantes de las mascotas. Organiza paseos grupales, encuentros en parques para perros y otras actividades divertidas para que tus mascotas socialicen y hagan nuevos amigos peludos.
+Adopción y Rescate: Fomentamos la adopción responsable y apoyamos a refugios y organizaciones de rescate. Encuentra mascotas que necesiten un hogar amoroso y ayuda a difundir su búsqueda de una familia cariñosa.
+Estilo de Vida Saludable: En Pet Lovers, creemos en un estilo de vida saludable para nuestras mascotas. Encuentra información sobre ejercicios, alimentación, entrenamiento y cuidados veterinarios para mantener a tus animales en óptimas condiciones. 
 
-Por lo tanto, en este proyecto construirás una
-[Single-page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-[_responsive_](https://curriculum.laboratoria.la/es/topics/css/02-responsive) (con más de una vista / página)
-en la que podamos **leer y escribir datos**.
+## 3. Objetivos generales del proyecto
 
-### Los objetivos generales de este proyecto son los siguientes
+A continuación se detallan las acciones que el usuario podrá realizar en la red social "Pet Lovers":
 
-* Desarrollar una SPA con temática de red social
-* Aplicar los conceptos de responsividad en el desarrollo de las vistas (templates)
-* Implementar un router para la navegación entre las diferentes vistas de la aplicación
-* Emplear un servicio externo para la persistencia de datos de la aplicación
-* Crear una suite de pruebas unitarias que permitan testear código asíncrono
+* Se desarrolló una SPA con temática de red social para mascotas.
+* El usuario podrá crear su cuenta desde Google authentication.
+* El usuario ingresará con su correo y contraseña.
+* El usuario podrá crear su cuenta desde el formulario de registro para acceder a la red social.
+* El usuario podrá visualizar su foto de perfil y nombre en el feed, cuando haya ingresado desde Google Authentication.
+* El usuario podrá visualizar una imagen predeterminada cuando haya ingresado por email y contraseña.
+* El usuario podrá crear una publicación.
+* El usuario podrá visualizar todas las publicaciones de manera ordenada por fecha de creación.
+* El usuario podrá eliminar y editar una publicación que sea de su autoría.
+* El usuario podrá dar like a las publicaciones que desee.
+* El usuario podrá cerrar sesión y será redireccionado al módulo de Log in.
 
-Para lograr estos objetivos, deberás aprender y hacer uso de las siguientes
-herramientas o habilidades técnicas:
 
-## 3. Objetivos de aprendizaje
+## 4. Objetivos de aprendizaje
 
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
+El proyecto Pet Lovers fue desarrollado entorno a las siguientes tecnologias; Java script, html,css,firebase etc..
+de cada uno de ellos se obtuvo un aprendizaje para poder concluir el proyecto a continuacion se detalla sobre lo aprendido.
 
 ### HTML
-
-- [ ] **Uso de HTML semántico**
-
-  <details><summary>Links</summary><p>
-
-  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/02-html5/02-semantic-html)
-  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-</p></details>
+- **Uso de HTML semántico**
+- Desarrollar la maquetación HTML en concordancia con el prototipo en Figma.
 
 ### CSS
-
-- [ ] **Uso de selectores de CSS**
-
-  <details><summary>Links</summary><p>
-
-  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/01-css/01-intro-css)
-  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
-</p></details>
-
-- [ ] **Modelo de caja (box model): borde, margen, padding**
-
-  <details><summary>Links</summary><p>
-
-  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/01-css/02-boxmodel-and-display)
-  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
-  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
-  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
-  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
-</p></details>
-
-- [ ] **Uso de flexbox en CSS**
-
-  <details><summary>Links</summary><p>
-
-  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
-  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
-</p></details>
-
-- [ ] **Uso de CSS Grid Layout**
-
-  <details><summary>Links</summary><p>
-
-  * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
-  * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
-</p></details>
+- Uso de selectores de CSS para dar estilos y formato al contenido
+- Modelo de caja
+- Uso de flexbox en CSS
 
 ### Web APIs
+- Uso de selectores del DOM.
+Se utilizaron para seleccionar y acceder cada elemento de la pagina web .
++ Listeners: Se utilizaron para detectar y responder a eventos que ocurren en los elementos HTML de la página web.
+    + EventTarget.addEventListener()
+    +  El objeto Event
 
-- [ ] **Uso de selectores del DOM**
-
-  <details><summary>Links</summary><p>
-
-  * [Manipulación del DOM](https://curriculum.laboratoria.la/es/topics/browser/02-dom/03-1-dom-methods-selection)
-  * [Introducción al DOM - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
-</p></details>
-
-- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
-
-  <details><summary>Links</summary><p>
-
-  * [Introducción a eventos - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events)
-  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
-  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)
-  * [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
-</p></details>
-
-- [ ] **Manipulación dinámica del DOM**
-
-  <details><summary>Links</summary><p>
-
-  * [Introducción al DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
-  * [Node.appendChild() - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
-  * [Document.createElement() - MDN](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
-  * [Document.createTextNode()](https://developer.mozilla.org/es/docs/Web/API/Document/createTextNode)
-  * [Element.innerHTML - MDN](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
-  * [Node.textContent - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
-</p></details>
-
-- [ ] **Ruteado (History API, evento hashchange, window.location)**
-
-  <details><summary>Links</summary><p>
-
-  * [Manipulando el historial del navegador - MDN](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-</p></details>
-
+### Manipulación dinámica del DOM
++ Se utilizó para crear, editar o modificar los elemento del DOM.
+    + Node.appendChild()
+    + Document.createElement()
+    + Element.innerHTML
+    + Node.textContent
+    + Element.classList
+    + Element.value
+    + Event.target
+### Enrutamiento
++ Estos fueron los elementos que se utilizaron par el enrutamiento.
+   + History API
+   + window.location.pathname;
+   + evento hashchange
+   + evento popstate
+   + evento pushState
+   + window.dispatchEvent
 ### JavaScript
-
-- [ ] **Arrays (arreglos)**
-
-  <details><summary>Links</summary><p>
-
-  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
-
-- [ ] **Objetos (key, value)**
-
-  <details><summary>Links</summary><p>
-
-  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
-</p></details>
-
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
-
-- [ ] **Variables (declaración, asignación, ámbito)**
-
-  <details><summary>Links</summary><p>
-
-  * [Valores, tipos de datos y operadores](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/01-values-variables-and-types)
-  * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/01-basics/02-variables)
-</p></details>
-
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
-
-  <details><summary>Links</summary><p>
-
-  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
-
-- [ ] **Uso de bucles/ciclos (while, for, for..of)**
-
-  <details><summary>Links</summary><p>
-
-  * [Bucles (Loops)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/02-loops)
-  * [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
-</p></details>
-
-- [ ] **Funciones (params, args, return)**
-
-  <details><summary>Links</summary><p>
-
-  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/03-functions)
-  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/02-arrow)
-  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-
-- [ ] **Pruebas unitarias (unit tests)**
-
-  <details><summary>Links</summary><p>
-
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
-
-- [ ] **Pruebas asíncronas**
-
-  <details><summary>Links</summary><p>
-
-  * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
-</p></details>
-
-- [ ] **Uso de mocks y espías**
-
-  <details><summary>Links</summary><p>
-
-  * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
-</p></details>
-
-- [ ] **Módulos de ECMAScript (ES Modules)**
-
-  <details><summary>Links</summary><p>
-
-  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
-  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
-</p></details>
-
-- [ ] **Uso de linter (ESLINT)**
-
-- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
-
-- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
-
-- [ ] **Callbacks**
-
-  <details><summary>Links</summary><p>
-
-  * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-</p></details>
-
-- [ ] **Promesas**
-
-  <details><summary>Links</summary><p>
-
-  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  * [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
-
+Estos fueron algunos de los conceptos o definiciones que se investigaron e implementaron en el proyecto.
+- **Arrays (arreglos)**
+- **Objetos (key, value)**
+- **Datos primitivos y no primitivos**
+- **Variables (declaración, asignación, ámbito)**
+-**Condicionales (if-else, operador ternario, lógica booleana)**
+- **Bucles/ciclos (for,forEach)**
+- **Funciones (params, args, return)**
+- **Pruebas unitarias (unit tests con jest DOM)**
+-**Pruebas asíncronas**
+- **Módulos de ECMAScript (ES Modules)**
+- **Uso de linter (ESLINT)**
+- **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+-**Callbacks**
+- **Promesas**
 ### Control de Versiones (Git y GitHub)
-
-- [ ] **Git: Instalación y configuración**
-
-- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-
-- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-
-- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-
-- [ ] **GitHub: Despliegue con GitHub Pages**
-
-  <details><summary>Links</summary><p>
-
-  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
-</p></details>
-
-- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-
-- [ ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
-
++ Git flow: Se utlizo este modelo de ramificación ya que nos facilita la organización del trabajo y el seguimiento de las diferentes etapas de desarrollo.
+  + Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+  + **Git: Integración de cambios entre ramas ( branch, checkout, merge, reset)**
+  + **GitHub: Colaboración en Github (branches | forks | pull requests, fork, jgh pages)**
+ + **GitHub: Despliegue con GitHub Pages**
 ### Centrado en el usuario
-
-- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
-
+ **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
 ### Diseño de producto
-
-- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
-
-- [ ] **Seguir los principios básicos de diseño visual**
-
-### Investigación
-
-- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
-
-  <details><summary>Links</summary><p>
-
-  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
-  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
-</p></details>
-
+-**Crear prototipos de alta fidelidad que incluyan interacciones**
+-**Seguir los principios básicos de diseño visual**
 ### Firebase
+-  **Firebase Auth**:
+  Se utilizo para el logeo del usuario final
+- **Firestore**:
+Se utilizo para el almacenamiento de datos y la iImplemntacion de los metodos de firebase (CRUD)
+   +  create
+   +  Read
+   +  Update
+   +  Delete
 
-- [ ] **Firebase Auth**
 
-  <details><summary>Links</summary><p>
+### 5 Historias de usuario
 
-  * [Primeros pasos con Firebase Authentication en sitios web - Documentación oficial](https://firebase.google.com/docs/auth/web/start?hl=es)
-  * [Administra usuarios en Firebase (onAuthStateChanged)](https://firebase.google.com/docs/auth/web/manage-users?hl=es#get_the_currently_signed-in_user)
-</p></details>
+**HU-07 Crear inicio de sesión de usuario a través de su cuenta de Google**
 
-- [ ] **Firestore**
+* **Criterios de Aceptación:** 
 
-  <details><summary>Links</summary><p>
+El usuario podrá dar clic en el icono de Google y con ello podrá acceder al sistema y ver la sección de publicaciones. Siempre y cuando tenga una cuenta disponible en Google podrá acceder al feed. 
 
-  * [Firestore - Documentación oficial](https://firebase.google.com/docs/firestore?hl=es)
-  * [Reglas de seguridad de Firestore - Documentación oficial](https://firebase.google.com/docs/rules?hl=es)
-  * [Obtén actualizaciones en tiempo real con Cloud Firestore - Documentación oficial](https://firebase.google.com/docs/firestore/query-data/listen?hl=es)
-</p></details>
+**HU-07 Enlace de crear cuenta desde login**
 
-## 4. Consideraciones generales
+* **Criterios de Aceptación:** 
 
-* Este proyecto se debe trabajar en equipos de tres.
+El usuario podra dar clic en CREAR CUENTA AQUI.
 
-* El rango de tiempo estimado para completar el proyecto es de 4 a 5 Sprints.
+Al dar click debera mostrarse la pantalla de crear cuenta.
 
-* La lógica del proyecto debe estar implementada completamente en JavaScript
-  (ES6+), HTML y CSS :smiley:. Para este proyecto **no está permitido** utilizar
-  _frameworks_ o librerías de CSS y JS.
+**HU-09 Registrarse con un nuevo correo electrónico**
 
-* La división y organización del trabajo debe permitir, sin excepciones, que
-  **cada integrante** del equipo practique el aprendizaje de todo lo involucrado
-  en **cada historia**. _No se dividan el trabajo como en una fábrica._
-  - ¿Hasta acá has avanzado en tus proyectos con cierta fluidez y sin mayores
-    problemas? Sé generosa con tus compañeras, permíteles aprender y practicar
-    sin restricciones, aunque tome un poco más de tiempo. Aproveha de
-    _coachearlas_, de hacer _pair programming_, una de las mejores maneras de
-    aprender es explicando verbalmente.
+* **Criterios de Aceptación:** 
 
-  - ¿Se te está haciendo difícil y te cuesta un poco más avanzar? No te quedes
-    con las partes "fáciles" del proyecto, conversa, negocia, exige tu oportunidad
-    para practicar y aprender lo que se te hace más difícil.
+El usuario podrá registrarse con su correo y contraseña dando clic en el botón crear cuenta, en caso de que el correo ya se encuentre registrado no podrá ingresar y le permitirá ir a la página de login.
 
-* Solamente pueden trabajar en una única historia por vez, no pueden avanzar a
-  la siguiente sin haber completado la anterior. La historia se completa cuando
-  se cumplen **todos** sus Criterios de Aceptación + **toda** su Definición
-  de Terminado.
+ Validar el campo de contraseña cuando no coinciden y mostrar un mensaje de “Las contraseñas no coinciden“.
 
-Para comenzar tendrás que hacer un _fork_ y _clonar_ este repositorio.
+Validar el campo de contraseña  deberá tener al menos 6 caracteres sino mostrar mensaje “La contraseña debe tener al menos 6 caracteres“.
 
-## 5. Criterios de aceptación mínimos del proyecto
+Validar el campo de correo electronico no se puede repetir con un correo ya registrado sino mostrar mensaje “El correo ya está registrado”.
 
-### 5.1 Boilerplate
+Desaparecer los mensajes cuando ya hay ingresado los datos correctos. 
 
-Este proyecto no incluye un _boilerplate_ completo, solo algunos archivos de
-configuración basico, así es que tendrás que definir la estructura de carpetas
-y escribir tus propias Pruebas Unitarias (_tests_). Para hacerlo, puedes guiarte
-de los proyectos anteriores y/o organizar los archivos siguiendo una estructura
-de [Modelo-Vista-Controlador](https://developer.mozilla.org/es/docs/Glossary/MVC).
+**HU-10 Crear publicación en el Feed.**
 
-En este proyecto vamos a usar una herramienta llamada
-[Vite](https://es.vitejs.dev/) para empaquetar nuestros módulos y arrancar
-el servidor de desarrollo, el cual provee nuestros archivos utilizando
-la estrategia `Hot Module Replacement`
-[(HMR)](https://es.vitejs.dev/guide/features.html#hot-module-replacement),
-esto significa que cuando hagas cambios en los archivos que estén siendo
-servidos, el navegador automáticamente se actualizará sin tener que refrescar
-y volver a cargar todo el sitio. Debes tener especial cuidado de no tener
-ninguna _dependencia circular_ en tu código ya que
-[eso puede ocasionar problemas con HMR](https://es.vitejs.dev/guide/troubleshooting.html#ocurre-un-refresco-completo-en-lugar-de-hmr).
-(`eslint-plugin-import` tiene una regla
-[import/no-cycle](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md)
-que va a avisar si las tiene.)
+* **Criterios de Aceptación:** 
 
-### 5.2 Definición del producto
+El usuario podrá crear una nueva publicación en tiempo real y observarla en el feed.
 
-En el `README.md` cuéntanos brevemente cómo descubriste las necesidades de los
-usuarios y cómo llegaste a la definición final de tu producto. Es importante
-que detalles:
+Al publicar, se debe validar que exista contenido en la casilla de texto.
 
-* Quiénes son los principales usuarios de producto.
-* Qué problema resuelve el producto / para qué le servirá a estos usuarios.
+**HU-11 Mostrar todas las publicaciones en el Feed por fecha de creación.**
 
-### 5.3 Historias de usuario
+* **Criterios de Aceptación:** 
 
-Una vez que entiendas las necesidades de tus usuarixs, escribe las Historias de
-Usuario que representen todo lo que necesitan hacer/ver en la Red Social. Cada
-una de tus Historias de Usuario debe tener:
+El usuario podrá ver todas las publicaciones creadas en el feed.
 
-* **Criterios de Aceptación:** todo lo que debe ocurrir para satisfacer las
-  necesidades del usuario.
+Las publicaciones se mostrarán en el feed basándose en su fecha de creación.
 
-* **Definición de terminado:** todos los aspectos técnicos que deben cumplirse
-  para que, como equipo, sepan que esa historia está terminada y lista
-  para publicarse. **Todas** tus Historias de Usuario (salvo excepciones), deben
-  incluir estos aspectos en su Definición de Terminado (más todo lo que
-  necesiten agregar):
+**HU-12 Eliminar publicación.**
 
-  - Debe ser una SPA.
-  - Debe ser _responsive_.
-  - Deben haber recibido _code review_ de al menos una compañera de otro equipo.
-  - Hicieron los _test_ unitarios
-  - Testearon manualmente buscando errores e imperfecciones simples.
-  - Hicieron _pruebas_ de usabilidad e incorporaron el _feedback_ de los
-    usuarios como mejoras.
-  - Desplegaron su aplicación y etiquetaron la versión (git tag).
+* **Criterios de Aceptación:** 
 
-### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
+Se debe poder eliminar un post específico.
 
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseña la Interfaz de Usuario (UI por sus siglas en inglés) que
-siga este flujo.
+Al dar click para eliminar un post, se mostrará un modal que pida la confirmación para eliminar dicho post.
 
-### 5.5 Responsive
+Dentro del modal, al dar click en aceptar, se eliminará dicho post y dejará de aparecer en el feed.
 
-Debe verse bien en dispositivos de pantallas grandes
-(computadoras/es, laptops, etc.) y pequeñas (_tablets_, celulares, etc.). Te
-sugerimos seguir la técnica de _`mobile first`_ (más detalles sobre esta técnica
-al final).
+Dentro del modal, al dar click en cancelar, se revertirá dicha acción.
 
-### 5.6 Consideraciones del comportamiento de la interfaz de usuario (UI)
+Únicamente el usuario que crea el post es capaz de eliminarlo.
 
-Estas consideraciones te ayudarán a escribir las Definiciones de Terminado de
-tus H.U.:
 
-#### Creación de cuenta de usuario e inicio de sesión
+**HU-13 Editar publicación.**
 
-* _Login_ con Firebase:
-  - Para el _login_ y las publicaciones en el muro puedes utilizar [Firebase](https://firebase.google.com/products/database/)
-  - Creación de cuenta de acceso y autenticación con cuenta de correo y
-    contraseña, y también con una cuenta de Google.
-* Validaciones:
-  - Solamente se permite el acceso a usuarios con cuentas válidas.
-  - No pueden haber usuarios repetidos.
-  - La cuenta de usuario debe ser un correo electrónico válido.
-  - Lo que se escriba en el campo (_input_) de contraseña debe ser secreto.
-* Comportamiento:
-  - Al enviarse el formulario de registro o inicio de sesión, debe validarse.
-  - Si hay errores, se deben mostrar mensajes descriptivos para ayudar al
-  usuario a corregirlos.
+* **Criterios de Aceptación:** 
 
-#### Muro/timeline
+Al dar click para editar un post, se mostrará el post seleccionado, donde se debe cambiar el texto por un input que permita editar el texto y luego guardar los cambios.
 
-* Validaciones:
-  - Al publicar, se debe validar que exista contenido en el _input_.
-* Comportamiento:
-  - Al recargar la aplicación, se debe verificar si el usuario está _logueado_
-    antes de mostrar contenido.
-  - Poder publicar un _post_.
-  - Poder dar y quitar _like_ a una publicación. Máximo uno por usuario.
-  - Llevar un conteo de los _likes_.
-  - Poder eliminar un post específico.
-  - Pedir confirmación antes de eliminar un _post_.
-  - Al dar _click_ para editar un _post_, debe cambiar el texto por un _input_
-    que permita editar el texto y luego guardar los cambios.
-  - Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la
-    información editada.
-  - Al recargar la página debo de poder ver los textos editados.
+Al guardar los cambios debe cambiar de vuelta a un texto normal pero con la información editada sobre el feed actualizado.
 
-### 5.7 Consideraciones técnicas Front-end
+Al dar click en Cancelar, se revertirá la acción y el post se mostrará intacto.
 
-* Separar la manipulación del DOM de la lógica (Separación de responsabilidades).
-* Contar con múltiples vistas. Para esto, tu aplicación debe ser una
- [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-* Alterar y persistir datos. Los datos que agregues o modifiques deberán
-  persistir a lo largo de la aplicación. Te recomendamos que uses
-  [Firebase](https://firebase.google.com/) para eso también.
+Únicamente el usuario que crea el post es capaz de editarlo.
 
-#### Pruebas unitarias (unit tests)
+**HU-13.1 Botón cancelar para editar publicación**
 
-* Recuerda que no hay un _setup_ de **tests** definido, dependerá de
-  la estructura de tu proyecto. Algo que no debes de olvidar es pensar en éstas
-  pruebas, te pueden ayudar a definir la estructura y nomenclatura de tu lógica.
+* **Criterios de Aceptación:** 
 
-* Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_,
-  _lines_, y _branches_.
+El usuario final dara clic en el botón cancelar inmediatamente la publicación mantendrá su texto original sin modificaciones.
 
-### 5.8 Consideraciones técnicas UX
+**HU-13.2 Botón guardar para editar publicación**
 
-* Hacer al menos 2 entrevistas con usuarios.
-* Hacer un  prototipo de baja fidelidad.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de _testing de usabilidad_ con el producto en HTML.
+* **Criterios de Aceptación:** 
 
-## 6. Hacker edition
+Al dar click en el botón GUARDAR la publicación se actualizara y se guardara en firebase.
 
-Las secciones llamadas _Hacker Edition_ son **opcionales**. Si **terminaste**
-con todo lo anterior y te queda tiempo, intenta completarlas. Así podrás
-profundizar y/o ejercitar más sobre los objetivos de aprendizaje del proyecto.
 
-* Permite crear posts con imágenes.
-* Permite buscar usuarios, agregar y eliminar "amigos".
-* Permite definir la privacidad de los _posts_ (público o solamente para amigos).
-* Permite ver su muro de cualquier usuario "no-amigo" (solamente los
-  posts _públicos_).
-* Permite comentar o responder una publicación.
-* Permite editar perfil.
+**HU-14 Dar like o dislike a una publación.**
 
-## 7. Entrega
+Se registrará un like por usuario en cada publicación.
 
-El proyecto será _entregado_ subiendo tu código a GitHub (`commit`/`push`) y la
-interfaz será desplegada usando GitHub pages u otro servicio de hosting
-(Firebase, Netlify, Vercel, etc) que puedas haber encontrado en el camino.
-Revisa la [documentación de Vite](https://vitejs.dev/guide/static-deploy.html)
-para guiarte con eso.
+Se registrará la eliminación o colocación del like en el contador de likes del feed.
 
-***
+**HU-15 Cerrar sesión del Usuario.**
 
-## 8. Pistas, tips y Lecturas complementarias
+* **Criterios de Aceptación:** 
 
-Súmate al canal de Slack
-[#project-social-network](https://claseslaboratoria.slack.com/archives/C03SE63GFJQ)
-para conversar y pedir ayuda del proyecto.
+Al dar click en el ícono de Logout, debería cerrarse la sesión del usuario y no mostrar más el feed.
 
-### Mobile first
+Al cerrar sesión, se debería mostrar la página de Login.
 
-El concepto de [_mobile first_](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-hace referencia a un proceso de diseño y desarrollo donde partimos de cómo se ve
-y cómo funciona la aplicación en un dispositivo móvil primero, y más adelante se
-ve como adaptar la aplicación a pantallas progresivamente grandes y
-características específicas del entorno desktop. Esto es en contraposición al
-modelo tradicional, donde primero se diseñaban los websites (o webapps) para
-desktop y después se trataba de _arrugar_ el diseño para que entre en pantallas
-más chicas. La clave acá es asegurarse de que desde el principio diseñan usando
-la vista _responsive_ de las herramientas de desarrollador (developer tools) del
-navegador. De esa forma, partimos de cómo se ve y comporta la aplicación en una
-pantalla y entorno móvil.
+**HU-16 Mostrar la fecha de publicación de cada post.**
 
-### Múltiples vistas
+* **Criterios de Aceptación:** 
 
-En proyectos anteriores nuestras aplicaciones habían estado compuestas de una
-sola _vista_ principal (una sóla _página_). En este proyecto se introduce la
-necesidad de tener que dividir nuestra interfaz en varias _vistas_ o _páginas_
-y ofrecer una manera de navegar entre estas vistas. Este problema se puede
-afrontar de muchas maneras: con archivos HTML independientes (cada uno con su
-URL) y links tradicionales, manteniendo estado en memoria y rederizando
-condicionalmente (sin refrescar la página), [manipulando el historial del
-navegador](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
-con [`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history).
-En este proyecto te invitamos a explorar opciones y decidir una opción
-de implementación.
+Se debe mostrar la fecha de creación de cada publicación en el feed.
 
-### Escritura de datos
+**HU-17 Mostrar datos de usuario en el feed.**
 
-En los proyectos anteriores hemos consumido (leído) datos, pero todavía no
-habíamos escrito datos (salvar cambios, crear datos, borrar, ...). En este
-proyecto tendrás que crear (salvar) nuevos datos, así como leer, actualizar y
-modificar datos existentes. Estos datos se podrán guardar de forma remota
-usando [Firebase](https://firebase.google.com/).
+* **Criterios de Aceptación:** 
 
-Para usar Firebase hay que crear un proyecto en la consola de Firebase e
-instalar la dependencia `firebase` utilizando `npm`.
-Lee [las instrucciones paso a paso aqui](https://firebase.google.com/docs/web/setup).
+Una vez que el usuario se encuentre registrado, el usuario podrá visualizar en el feed su foto de perfil y nombre. 
 
-Otras:
+### 6 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-* [Modulos: Export](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/export)
-* [Modulos: Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
-* [Diseño web, responsive design y la importancia del mobile first - Media Click](https://www.mediaclick.es/blog/diseno-web-responsive-design-y-la-importancia-del-mobile-first/)
-* [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
-* [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
+Prototipo de baja fidelidad para Inicio y registro de sesión del Usuario.
+
+![Inicio de sesión](./src/img/20230609_111228.jpg)
+
+Prototipo de baja fidelidad para componente Feed del Usuario incluido el registro e inicio de sesión.
+
+![Inicio de sesión](./src/img/image%20(1).png)
+
+
+### 7 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+
+
+
+![Inicio de sesión](./src/img/log-in.PNG)
+
+Prototipo de alta fidelidad para Inicio de sesión del Usuario.
+
+![Inicio de sesión](./src/img/register.PNG)
+
+Prototipo de alta fidelidad para Registro de sesión de Usuario.
+
+![Inicio de sesión](./src/img/feed.PNG)
+
+Prototipo de alta fidelidad para componente Feed del Usuario.
+
+
