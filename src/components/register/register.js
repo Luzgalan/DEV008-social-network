@@ -2,13 +2,14 @@
 
 import { signInUser } from './register.controller';
 import { loginWithGoogle } from '../login/login.controller';
+import logoregister from '../../img/logo.png';
 
 const register = {
   loadHTML: () => `<section>
     <div class="contenedor-crear-cuenta">
         <div class="logo-cuenta">
             <p class="text-title text-color-white" id="bienvenido">Bienvenidos a:</p>
-            <img src="../../img/logo.png" class="marca">
+            <img src="${logoregister}" class="marca">
             <p class="text-color-white">Somos un espacio en donde podrás consultar o publicar información acerca de
                 nuestros amigos de 4
                 patitas.
