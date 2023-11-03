@@ -17,10 +17,10 @@ const register = {
         </div>
   
         <form class="formulario-cuenta" id="formCrearcuenta">
+            <img class="imgResponsive" src="./../../img/logo.png" alt="PET LOVERS">
             <h1 class="text-title">Crear cuenta</h1>
-            <img class="imgResponsive" src="./../../img/logo.png" >
             <input type="text" placeholder="Nombre" required id="nombre" class="ingresa"> 
-            <input type="email" placeholder="Correo electrónico" required id="correo" class="ingresa"> 
+            <input type="email" placeholder="Correo electrónico" required id="correo" class="ingresa">
             <input type="password" placeholder="Contraseña" required id="contrasena" class="ingresa"> 
             <input type="password" placeholder="Confirmar contraseña" required id="confirmar-contrasena"
                 class="ingresa"> 

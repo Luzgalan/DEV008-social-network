@@ -20,7 +20,6 @@ const feed = {
   <section id="feedAllContent">
       <aside id="feedAside">
           <div id="feedMenu"><span class="material-symbols-menu">
-                  menu
               </span>
           </div>
           <section id="feedProfile">

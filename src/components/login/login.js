@@ -6,7 +6,7 @@ const login = {
   <div class="l-div">
     <div class="l-container">
         <div class="l-container-login">
-        <img class="imgResponsive" src="./../../img/logo.png" >
+        <img class="imgResponsive" src="./../../img/logo.png" alt="PET LOVERS">
 
             <p class="text-title">Inicia sesión</p>
             <div id="btnLoginGoogle">

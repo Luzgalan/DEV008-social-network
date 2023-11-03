@@ -906,13 +906,16 @@ span.material-symbols-outlined {
 
 
 section{
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     /*background-image: url(img/image-huella-naranja.png);*/
 }
 .contenedor-crear-cuenta{
+    width: 800px;
     height: 100%;
+    min-height: 550px;
     display: flex;
     padding: 80px;
 }
