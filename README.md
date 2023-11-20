@@ -2,6 +2,8 @@
 
 Colaboradoras: Katherine Cevallos, Luz María Vázquez, Ana Karen Morales.
 
+![Login](./src/img/login.png)
+
 ## Índice
 
 * [1. Definición del Producto](#1-preámbulo)
@@ -15,19 +17,13 @@ Colaboradoras: Katherine Cevallos, Luz María Vázquez, Ana Karen Morales.
 
 ## 1. Definición del Producto
 
-¡Bienvenido a Pet Lovers, la red social creada exclusivamente para personas apasionadas por las mascotas! Ya seas dueño de un tierno cachorro, un gato curioso o cualquier otra adorable criatura, este es el lugar perfecto para conectarte con otros amantes de los animales y encontrar todo lo que necesitas para cuidar y disfrutar al máximo de la compañía de tus queridas mascotas.
+¡Bienvenido a Pet Lovers, es una plataforma de red social creada exclusivamente para personas apasionadas por las mascotas! Aquí, los usuarios pueden conectarse con otros amantes de los animales, compartir experiencias, acceder a recursos y encontrar todo lo necesario para cuidar y disfrutar al máximo la compañía de sus mascotas. Sea cual sea tu mascota, este es el lugar perfecto para intercambiar conocimientos y amor por los animales.
 
 ## 2. Resumen del proyecto
 
 Características principales de Pet Lovers:
 
-Comunidad de Amantes de las Mascotas: Únete a una comunidad en línea de personas que comparten tu amor por los animales. Comparte historias de tus mascotas, y encuentra inspiración en las experiencias de otros propietarios.
-Consejos y Recomendaciones: En Pet Lovers, encontrarás una abundancia de consejos prácticos y recomendaciones sobre el cuidado de mascotas. Nuestra comunidad está llena de expertos y personas con experiencia que estarán encantados de compartir su sabiduría contigo.
-Ayuda para Mascotas Perdidas: Si has perdido a tu querida mascota, no estás solo. Publica detalles sobre tu mascota perdida y su última ubicación conocida, y permite que la comunidad te ayude en la búsqueda para reunirte con tu peludo amigo.
-Proveedores de Alimentos y Productos para Mascotas: Encuentra proveedores locales y en línea de alimentos saludables y productos de alta calidad para tus mascotas. Lee reseñas, comparte tus recomendaciones y descubre nuevos productos que harán la vida de tus animales más feliz.
-Eventos y Encuentros: Mantente informado sobre eventos y encuentros locales para amantes de las mascotas. Organiza paseos grupales, encuentros en parques para perros y otras actividades divertidas para que tus mascotas socialicen y hagan nuevos amigos peludos.
-Adopción y Rescate: Fomentamos la adopción responsable y apoyamos a refugios y organizaciones de rescate. Encuentra mascotas que necesiten un hogar amoroso y ayuda a difundir su búsqueda de una familia cariñosa.
-Estilo de Vida Saludable: En Pet Lovers, creemos en un estilo de vida saludable para nuestras mascotas. Encuentra información sobre ejercicios, alimentación, entrenamiento y cuidados veterinarios para mantener a tus animales en óptimas condiciones. 
+Pet Lovers ofrece una comunidad en línea para amantes de mascotas donde puedes compartir publicaciones,historias y recibir inspiración. Ofrece consejos prácticos y recomendaciones de cuidado animal de expertos. También brinda ayuda para mascotas perdidas, conectando a la comunidad para reunir a las mascotas con sus dueños. Además, proporciona información sobre proveedores de alimentos y productos de calidad, anuncia eventos locales para que las mascotas socialicen, promueve la adopción responsable y apoya un estilo de vida saludable para tus animales a través de ejercicios, alimentación y cuidados veterinarios.
 
 ## 3. Objetivos generales del proyecto
 
