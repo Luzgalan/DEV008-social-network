@@ -2,13 +2,14 @@
 
 import { signInUser } from './register.controller';
 import { loginWithGoogle } from '../login/login.controller';
+import logoregister from '../../img/logo.png';
 
 const register = {
   loadHTML: () => `<section>
     <div class="contenedor-crear-cuenta">
         <div class="logo-cuenta">
             <p class="text-title text-color-white" id="bienvenido">Bienvenidos a:</p>
-            <img src="../../img/logo.png" class="marca">
+            <img src="${logoregister}" class="marca">
             <p class="text-color-white">Somos un espacio en donde podrás consultar o publicar información acerca de
                 nuestros amigos de 4
                 patitas.
@@ -16,10 +17,10 @@ const register = {
         </div>
   
         <form class="formulario-cuenta" id="formCrearcuenta">
+            <img class="imgResponsive" src="./../../img/logo.png" alt="PET LOVERS">
             <h1 class="text-title">Crear cuenta</h1>
-            <img class="imgResponsive" src="./../../img/logo.png" >
             <input type="text" placeholder="Nombre" required id="nombre" class="ingresa"> 
-            <input type="email" placeholder="Correo electrónico" required id="correo" class="ingresa"> 
+            <input type="email" placeholder="Correo electrónico" required id="correo" class="ingresa">
             <input type="password" placeholder="Contraseña" required id="contrasena" class="ingresa"> 
             <input type="password" placeholder="Confirmar contraseña" required id="confirmar-contrasena"
                 class="ingresa"> 

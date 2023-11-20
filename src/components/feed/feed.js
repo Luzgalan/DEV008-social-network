@@ -1,4 +1,7 @@
 /* import { async } from 'regenerator-runtime'; */
+import abeja from '../../imgfeed/abejita.png';
+import perrito from '../../imgfeed/perritove.png';
+import logocorto from '../../imgfeed/logo-corto.png';
 
 import {
   newPost, logoutSesion, deletePost, subscribeToDataChanges, updatePost, getDataUser,
@@ -10,14 +13,13 @@ const feed = {
   loadHTML: () => `<main id="pageAllContent">
   <header id="feedHeader">
       <div id="feedLogoContent">
-          <img id="feedLogo" src="imgfeed/logo-corto.png" alt="Logotype">
+          <img id="feedLogo" src="${logocorto}" alt="Logotype">
       </div>
       <span class="material-symbols-outlined" id="logoutfeed">move_item</span>
   </header>
   <section id="feedAllContent">
       <aside id="feedAside">
           <div id="feedMenu"><span class="material-symbols-menu">
-                  menu
               </span>
           </div>
           <section id="feedProfile">
@@ -35,8 +37,8 @@ const feed = {
       <section id="feedScroll">
           <div id="randomImages">
               <p id="adoptionLetter">Y si adoptas un nuevo mejor amigo? Por fis...</p>
-              <div class="randomAbeja"><img id="randomAbeja" src="imgfeed/abejita.png" alt="Abejita"></div>
-              <div class="randomDog"><img id="randomDog" src="imgfeed/perritove.png" alt="Perrito"></div>
+              <div class="randomAbeja"><img id="randomAbeja" src="${abeja}" alt="Abejita"></div>
+              <div class="randomDog"><img id="randomDog" src="${perrito}" alt="Perrito"></div>
           </div>
           <section id="newPost">
               <h4 class="newPost">Crear nueva publicación</h4>

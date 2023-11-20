@@ -1,11 +1,12 @@
 import { loginWithGoogle, loginWithPassword } from './login.controller';
+import logo from '../../img/logo.png';
 
 const login = {
   loadHTML: () => `
   <div class="l-div">
     <div class="l-container">
         <div class="l-container-login">
-        <img class="imgResponsive" src="./../../img/logo.png" >
+        <img class="imgResponsive" src="./../../img/logo.png" alt="PET LOVERS">
 
             <p class="text-title">Inicia sesión</p>
             <div id="btnLoginGoogle">
@@ -37,7 +38,7 @@ const login = {
         
         <div class="l-container-informacion">
             <p class="text-title text-color-white">Bienvenidos a:</p>
-            <img src="./../../img/logo.png" alt="">
+            <img src="${logo}" alt="">
             <p class="text-color-white">Somos un espacio en donde podras consultar o publicar información acerca de
                 nuestros amigos de 4 patitas.
             </p>
