@@ -8,12 +8,11 @@ Colaboradoras: Katherine Cevallos, Luz María Vázquez, Ana Karen Morales.
 
 * [1. Definición del Producto](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos generales del proyecto](#3-objetivos-de-aprendizaje)
-* [4. Objetivos de Aprendizaje](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+* [3. Objetivos generales del proyecto](#3-objetivos-generales-del-proyecto)
+* [4. Historias de usuario](#4-historia-de-usuario)
+* [5. Demo](#5-demo)
+* [6. Boceto baja fidelidad](#6-bodeto-baja-fidelidad)
+* [7. Objetivos de Aprendizaje](#7-objetivos-de-aprendizale)
 
 ## 1. Definición del Producto
 
@@ -41,85 +40,7 @@ A continuación se detallan las acciones que el usuario podrá realizar en la re
 * El usuario podrá dar like a las publicaciones que desee.
 * El usuario podrá cerrar sesión y será redireccionado al módulo de Log in.
 
-
-## 4. Objetivos de aprendizaje
-
-El proyecto Pet Lovers fue desarrollado entorno a las siguientes tecnologias; Java script, html,css,firebase etc..
-de cada uno de ellos se obtuvo un aprendizaje para poder concluir el proyecto a continuacion se detalla sobre lo aprendido.
-
-### HTML
-- **Uso de HTML semántico**
-- Desarrollar la maquetación HTML en concordancia con el prototipo en Figma.
-
-### CSS
-- Uso de selectores de CSS para dar estilos y formato al contenido
-- Modelo de caja
-- Uso de flexbox en CSS
-
-### Web APIs
-- Uso de selectores del DOM.
-Se utilizaron para seleccionar y acceder cada elemento de la pagina web .
-+ Listeners: Se utilizaron para detectar y responder a eventos que ocurren en los elementos HTML de la página web.
-    + EventTarget.addEventListener()
-    +  El objeto Event
-
-### Manipulación dinámica del DOM
-+ Se utilizó para crear, editar o modificar los elemento del DOM.
-    + Node.appendChild()
-    + Document.createElement()
-    + Element.innerHTML
-    + Node.textContent
-    + Element.classList
-    + Element.value
-    + Event.target
-### Enrutamiento
-+ Estos fueron los elementos que se utilizaron par el enrutamiento.
-   + History API
-   + window.location.pathname;
-   + evento hashchange
-   + evento popstate
-   + evento pushState
-   + window.dispatchEvent
-### JavaScript
-Estos fueron algunos de los conceptos o definiciones que se investigaron e implementaron en el proyecto.
-- **Arrays (arreglos)**
-- **Objetos (key, value)**
-- **Datos primitivos y no primitivos**
-- **Variables (declaración, asignación, ámbito)**
--**Condicionales (if-else, operador ternario, lógica booleana)**
-- **Bucles/ciclos (for,forEach)**
-- **Funciones (params, args, return)**
-- **Pruebas unitarias (unit tests con jest DOM)**
--**Pruebas asíncronas**
-- **Módulos de ECMAScript (ES Modules)**
-- **Uso de linter (ESLINT)**
-- **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
-- **Diferenciar entre expresiones (expressions) y sentencias (statements)**
--**Callbacks**
-- **Promesas**
-### Control de Versiones (Git y GitHub)
-+ Git flow: Se utlizo este modelo de ramificación ya que nos facilita la organización del trabajo y el seguimiento de las diferentes etapas de desarrollo.
-  + Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-  + **Git: Integración de cambios entre ramas ( branch, checkout, merge, reset)**
-  + **GitHub: Colaboración en Github (branches | forks | pull requests, fork, jgh pages)**
- + **GitHub: Despliegue con GitHub Pages**
-### Centrado en el usuario
- **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
-### Diseño de producto
--**Crear prototipos de alta fidelidad que incluyan interacciones**
--**Seguir los principios básicos de diseño visual**
-### Firebase
--  **Firebase Auth**:
-  Se utilizo para el logeo del usuario final
-- **Firestore**:
-Se utilizo para el almacenamiento de datos y la iImplemntacion de los metodos de firebase (CRUD)
-   +  create
-   +  Read
-   +  Update
-   +  Delete
-
-
-### 5 Historias de usuario
+## 4. Historias de usuario
 
 **HU-07 Crear inicio de sesión de usuario a través de su cuenta de Google**
 
@@ -231,18 +152,9 @@ Se debe mostrar la fecha de creación de cada publicación en el feed.
 
 Una vez que el usuario se encuentre registrado, el usuario podrá visualizar en el feed su foto de perfil y nombre. 
 
-### 6 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-Prototipo de baja fidelidad para Inicio y registro de sesión del Usuario.
-
-![Inicio de sesión](./src/img/20230609_111228.jpg)
-
-Prototipo de baja fidelidad para componente Feed del Usuario incluido el registro e inicio de sesión.
-
-![Inicio de sesión](./src/img/image%20(1).png)
-
-
-### 7 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
+## 5. Demo
+### 5.1 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
 
 
@@ -257,5 +169,93 @@ Prototipo de alta fidelidad para Registro de sesión de Usuario.
 ![Inicio de sesión](./src/img/feed.PNG)
 
 Prototipo de alta fidelidad para componente Feed del Usuario.
+
+## 6. Boceto baja fidelidad
+
+Prototipo de baja fidelidad para Inicio y registro de sesión del Usuario.
+
+![Inicio de sesión](./src/img/20230609_111228.jpg)
+
+Prototipo de baja fidelidad para componente Feed del Usuario incluido el registro e inicio de sesión.
+
+![Inicio de sesión](./src/img/image%20(1).png)
+
+
+## 7. Objetivos de aprendizaje
+
+El proyecto Pet Lovers fue desarrollado entorno a las siguientes tecnologias; Java script, html,css,firebase etc..
+de cada uno de ellos se obtuvo un aprendizaje para poder concluir el proyecto a continuacion se detalla sobre lo aprendido.
+
+### HTML
+- **Uso de HTML semántico**
+- Desarrollar la maquetación HTML en concordancia con el prototipo en Figma.
+
+### CSS
+- Uso de selectores de CSS para dar estilos y formato al contenido
+- Modelo de caja
+- Uso de flexbox en CSS
+
+### Web APIs
+- Uso de selectores del DOM.
+Se utilizaron para seleccionar y acceder cada elemento de la pagina web .
++ Listeners: Se utilizaron para detectar y responder a eventos que ocurren en los elementos HTML de la página web.
+    + EventTarget.addEventListener()
+    +  El objeto Event
+
+### Manipulación dinámica del DOM
++ Se utilizó para crear, editar o modificar los elemento del DOM.
+    + Node.appendChild()
+    + Document.createElement()
+    + Element.innerHTML
+    + Node.textContent
+    + Element.classList
+    + Element.value
+    + Event.target
+### Enrutamiento
++ Estos fueron los elementos que se utilizaron par el enrutamiento.
+   + History API
+   + window.location.pathname;
+   + evento hashchange
+   + evento popstate
+   + evento pushState
+   + window.dispatchEvent
+### JavaScript
+Estos fueron algunos de los conceptos o definiciones que se investigaron e implementaron en el proyecto.
+- **Arrays (arreglos)**
+- **Objetos (key, value)**
+- **Datos primitivos y no primitivos**
+- **Variables (declaración, asignación, ámbito)**
+-**Condicionales (if-else, operador ternario, lógica booleana)**
+- **Bucles/ciclos (for,forEach)**
+- **Funciones (params, args, return)**
+- **Pruebas unitarias (unit tests con jest DOM)**
+-**Pruebas asíncronas**
+- **Módulos de ECMAScript (ES Modules)**
+- **Uso de linter (ESLINT)**
+- **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+- **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+-**Callbacks**
+- **Promesas**
+### Control de Versiones (Git y GitHub)
++ Git flow: Se utlizo este modelo de ramificación ya que nos facilita la organización del trabajo y el seguimiento de las diferentes etapas de desarrollo.
+  + Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+  + **Git: Integración de cambios entre ramas ( branch, checkout, merge, reset)**
+  + **GitHub: Colaboración en Github (branches | forks | pull requests, fork, jgh pages)**
+ + **GitHub: Despliegue con GitHub Pages**
+### Centrado en el usuario
+ **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
+### Diseño de producto
+-**Crear prototipos de alta fidelidad que incluyan interacciones**
+-**Seguir los principios básicos de diseño visual**
+### Firebase
+-  **Firebase Auth**:
+  Se utilizo para el logeo del usuario final
+- **Firestore**:
+Se utilizo para el almacenamiento de datos y la iImplemntacion de los metodos de firebase (CRUD)
+   +  create
+   +  Read
+   +  Update
+   +  Delete
+
 
 
